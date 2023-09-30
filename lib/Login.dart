@@ -1,11 +1,14 @@
 // ignore_for_file: constant_identifier_names
+
 import 'package:flutter/material.dart';
-import 'home.dart';
+import 'Agent/AgentMain.dart';
+
 import 'main.dart';
-import 'Signup.dart';
-import 'package:rive/rive.dart';
-//import 'forgot_password.dart';
-//import 'package:firebase_auth/firebase_auth.dart';
+
+import 'signup_screen.dart';
+
+import 'forgot_password.dart';
+import 'package:firebase_auth/firebase_auth.dart';
 // Define DefaultSize as a constant double value
 const double DefaultSize = 16.0;
 
@@ -40,33 +43,16 @@ class LoginPage extends StatefulWidget {
   _LoginPageState createState() => _LoginPageState();
 }
 class _LoginPageState extends State<LoginPage> {
-  /*late RiveAnimationController _controller;
-
-  /// Is the animation currently playing?
-  bool _isPlaying = false;
-
-  @override
-  void initState() {
-    super.initState();
-    _controller = OneShotAnimation(
-      'bounce',
-      autoplay: false,
-      onStop: () => setState(() => _isPlaying = false),
-      onStart: () => setState(() => _isPlaying = true),
-    );
-  }*/
-
-
 
   bool showSpinner = false;
 
- /* void _showForgetPasswordBottomSheet(BuildContext context) {
+  void _showForgetPasswordBottomSheet(BuildContext context) {
     showModalBottomSheet(
       context: context,
       shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(20.0)),
       builder: (context) => ForgetPasswordBottomSheet(), // Use the new widget here
     );
-  }*/
+  }
   String Choice1 = 'SELECT';
 
   bool _isPasswordHidden = true;
@@ -110,17 +96,10 @@ class _LoginPageState extends State<LoginPage> {
                 Column(
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
-                     Positioned(
-                       height: 10,
-                       top: 10,
-                       left: 0,
-                       child: RiveAnimation.asset(
-                            'assets/images/a_boy (2).riv',
-                           // animations: const ['idle', 'curves'],
-                            //controllers: [_controller],
-                           // fit: BoxFit.fill,
-                          ),
-                     ),
+                    Image(
+                      image: const AssetImage(tWelcomeScreenImage),
+                      height: size.height * 0.2,
+                    ),
                     Text(tLoginTitle, style: Theme.of(context).textTheme.displayLarge),
                     Text(tLoginSubTitle, style: Theme.of(context).textTheme.bodyLarge),
                   ],
@@ -167,7 +146,7 @@ class _LoginPageState extends State<LoginPage> {
                             print(tPassword);
                           },
                         ),
-                       /* DropdownButton(
+                        DropdownButton(
                           items: const [
                             DropdownMenuItem(child: Text("SELECT"), value: "SELECT"),
                             DropdownMenuItem(child: Text("User"), value: "user"),
@@ -175,8 +154,8 @@ class _LoginPageState extends State<LoginPage> {
                           ],
                           value: Choice1,
                           onChanged: dropdownCallback,
-                        ),*/
-                      /*  const SizedBox(height: tFormHeight - 20),
+                        ),
+                        const SizedBox(height: tFormHeight - 20),
                         Align(
                           alignment: Alignment.centerRight,
                           child: TextButton(
@@ -185,8 +164,8 @@ class _LoginPageState extends State<LoginPage> {
                             },
                             child: Text("Forget password".toUpperCase()),
                           ),
-                        ),*/
-                      /*  SizedBox(
+                        ),
+                        SizedBox(
                           width: double.infinity,
                           child: ElevatedButton(
                             onPressed: () async {
@@ -201,7 +180,7 @@ class _LoginPageState extends State<LoginPage> {
                                     Navigator.of(context).push(
                                       MaterialPageRoute(
                                         builder: (context) =>
-                                        const HomePage(), // Replace with the name of your MyApp class
+                                        const MyHomePage(), // Replace with the name of your MyApp class
                                       ),
                                     );
                                   }
@@ -286,7 +265,7 @@ class _LoginPageState extends State<LoginPage> {
                             },
                             child: Text(LoginText(Choice1)),
                           ),
-                        ),*/
+                        ),
                       ],
                     ),
                   ),

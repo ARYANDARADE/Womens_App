@@ -57,6 +57,14 @@ def predict_route(data:Route):
         'prediction': prediction
     }
 
+@app.post('/chat_bot')
+def chat_bot(question: str):
+    ask= question
+    answer=model.response(ask)
+    return {
+        'answer' : answer
+    }
+
 
 
 

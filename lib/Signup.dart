@@ -1,8 +1,10 @@
 import 'dart:ffi';
-import 'home.dart';
-//import 'package:firebase_auth/firebase_auth.dart';
+
+import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
-import 'main.dart';
+import 'package:flutter_yantrika/main.dart';
+import 'Agent/AgentMain.dart';
+import 'Home.dart';
 import 'Login.dart';
 
 // Define DefaultSize as a constant double value
@@ -135,7 +137,7 @@ class _SignUpFormWidgetState extends State<SignUpFormWidget> {
 
     }
     else{
-      return "SignUp as "+ Choice1  ;
+      return "SignUp" ;
     }
   }
 
@@ -204,27 +206,18 @@ class _SignUpFormWidgetState extends State<SignUpFormWidget> {
               ),
             ),
 
-            const SizedBox(height: FormHeight - 20),
-           /* DropdownButton(
-              items: const [
-                DropdownMenuItem(child: Text("SELECT"), value: "SELECT"),
-                DropdownMenuItem(child: Text("User"), value: "user"),
-                DropdownMenuItem(child: Text("Agent"), value: "agent"),
-              ],
-              value: Choice1, // Set the value here
-              onChanged: dropdownCallback,
-            ),*/
+
             const SizedBox(height: FormHeight - 10),
-           /* SizedBox(
+            SizedBox(
               width: double.infinity,
               child: ElevatedButton(
                 onPressed: () async {
                   if (_validateForm(context) && Choice1 == "user") {
                     try {
                       UserCredential newUser = await FirebaseAuth.instance.createUserWithEmailAndPassword(
-                          email: "user." + widget.emailController.text,
+                          email: widget.emailController.text,
                           password: widget.passwordController.text);
-                      print("User Registered");
+                      print(Registered");
                       if (newUser != null) {
                         Navigator.push(
                           context,
@@ -256,43 +249,15 @@ class _SignUpFormWidgetState extends State<SignUpFormWidget> {
                     catch (e) {
                       print(e);
                     } // Your user signup logic here
-                  } else if (_validateForm(context) && Choice1 == "agent") {
-                    try {
-                      UserCredential newUser = await FirebaseAuth.instance.createUserWithEmailAndPassword(
-                          email: "agent." + widget.emailController.text,
-                          password: widget.passwordController.text);
-                      print("Agent REgistered");
-                      if (newUser != null) {
-                        Navigator.push(
-                          context,
-                          MaterialPageRoute(builder: (
-                              context) =>  AgentMain()),
+                  }
                         );
                       }
-
-                    }
-                    on FirebaseAuthException catch (e) {
-                      if (e.code == 'weak-password') {
-                        ScaffoldMessenger.of(context).showSnackBar(
-                          SnackBar(
-                            content: Text('The password provided is too weak.'),
-                          ),
-                        );
-                        print('The password provided is too weak.');
-                      } else if (e.code == 'email-already-in-use') {
-                        ScaffoldMessenger.of(context).showSnackBar(
-                          SnackBar(
-                            content: Text('The account already exists for that email.'),
-                          ),
-                        );
-                        print('The account already exists for that email.');
-                      }
-                    }
-
-
-                    catch (e) {
-                      print(e);
-                    }         // Your agent signup logic here
+    try {
+    UserCredential newUser = await FirebaseAuth.instance.createUserWithEmailAndPassword(
+    email: "agent." + widget.emailController.text,
+    password: widget.passwordController.text);
+    print("Agent REgistered");
+    if (newUser        // Your agent signup logic here
                   } else {
                     // Show an error message on the signup page
                     ScaffoldMessenger.of(context).showSnackBar(
@@ -304,7 +269,7 @@ class _SignUpFormWidgetState extends State<SignUpFormWidget> {
                 },
                 child: Text(SignupText(Choice1)),
               ),
-            ),*/
+            ),
           ],
         ),
       ),
@@ -332,7 +297,7 @@ class SignUpFooterWidget extends StatelessWidget {
           child: Text.rich(TextSpan(children: [
             TextSpan(
               text: "Already have an account?", // Use the variable here
-              style: Theme.of(context).textTheme.bodyText1,
+              style: Theme.of(context).textTheme.bodyLarge,
             ),
             TextSpan(text: "login".toUpperCase()), // Use the variable here
           ])),

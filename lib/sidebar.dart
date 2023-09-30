@@ -1,26 +1,26 @@
 // ignore_for_file: use_build_context_synchronously
 
-//import 'package:firebase_auth/firebase_auth.dart';
+import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 
 class Sidebar extends StatelessWidget {
   const Sidebar({super.key});
 
- /* String GetUserEmail(){
+  String GetUserEmail(){
     String EEmail='anonymous';
-    EEmail =FirebaseAuth.instance.currentUser!.email!;
-    if (EEmail == Null)
-      EEmail= "anonymous";
+     EEmail =FirebaseAuth.instance.currentUser!.email!;
+     if (EEmail == Null)
+       EEmail= "anonymous";
 
     return EEmail;
-  }*/
+  }
 
   @override
   Widget build(BuildContext context) {
     return Drawer(
       child: Column(
         children: <Widget>[
-         /* Align(
+           Align(
             alignment: Alignment.centerLeft, // Align content to the right
             child: UserAccountsDrawerHeader(
               accountName: const Text(''),
@@ -35,9 +35,6 @@ class Sidebar extends StatelessWidget {
                 ),
               ),
             ),
-          ),*/
-          SizedBox(
-            height: 150,
           ),
           ListTile(
             leading: const Icon(Icons.settings, color: Colors.black), // Change icon color to black
@@ -61,7 +58,7 @@ class Sidebar extends StatelessWidget {
             title: const Text('Login with different account'),
             onTap: () async {
               // Handle logout
-              //await FirebaseAuth.instance.signOut();
+              await FirebaseAuth.instance.signOut();
               Navigator.pushNamed(context, '/login'); // Close the drawer
             },
           ),
@@ -70,11 +67,11 @@ class Sidebar extends StatelessWidget {
             title: const Text('Logout'),
             onTap: () async {
               // Handle logout
-             // await FirebaseAuth.instance.signOut();
+              await FirebaseAuth.instance.signOut();
               Navigator.pushNamed(context, '/welcome'); // Close the drawer
             },
           ),
-         /* ListTile(
+          ListTile(
             leading: const Icon(Icons.remove_circle_outline, color: Colors.black), // Change icon color to black
             title: const Text('Delete Account'),
             onTap: () async {
@@ -93,7 +90,7 @@ class Sidebar extends StatelessWidget {
               Navigator.pop(context); // Close the drawer
               Navigator.pushNamed(context, '/login'); // Navigate to the login page
             },
-          ),*/
+          ),
         ],
       ),
     );

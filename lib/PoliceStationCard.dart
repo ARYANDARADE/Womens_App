@@ -17,6 +17,7 @@ class PoliceStationCard extends StatelessWidget {
             child: InkWell(
               onTap: (){
                 onMapFunction!('https://www.google.co.in/maps/search/police+stations+near+me');
+
               },
               child: Card(
                 elevation: 3,

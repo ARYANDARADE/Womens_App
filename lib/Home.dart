@@ -1,7 +1,7 @@
 import 'package:basic/NavBar.dart';
 import 'package:flutter/material.dart';
-import 'Cart.dart';
-import 'History.dart';
+import 'Chat.dart';
+import 'Report.dart';
 import 'Location.dart';
 import 'sidebar.dart';
 import 'Welcome.dart';

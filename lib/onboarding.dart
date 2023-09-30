@@ -89,10 +89,10 @@ class _onBoardingState extends State<onBoarding> {
       nextFlex: 0,
       showBackButton: false,
       showDoneButton: true,
-      back: const Icon(Icons.arrow_back),
-      skip: const Text('Skip', style: TextStyle(fontWeight: FontWeight.w600)),
-      next: const Icon(Icons.arrow_forward),
-      done: const Text('Done', style: TextStyle(fontWeight: FontWeight.w600)),
+      back: const Icon(Icons.arrow_back,color: Color(0xff30949D)),
+      skip: const Text('Skip', style: TextStyle(fontWeight: FontWeight.w600,color: Color(0xff30949D))),
+      next: const Icon(Icons.arrow_forward,color: Color(0xff30949D)),
+      done: const Text('Done', style: TextStyle(fontWeight: FontWeight.w600,color: Color(0xff30949D))),
       curve: Curves.fastLinearToSlowEaseIn,
       controlsMargin: const EdgeInsets.all(16),
       controlsPadding: kIsWeb
@@ -102,6 +102,7 @@ class _onBoardingState extends State<onBoarding> {
         size: Size(10.0, 10.0),
         color: Color(0xFFBDBDBD),
         activeSize: Size(22.0, 10.0),
+        activeColor: Color(0xff30949D),
         activeShape: RoundedRectangleBorder(
           borderRadius: BorderRadius.all(Radius.circular(25.0)),
         ),

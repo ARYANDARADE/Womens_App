@@ -1,14 +1,14 @@
 import 'package:flutter/material.dart';
-class HistoryPage extends StatelessWidget {
+class ChatPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final screenWidth = MediaQuery.of(context).size.width;
     return Scaffold(
-      backgroundColor: Colors.blue,
+      backgroundColor: Colors.green,
       body: Center(
         child: Container(
           child: Text(
-            "THIS IS History PAGE",
+            "THIS IS Chat PAGE",
             style: TextStyle(
                 color: Colors.white,
                 fontSize: 20,

@@ -1,14 +1,14 @@
 import 'package:flutter/material.dart';
-class CartPage extends StatelessWidget {
+class ReportPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final screenWidth = MediaQuery.of(context).size.width;
     return Scaffold(
-      backgroundColor: Colors.green,
+      backgroundColor: Colors.blue,
       body: Center(
         child: Container(
           child: Text(
-            "THIS IS cArt PAGE",
+            "THIS IS Report PAGE",
             style: TextStyle(
                 color: Colors.white,
                 fontSize: 20,

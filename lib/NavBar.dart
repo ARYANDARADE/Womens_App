@@ -1,13 +1,14 @@
+import 'Chat.dart';
 import 'sidebar.dart';
 import 'package:curved_navigation_bar/curved_navigation_bar.dart';
 import 'package:floating_navigation_bar/floating_navigation_bar.dart';
 //import 'package:eva_icons_flutter/eva_icons_flutter.dart';
 import 'package:flutter/material.dart';
-import 'Cart.dart';
 import 'Home.dart';
-import 'History.dart';
+import 'Report.dart';
 import 'Location.dart';
 import 'package:icons_plus/icons_plus.dart';
+import 'package:dot_navigation_bar/dot_navigation_bar.dart';
 class NavBar extends StatefulWidget {
   const NavBar({super.key});
 
@@ -17,7 +18,7 @@ class NavBar extends StatefulWidget {
 
 class _NavBarState extends State<NavBar> {
   int selectedpage = 0;
-  final _pageOptions = [LocationPage(), HomePage(), CartPage(), HistoryPage()];
+  final _pageOptions = [ChatPage(),LocationPage(),ReportPage()];
   @override
   Widget build(BuildContext context) {
     final screenWidth = MediaQuery.of(context).size.width;
@@ -58,7 +59,10 @@ class _NavBarState extends State<NavBar> {
           });
         },
       ),*/
-      _pageOptions[selectedpage],bottomNavigationBar: FloatingNavigationBar(
+      _pageOptions[selectedpage],bottomNavigationBar:
+        
+    SafeArea(
+      child: FloatingNavigationBar(
       backgroundColor: Color(0xff30949D),
       barHeight: 80.0,
       barWidth: MediaQuery.of(context).size.width - 40.0,
@@ -72,23 +76,24 @@ class _NavBarState extends State<NavBar> {
       indicatorHeight: 5,
       indicatorWidth: 25.0,
       items: [
+
+        NavBarItems(
+          icon: Icons.chat_bubble_outlined,
+          title: "Chat",
+        ),
         NavBarItems(
           // icon: EvaIcons.homeOutline,
           icon: Icons.my_location,
           title: "Maps",
         ),
         NavBarItems(
-          icon: Icons.shopping_cart,
-          title: "cart",
+          icon: Icons.report_gmailerrorred,
+          title: "Report",
         ),
-        NavBarItems(
-          icon: Icons.history_rounded,
-          title: "history",
-        ),
-        NavBarItems(
-          icon: Icons.my_location,
-          title: "location",
-        ),
+        // NavBarItems(
+        //   icon: Icons.my_location,
+        //   title: "maps",
+        // ),
       ]
       ,
         onChanged: (value) {
@@ -96,6 +101,7 @@ class _NavBarState extends State<NavBar> {
           setState(() {});
         },
       ),
+    ),
       // Add the Sidebar her
     );
   }

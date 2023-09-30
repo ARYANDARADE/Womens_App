@@ -17,8 +17,8 @@ class NavBar extends StatefulWidget {
 }
 
 class _NavBarState extends State<NavBar> {
-  int selectedpage = 1;
-  final _pageOptions = [ChatPage(),LocationPage(),ReportPage()];
+  int selectedpage = 0;
+  final _pageOptions = [LocationPage(),ChatPage(),ReportPage(),HomePage()];
   @override
   Widget build(BuildContext context) {
     final screenWidth = MediaQuery.of(context).size.width;
@@ -78,23 +78,24 @@ class _NavBarState extends State<NavBar> {
       indicatorWidth: 25.0,
       items: [
 
-        NavBarItems(
-          icon: Icons.chat_bubble_outlined,
-          title: "Chat",
-        ),
+
         NavBarItems(
           // icon: EvaIcons.homeOutline,
           icon: Icons.my_location,
           title: "Maps",
         ),
         NavBarItems(
+          icon: Icons.chat_bubble_outlined,
+          title: "Chat",
+        ),
+        NavBarItems(
           icon: Icons.report_gmailerrorred,
           title: "Report",
         ),
-        // NavBarItems(
-        //   icon: Icons.my_location,
-        //   title: "maps",
-        // ),
+        NavBarItems(
+          icon: Icons.my_location,
+          title: "maps",
+        ),
       ]
       ,
         onChanged: (value) {

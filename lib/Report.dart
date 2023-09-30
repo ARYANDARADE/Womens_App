@@ -4,19 +4,25 @@ class ReportPage extends StatelessWidget {
   Widget build(BuildContext context) {
     final screenWidth = MediaQuery.of(context).size.width;
     return Scaffold(
-      backgroundColor: Colors.blue,
-      body: Center(
-        child: Container(
-          child: Text(
-            "THIS IS Report PAGE",
-            style: TextStyle(
-                color: Colors.white,
-                fontSize: 20,
-                fontStyle: FontStyle.italic,
-                fontWeight: FontWeight.w700),
-          ),
-        ),
-      ),
+      backgroundColor: Colors.white,
+      body: Column(
+        children: [
+          Align(
+            alignment: Alignment.center,
+            child: SafeArea(
+              child: Padding(
+                padding: const EdgeInsets.all(10.0),
+                child: Container(
+                  height: 50,
+                  width: screenWidth,
+                  decoration: BoxDecoration(borderRadius: BorderRadius.circular(15),
+                      color: Colors.lightGreen),
+                ),
+              ),
+            ),
+          )
+        ],
+      )
     );
   }
 }

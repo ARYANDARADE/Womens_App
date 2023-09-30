@@ -17,7 +17,7 @@ class NavBar extends StatefulWidget {
 }
 
 class _NavBarState extends State<NavBar> {
-  int selectedpage = 0;
+  int selectedpage = 1;
   final _pageOptions = [ChatPage(),LocationPage(),ReportPage()];
   @override
   Widget build(BuildContext context) {
@@ -60,6 +60,7 @@ class _NavBarState extends State<NavBar> {
         },
       ),*/
       _pageOptions[selectedpage],bottomNavigationBar:
+
         
     SafeArea(
       child: FloatingNavigationBar(

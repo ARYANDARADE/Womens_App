@@ -18,7 +18,7 @@ class NavBar extends StatefulWidget {
 
 class _NavBarState extends State<NavBar> {
   int selectedpage = 1;
-  final _pageOptions = [HomePage(),ChatPage(),LocationPage(),ReportPage(),];
+  final _pageOptions = [HomePage(),ChatPage(),LocationScreen(),ReportPage(),];
   @override
   Widget build(BuildContext context) {
     final screenWidth = MediaQuery.of(context).size.width;

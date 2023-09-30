@@ -34,7 +34,9 @@ class ChatPage extends StatelessWidget {
                                 color: Colors.grey,
                               ),
                               child:
-                                  Icon(Icons.add, color: Colors.grey.shade200),
+                                  IconButton(icon:Icon(Icons.add, color: Colors.grey.shade200), onPressed: () {
+
+                                  },),
                             ),
                           ),
                         ),

@@ -9,6 +9,9 @@ class Contact extends StatelessWidget {
       height: 10,
       width: 75,
       decoration: BoxDecoration(color: Colors.lightBlue,shape: BoxShape.circle),
+      child: Container(
+        child: Icon(Icons.call),
+      ),
     );
   }
 }

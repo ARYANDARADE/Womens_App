@@ -139,7 +139,7 @@ class _MyHomePageState extends State<MyHomePage> {
              ElevatedButton(
                  onPressed: (){
                    _openMap(lat,long);
-                 }, child: const Text('Open Google Map'),
+                 }, child:Text('Open Google Map'),
              ),
             ],
           ),

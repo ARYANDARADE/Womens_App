@@ -218,13 +218,15 @@ class _LocationScreenState extends State<LocationScreen> {
             child: ListView.builder(
               itemCount: _locations.length,
               itemBuilder: (context, index) {
-                return ListTile(
-                  title: Text(_locations[index].name),
-                  onTap: () {
-                    _selectedListIndex = index;
-                    _onLocationSelected(_locations[index]);
-                    _toggleLocationMenu();
-                  },
+                return Container(
+                  child: ListTile(
+                    title: Text(_locations[index].name),
+                    onTap: () {
+                      _selectedListIndex = index;
+                      _onLocationSelected(_locations[index]);
+                      _toggleLocationMenu();
+                    },
+                  ),
                 );
               },
             ),

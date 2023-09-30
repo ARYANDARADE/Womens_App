@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:intl/intl.dart';
+import 'package:tflite_flutter/tflite_flutter.dart';
 class ChatBot extends StatefulWidget {
   const ChatBot({super.key});
 
@@ -9,6 +10,10 @@ class ChatBot extends StatefulWidget {
 
 class _ChatBotState extends State<ChatBot> {
   final messagecontroller = TextEditingController();
+
+  final interpreter = Interpreter.fromAsset('assets/your_model.tflite');
+
+
   @override
   Widget build(BuildContext context) {
     return Expanded(

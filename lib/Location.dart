@@ -40,7 +40,8 @@ class _LocationScreenState extends State<LocationScreen> {
   GoogleMapController? mapController;
   List<LocationData> _locations = [];
   LatLng? _currentLocation;
-  Marker? _marker;
+  Marker? marker;
+  Set<Marker> _markers = {};
   int _selectedListIndex = 0;
   bool _isLocationMenuOpen = false;
 
@@ -53,7 +54,23 @@ class _LocationScreenState extends State<LocationScreen> {
       _getCurrentLocation();
     });
   }
-
+  void _onLocationSelected(LocationData location) {
+    setState(() {
+      _markers.clear();
+      _markers.add(
+        Marker(
+          markerId: MarkerId(location.name),
+          position: LatLng(location.latitude, location.longitude),
+          infoWindow: InfoWindow(title: location.name),
+        ),
+      );
+    });
+    mapController?.animateCamera(
+      CameraUpdate.newLatLng(
+        LatLng(location.latitude, location.longitude),
+      ),
+    );
+  }
   String getColumn8Value(int selectedIndex, List<List<dynamic>> csvTable) {
     if (selectedIndex >= 0 && selectedIndex < csvTable.length) {
       return csvTable[selectedIndex][8].toString();
@@ -73,7 +90,7 @@ class _LocationScreenState extends State<LocationScreen> {
   }
 
   void _updateMarker() {
-    _marker = Marker(
+    marker = Marker(
       markerId: MarkerId('currentLocation'),
       position: _currentLocation!,
       infoWindow: InfoWindow(title: 'Current Location'),
@@ -187,6 +204,37 @@ class _LocationScreenState extends State<LocationScreen> {
     }
   }
 
+  showDialogFunc(context){
+    return showDialog(context: context, builder: (context){
+      return Center(
+        child: Material(
+          type: MaterialType.transparency,
+          child: Container(
+            decoration: BoxDecoration(borderRadius: BorderRadius.circular(15),
+            color: Colors.white),
+            padding: EdgeInsets.all(15),
+            width: MediaQuery.of(context).size.width*0.7,
+            height: 320 ,
+            child: ListView.builder(
+              itemCount: _locations.length,
+              itemBuilder: (context, index) {
+                return ListTile(
+                  title: Text(_locations[index].name),
+                  onTap: () {
+                    _selectedListIndex = index;
+                    _onLocationSelected(_locations[index]);
+                    _toggleLocationMenu();
+                  },
+                );
+              },
+            ),
+          ),
+        ),
+      );
+
+    });
+  }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -202,7 +250,7 @@ class _LocationScreenState extends State<LocationScreen> {
               target: _currentLocation ?? LatLng(20.682131,77.894250), // Use a default location if _currentLocation is null
               zoom: 4,
             ),
-            markers: _marker != null ? Set<Marker>.from([_marker!]) : {},
+            markers: marker != null ? Set<Marker>.from([marker!]) : {},
           ),
           Positioned(
             top: 80.0,
@@ -233,7 +281,8 @@ class _LocationScreenState extends State<LocationScreen> {
               height: 60.0,
               child: FloatingActionButton(
                 onPressed: () {
-                  _openPopUpWindow(_selectedListIndex);
+                  // _openPopUpWindow(_selectedListIndex);
+                  showDialogFunc(context);
 
                   // Add your onPressed action here
                 },

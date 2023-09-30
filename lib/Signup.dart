@@ -2,9 +2,7 @@ import 'dart:ffi';
 
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_yantrika/main.dart';
-import 'Agent/AgentMain.dart';
-import 'Home.dart';
+import 'main.dart';
 import 'Login.dart';
 
 // Define DefaultSize as a constant double value
@@ -137,7 +135,7 @@ class _SignUpFormWidgetState extends State<SignUpFormWidget> {
 
     }
     else{
-      return "SignUp" ;
+      return "SignUp as "+ Choice1  ;
     }
   }
 
@@ -206,7 +204,16 @@ class _SignUpFormWidgetState extends State<SignUpFormWidget> {
               ),
             ),
 
-
+            const SizedBox(height: FormHeight - 20),
+            DropdownButton(
+              items: const [
+                DropdownMenuItem(child: Text("SELECT"), value: "SELECT"),
+                DropdownMenuItem(child: Text("User"), value: "user"),
+                DropdownMenuItem(child: Text("Agent"), value: "agent"),
+              ],
+              value: Choice1, // Set the value here
+              onChanged: dropdownCallback,
+            ),
             const SizedBox(height: FormHeight - 10),
             SizedBox(
               width: double.infinity,
@@ -215,14 +222,14 @@ class _SignUpFormWidgetState extends State<SignUpFormWidget> {
                   if (_validateForm(context) && Choice1 == "user") {
                     try {
                       UserCredential newUser = await FirebaseAuth.instance.createUserWithEmailAndPassword(
-                          email: widget.emailController.text,
+                          email: "user." + widget.emailController.text,
                           password: widget.passwordController.text);
-                      print(Registered");
+                      print("User Registered");
                       if (newUser != null) {
                         Navigator.push(
                           context,
                           MaterialPageRoute(builder: (
-                              context) =>  HomePage()),
+                              context) =>  MyHomePage()),
                         );
                       }
 
@@ -249,15 +256,43 @@ class _SignUpFormWidgetState extends State<SignUpFormWidget> {
                     catch (e) {
                       print(e);
                     } // Your user signup logic here
-                  }
+                  } else if (_validateForm(context) && Choice1 == "agent") {
+                    try {
+                      UserCredential newUser = await FirebaseAuth.instance.createUserWithEmailAndPassword(
+                          email: "agent." + widget.emailController.text,
+                          password: widget.passwordController.text);
+                      print("Agent REgistered");
+                      if (newUser != null) {
+                        Navigator.push(
+                          context,
+                          MaterialPageRoute(builder: (
+                              context) =>  AgentMain()),
                         );
                       }
-    try {
-    UserCredential newUser = await FirebaseAuth.instance.createUserWithEmailAndPassword(
-    email: "agent." + widget.emailController.text,
-    password: widget.passwordController.text);
-    print("Agent REgistered");
-    if (newUser        // Your agent signup logic here
+
+                    }
+                    on FirebaseAuthException catch (e) {
+                      if (e.code == 'weak-password') {
+                        ScaffoldMessenger.of(context).showSnackBar(
+                          SnackBar(
+                            content: Text('The password provided is too weak.'),
+                          ),
+                        );
+                        print('The password provided is too weak.');
+                      } else if (e.code == 'email-already-in-use') {
+                        ScaffoldMessenger.of(context).showSnackBar(
+                          SnackBar(
+                            content: Text('The account already exists for that email.'),
+                          ),
+                        );
+                        print('The account already exists for that email.');
+                      }
+                    }
+
+
+                    catch (e) {
+                      print(e);
+                    }         // Your agent signup logic here
                   } else {
                     // Show an error message on the signup page
                     ScaffoldMessenger.of(context).showSnackBar(

@@ -6,7 +6,7 @@ import 'package:geolocator/geolocator.dart';
 import 'package:url_launcher/url_launcher_string.dart';
 import 'NavBar.dart';
 import 'sidebar.dart';
-import 'Welcome.dart';
+
 import 'Login.dart';
 import 'Signup.dart';
 

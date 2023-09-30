@@ -12,13 +12,14 @@ import numpy as np
 import pickle
 import pandas as pd
 import tensorflow as tf
+from python_library.test_lib2 import test_func
 
 
 
 
 app = FastAPI()
-model = tf.saved_model.load('model.tflite')
-
+interpreter = tf.saved_model.load("model.tflite")
+interpreter.allocate_tensors()
 pickle_in = open("vigilanceapp.pkl","rb")
 classifier=pickle.load(pickle_in)
 
@@ -57,18 +58,11 @@ def predict_route(data:Route):
         'prediction': prediction
     }
 
-@app.post('/chat_bot')
-def chat_bot(question: str):
-    ask= question
-    answer=model.response(ask)
-    return {
-        'answer' : answer
-    }
 
 
 
 
 if __name__ =='__main__':
-    uvicorn.run(app,host='127.0.0.1',port=8000)
+    uvicorn.run(app,host='0.0.0.0',port=8000)
 #uvicorn app:app --host 127.0.0.1 --port 8000
 #uvicorn app:app --reload

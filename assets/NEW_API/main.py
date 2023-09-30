@@ -1,46 +1,50 @@
-from fastapi import FastAPI, UploadFile, File
+# -*- coding: utf-8 -*-
+"""
+Spyder Editor
+
+This is a temporary script file.
+"""
+
 import uvicorn
+from fastapi import FastAPI
+from Routes import Route
 import numpy as np
-from io import BytesIO
-from PIL import Image
+import pickle
+import pandas as pd
 import tensorflow as tf
 
 
 
 
 app = FastAPI()
-
-# creating global variable of the model
-MODEL = tf.keras.models.load_model("../models/1")
-CLASS_NAMES = ['Early Blight','Late Blight','Healthy']
-
-
-# @app.get("/ping")
-# async def ping():
-#     return "Hello ,I am alive"
-def read_file_as_image(data) -> np.ndarray:
-    image = np.array(Image.open(BytesIO(data)))
-    return image
+interpreter = tf.saved_model.load("model.tflite")
+interpreter.allocate_tensors()
 
 
 
-@app.post("/predict")
-async def predict(file: UploadFile = File(...)):
-    image = read_file_as_image(await file.read())
-    # since our model needs batch of images np.expand_dims helps in expanding or increasing the dimension of the images
-    img_batch = np.expand_dims(image, 0)
-    predictions = MODEL.predict(img_batch)
-    # index = np.argmax(predictions)
-    predicted_class = CLASS_NAMES[np.argmax(predictions[0])]
-    confidence = np.max(predictions[0])
-    print(predicted_class,confidence)
+@app.get('/')
+def index():
+    return{'message':'hello ,World'}
+
+
+@app.get('/{name}')
+def get_name(name:str):
+    return {'Welcome here to api': f'{name}'}
+
+@app.post('/chat_bot')
+def chat_bot(question: str):
+
+    ask= question
+
+    answer=model.response(ask)
     return {
-        "class": predicted_class,
-        "confidence": float(confidence)
+        'answer' : answer
     }
 
-    pass
 
-if __name__ == "__main__" :
-    uvicorn.run(app,host='localhost',port=8000)
 
+
+if __name__ =='__main__':
+    uvicorn.run(app,host='0.0.0.0',port=8000)
+#uvicorn app:app --host 127.0.0.1 --port 8000
+#uvicorn app:app --reload

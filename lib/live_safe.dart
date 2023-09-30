@@ -13,7 +13,7 @@ class LiveSafe extends StatelessWidget {
   const LiveSafe({Key? key}) : super(key: key);
 
   static Future<void> openMap(String location) async {
-    String googleUrl = 'https://www.google.com/maps/search/$location';
+    String googleUrl = location;
 
     if (Platform.isAndroid) {
       if (await canLaunchUrl(Uri.parse(googleUrl))) {

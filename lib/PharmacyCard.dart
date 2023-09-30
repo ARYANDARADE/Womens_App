@@ -17,7 +17,7 @@ class PharmacyCard extends StatelessWidget {
             },
             child: InkWell(
               onTap: () {
-                onMapFunction!('PHARMACY STORES near me');
+                onMapFunction!('https://www.google.co.in/maps/search/pharmacy+stores+near+me');
               },
               child: Card(
                 elevation: 3,

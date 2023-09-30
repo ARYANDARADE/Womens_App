@@ -13,7 +13,7 @@ class HospitalCard extends StatelessWidget {
         children: [
           InkWell(
             onTap: () {
-              onMapFunction!('Hospitals near me');
+              onMapFunction!("https://www.google.co.in/maps/search/hospitals+stations+near+me");
             },
             child: Card(
               elevation: 3,

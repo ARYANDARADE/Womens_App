@@ -17,6 +17,8 @@ import tensorflow as tf
 
 
 app = FastAPI()
+model = tf.saved_model.load('model.tflite')
+
 pickle_in = open("vigilanceapp.pkl","rb")
 classifier=pickle.load(pickle_in)
 

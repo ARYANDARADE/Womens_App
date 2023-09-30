@@ -18,13 +18,13 @@ class NavBar extends StatefulWidget {
 
 class _NavBarState extends State<NavBar> {
   int selectedpage = 1;
-  final _pageOptions = [ChatPage(),LocationScreen(),ReportPage()];
+  final _pageOptions = [HomePage(),ChatPage(),LocationPage(),ReportPage(),];
   @override
   Widget build(BuildContext context) {
     final screenWidth = MediaQuery.of(context).size.width;
     return Scaffold(
       extendBody: true,
-      body: /*_pageOptions[selectedpage],
+      body: _pageOptions[selectedpage],
       bottomNavigationBar: CurvedNavigationBar(
         height: screenWidth * 0.15,
         buttonBackgroundColor:const Color(0xFFA22327), // bbgcolor[selectedpage],////const Color(0xFF5BEA43),
@@ -38,17 +38,18 @@ class _NavBarState extends State<NavBar> {
             color: Colors.black,
           ),
           Icon(
-            Icons.shopping_cart,
+            Icons.chat,
             size: screenWidth * 0.09,
             color: Colors.black,
           ),
-          Icon(
-            Icons.history_rounded,
-            size: screenWidth * 0.09,
-            color: Colors.black,
-          ),
+
           Icon(
             Icons.location_on,
+            size: screenWidth * 0.09,
+            color: Colors.black,
+          ),
+          Icon(
+            Icons.report,
             size: screenWidth * 0.09,
             color: Colors.black,
           ),
@@ -58,51 +59,52 @@ class _NavBarState extends State<NavBar> {
             selectedpage = index; // changing selected page as per bar index selected by the user
           });
         },
-      ),*/
-      _pageOptions[selectedpage],bottomNavigationBar:
-
-        
-    SafeArea(
-      child: FloatingNavigationBar(
-      backgroundColor: Color(0xff30949D),
-      barHeight: 80.0,
-      barWidth: MediaQuery.of(context).size.width - 40.0,
-      iconColor: Colors.black,
-      textStyle: TextStyle(
-        color: Colors.white,
-        fontSize: 16.0,
       ),
-      iconSize: 25.0,
-      indicatorColor: Colors.white,
-      indicatorHeight: 5,
-      indicatorWidth: 25.0,
-      items: [
+      // _pageOptions[selectedpage],bottomNavigationBar:
 
-        NavBarItems(
-          icon: Icons.chat_bubble_outlined,
-          title: "Chat",
-        ),
-        NavBarItems(
-          // icon: EvaIcons.homeOutline,
-          icon: Icons.my_location,
-          title: "Maps",
-        ),
-        NavBarItems(
-          icon: Icons.report_gmailerrorred,
-          title: "Report",
-        ),
-        // NavBarItems(
-        //   icon: Icons.my_location,
-        //   title: "maps",
-        // ),
-      ]
-      ,
-        onChanged: (value) {
-          selectedpage = value;
-          setState(() {});
-        },
-      ),
-    ),
+
+    // SafeArea(
+    //   child: FloatingNavigationBar(
+    //   backgroundColor: Color(0xff30949D),
+    //   barHeight: 80.0,
+    //   barWidth: MediaQuery.of(context).size.width - 40.0,
+    //   iconColor: Colors.black,
+    //   textStyle: TextStyle(
+    //     color: Colors.white,
+    //     fontSize: 16.0,
+    //   ),
+    //   iconSize: 25.0,
+    //   indicatorColor: Colors.white,
+    //   indicatorHeight: 5,
+    //   indicatorWidth: 25.0,
+    //   items: [
+    //
+    //     NavBarItems(
+    //       icon: Icons.chat_bubble_outlined,
+    //       title: "Chat",
+    //     ),
+    //     NavBarItems(
+    //       // icon: EvaIcons.homeOutline,
+    //       icon: Icons.my_location,
+    //       title: "Maps",
+    //     ),
+    //     NavBarItems(
+    //       icon: Icons.report_gmailerrorred,
+    //       title: "Report",
+    //     ),
+    //
+    //     // NavBarItems(
+    //     //   icon: Icons.my_location,
+    //     //   title: "maps",
+    //     // ),
+    //   ]
+    //   ,
+    //     onChanged: (value) {
+    //       selectedpage = value;
+    //       setState(() {});
+    //     },
+    //   ),
+    // ),
       // Add the Sidebar her
     );
   }

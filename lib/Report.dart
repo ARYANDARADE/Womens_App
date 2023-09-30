@@ -1,4 +1,9 @@
+import 'package:basic/BusStationCard.dart';
+import 'package:basic/HospitalCard.dart';
+import 'package:basic/policeemergency.dart';
 import 'package:flutter/material.dart';
+
+import 'PharmacyCard.dart';
 class ReportPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
@@ -12,11 +17,22 @@ class ReportPage extends StatelessWidget {
             child: SafeArea(
               child: Padding(
                 padding: const EdgeInsets.all(10.0),
-                child: Container(
-                  height: 50,
-                  width: screenWidth,
-                  decoration: BoxDecoration(borderRadius: BorderRadius.circular(15),
-                      color: Colors.lightGreen),
+                child: Column(
+                  children: [
+
+                    Container(
+                        child: PoliceEmergency()
+                    ),
+                    Container(
+                      child: HospitalCard() ,
+                    ),
+                    Container(
+                      child: BusStationCard(),
+                    ),
+              Container(
+                child: PharmacyCard(),
+              ),
+                  ],
                 ),
               ),
             ),

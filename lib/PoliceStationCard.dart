@@ -1,9 +1,8 @@
 import 'package:flutter/material.dart';
 
-class PharmacyCard extends StatelessWidget {
+class PoliceStationCard extends StatelessWidget {
   final Function? onMapFunction;
-
-  const PharmacyCard({Key? key, this.onMapFunction}) : super(key: key);
+  const PoliceStationCard({Key? key, this.onMapFunction}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -13,11 +12,11 @@ class PharmacyCard extends StatelessWidget {
         children: [
           InkWell(
             onTap: () {
-              onMapFunction!('pharmacies near me');
+              onMapFunction!('Police stations near me');
             },
             child: InkWell(
-              onTap: () {
-                onMapFunction!('PHARMACY STORES near me');
+              onTap: (){
+                onMapFunction('Police stations near me');
               },
               child: Card(
                 elevation: 3,
@@ -29,7 +28,7 @@ class PharmacyCard extends StatelessWidget {
                   width: 50,
                   child: Center(
                     child: Image.asset(
-                      'assets/pharmacy.png',
+                      'assets/police-badge.png',
                       height: 32,
                     ),
                   ),
@@ -37,7 +36,7 @@ class PharmacyCard extends StatelessWidget {
               ),
             ),
           ),
-          Text('Pharmacy')
+          Text('Police Stations')
         ],
       ),
     );

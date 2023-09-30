@@ -52,8 +52,8 @@ class _LocationScreenState extends State<LocationScreen> {
               });
             },
             initialCameraPosition: CameraPosition(
-              target: _currentLocation ?? LatLng(0, 0), // Use a default location if _currentLocation is null
-              zoom: 15,
+              target: _currentLocation ?? LatLng(20.682131,77.894250), // Use a default location if _currentLocation is null
+              zoom: 4,
             ),
             markers: _marker != null ? Set<Marker>.from([_marker!]) : {},
           ),
@@ -65,7 +65,8 @@ class _LocationScreenState extends State<LocationScreen> {
               height: 80.0,
               child: FloatingActionButton(
                 onPressed: () {
-                  // Add your onPressed action here
+                  _getCurrentLocation();
+                  _updateMarker();
                 },
                 child: Transform.scale(
                   scale: 1.5,

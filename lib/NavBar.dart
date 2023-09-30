@@ -17,7 +17,7 @@ class NavBar extends StatefulWidget {
 }
 
 class _NavBarState extends State<NavBar> {
-  int selectedpage = 1;
+  int selectedpage = 0;
   final _pageOptions = [HomePage(),ChatPage(),LocationScreen(),ReportPage(),];
   @override
   Widget build(BuildContext context) {
@@ -27,9 +27,9 @@ class _NavBarState extends State<NavBar> {
       body: _pageOptions[selectedpage],
       bottomNavigationBar: CurvedNavigationBar(
         height: screenWidth * 0.15,
-        buttonBackgroundColor:const Color(0xFFA22327), // bbgcolor[selectedpage],////const Color(0xFF5BEA43),
+        buttonBackgroundColor:const Color(0xFF37949d), // bbgcolor[selectedpage],////const Color(0xFF5BEA43),
         backgroundColor:Colors.transparent,// bgcolor[selectedpage],
-        color: const Color(0xFFF19393),
+        color: const Color(0xff37949d),
         animationCurve: Curves.linearToEaseOut,
         items: <Widget>[
           Icon(

@@ -41,7 +41,7 @@ class _onBoardingState extends State<onBoarding> {
       autoScrollDuration: 10000,
       infiniteAutoScroll: false,
       globalHeader: Align(
-        alignment: Alignment.topRight,
+        alignment: Alignment.center,
         child: SafeArea(
           child: Padding(
             padding: const EdgeInsets.only(top: 16,right: 16),
@@ -60,16 +60,27 @@ class _onBoardingState extends State<onBoarding> {
       //   ),
       // ),
       pages: [
-        PageViewModel(title: "1",
-        body: "Test1",
-        image : _buildImage("flutter.png",100),
+        PageViewModel(title: "Maps: Navigate with Confidence",
+        body: "Navigate through your surroundings with ease and confidence using our intuitive map feature which shows the Safety of a Road",
+        image : _buildImage("maps.png",100),
         decoration: pageDecoration,
         ),
-        PageViewModel(title: "2",
-          body: "Test2",
-          image : _buildImage("flutter.png",100),
+        PageViewModel(title: "Emergency Alert Button: Swift Action, Swift Response",
+          body: "Your safety is our priority. With our dedicated emergency alert button, you can instantly send distress signals to pre-configured contacts and emergency services. In critical situations, every second matters, and Vigilance ensures help is just a tap away.",
+          image : _buildImage("alert.png",100),
+          decoration: pageDecoration,
+        ),
+        PageViewModel(title: "In-App Chatbot: Instant Contact with Emergency Services",
+          body: "Communicate directly with emergency services using our in-app chatbot. Reach out for assistance, provide crucial information, and receive immediate guidance to help you through any distressing situation.",
+          image : _buildImage("chatbot.png",100),
+          decoration: pageDecoration,
+        ),
+        PageViewModel(title: "Community Watch: A Collaborative Approach to Safety",
+          body: "Join forces with our community and participate in making a difference. The community watch feature allows you to contribute to the safety of others by rating and assessing the safety of different locations. When a certain number of users vote on a location, it dynamically updates its safety rating, enabling a collective effort to promote secure spaces.",
+          image : _buildImage("community.png",100),
           decoration: pageDecoration,
         )
+
       ],
       onDone: () => _onIntroEnd(context),
       onSkip: () => _onIntroEnd(context), // You can override onSkip callback

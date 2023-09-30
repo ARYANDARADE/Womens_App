@@ -17,7 +17,7 @@ class NavBar extends StatefulWidget {
 
 class _NavBarState extends State<NavBar> {
   int selectedpage = 0;
-  final _pageOptions = [ HomePage(), CartPage(), HistoryPage(),LocationPage()];
+  final _pageOptions = [LocationPage(), HomePage(), CartPage(), HistoryPage()];
   @override
   Widget build(BuildContext context) {
     final screenWidth = MediaQuery.of(context).size.width;
@@ -59,7 +59,7 @@ class _NavBarState extends State<NavBar> {
         },
       ),*/
       _pageOptions[selectedpage],bottomNavigationBar: FloatingNavigationBar(
-      backgroundColor: Colors.green[500],
+      backgroundColor: Color(0xff30949D),
       barHeight: 80.0,
       barWidth: MediaQuery.of(context).size.width - 40.0,
       iconColor: Colors.black,
@@ -74,8 +74,8 @@ class _NavBarState extends State<NavBar> {
       items: [
         NavBarItems(
           // icon: EvaIcons.homeOutline,
-          icon: Icons.home_filled,
-          title: "home",
+          icon: Icons.my_location,
+          title: "Maps",
         ),
         NavBarItems(
           icon: Icons.shopping_cart,

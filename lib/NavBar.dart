@@ -38,13 +38,13 @@ class _NavBarState extends State<NavBar> {
             color: Colors.black,
           ),
           Icon(
-            Icons.chat,
+            Icons.location_on,
             size: screenWidth * 0.09,
             color: Colors.black,
           ),
 
           Icon(
-            Icons.location_on,
+            Icons.chat,
             size: screenWidth * 0.09,
             color: Colors.black,
           ),

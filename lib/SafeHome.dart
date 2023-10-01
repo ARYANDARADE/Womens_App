@@ -5,6 +5,8 @@ import 'package:geocoding/geocoding.dart';
 import 'package:geolocator/geolocator.dart';
 import 'package:permission_handler/permission_handler.dart';
 
+import '';
+
 class SafeHome extends StatefulWidget {
   @override
   State<SafeHome> createState() => _SafeHomeState();
@@ -194,7 +196,7 @@ class _SafeHomeState extends State<SafeHome> {
 
 class TContact {
   int? id;
-  int? number;
+  String? number;
 
 }
 

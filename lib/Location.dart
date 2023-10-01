@@ -265,13 +265,16 @@ the csv and we are printing on the Sreen on the basis of those predefined ml
                 : const Icon(Icons.arrow_circle_up),
           ),
           const SizedBox(height: 16),
-          FloatingActionButton(
-            onPressed: () async {
-              if (_markers.isNotEmpty) {
-                await _openPopUpWindow(_selectedListIndex);
-              }
-            },
-            child: const Icon(Icons.message),
+          Align(
+            alignment: Alignment.topLeft,
+            child: FloatingActionButton(
+              onPressed: () async {
+                if (_markers.isNotEmpty) {
+                  await _openPopUpWindow(_selectedListIndex);
+                }
+              },
+              child: const Icon(Icons.message),
+            ),
           ),
         ],
       ),

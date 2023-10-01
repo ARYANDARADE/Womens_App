@@ -18,7 +18,7 @@ class NavBar extends StatefulWidget {
 
 class _NavBarState extends State<NavBar> {
   int selectedpage = 0;
-  final _pageOptions = [HomePage(),ChatPage(),LocationScreen(),ReportPage(),];
+  final _pageOptions = [ChatPage(),LocationScreen(),ReportPage(),];
   @override
   Widget build(BuildContext context) {
     final screenWidth = MediaQuery.of(context).size.width;
@@ -32,19 +32,19 @@ class _NavBarState extends State<NavBar> {
         color: const Color(0xff37949d),
         animationCurve: Curves.linearToEaseOut,
         items: <Widget>[
-          Icon(
-            Icons.home,
-            size: screenWidth * 0.09,
-            color: Colors.black,
-          ),
-          Icon(
-            Icons.location_on,
-            size: screenWidth * 0.09,
-            color: Colors.black,
-          ),
+          // Icon(
+          //   Icons.home,
+          //   size: screenWidth * 0.09,
+          //   color: Colors.black,
+          // ),
+
 
           Icon(
             Icons.chat,
+            size: screenWidth * 0.09,
+            color: Colors.black,
+          ),Icon(
+            Icons.location_on,
             size: screenWidth * 0.09,
             color: Colors.black,
           ),

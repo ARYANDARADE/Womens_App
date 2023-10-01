@@ -8,7 +8,6 @@ import 'Report.dart';
 import 'Location.dart';
 import 'quotes.dart';
 import 'sidebar.dart';
-import 'package:flutter_sms/flutter_sms.dart';
 
 import 'Signup.dart';
 

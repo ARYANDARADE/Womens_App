@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:grouped_list/grouped_list.dart';
 import 'package:intl/intl.dart';
 
 import 'package:tflite_flutter/tflite_flutter.dart';
@@ -37,13 +38,8 @@ class _ChatBotState extends State<ChatBot> {
                 ),
               ),
             ),
-            Flexible(child:
-            ListView.builder(itemCount: 0,
-            reverse: true,
-            itemBuilder: (context,index){
-
-            }
-            )
+            Flexible(
+                child: Container()
             ),
             Container(
               child: ListTile(

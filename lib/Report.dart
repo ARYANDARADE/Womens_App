@@ -20,40 +20,44 @@ class ReportPage extends StatelessWidget {
             child: SafeArea(
               child: Padding(
                 padding: const EdgeInsets.all(10.0),
-                child: Column(
-                  children: [
-                    Container(
-                        child: PoliceEmergency()
-                    ),
-                    Container(
-                        child:AmbulanceEmergency ()
-                    ),
-                    Container(
-                        child:FirebrigadeEmergency ()
-                    ),
-                    Container(
-                      height: 100,
-                      child: ListView(
-                        scrollDirection: Axis.horizontal,
-                        children: [
-
-
-                          Container(
-                            child: HospitalCard() ,
-                          ),
-                          Container(
-                            child: BusStationCard(),
-                          ),
-                          Container(
-                            child: PharmacyCard(),
-              ),
-                          Container(
-                            child: PoliceStationCard(),
-                          ),
-                        ],
+                child: Container(
+                  height: 300,
+                  child: ListView(
+                    scrollDirection: Axis.horizontal,
+                    children: [
+                      Container(
+                          child: PoliceEmergency()
                       ),
-                    ),
-                  ],
+                      Container(
+                          child:AmbulanceEmergency ()
+                      ),
+                      Container(
+                          child:FirebrigadeEmergency ()
+                      ),
+                      Container(
+                        height: 100,
+                        child: ListView(
+                          scrollDirection: Axis.horizontal,
+                          children: [
+
+
+                            Container(
+                              child: HospitalCard() ,
+                            ),
+                            Container(
+                              child: BusStationCard(),
+                            ),
+                            Container(
+                              child: PharmacyCard(),
+              ),
+                            Container(
+                              child: PoliceStationCard(),
+                            ),
+                          ],
+                        ),
+                      ),
+                    ],
+                  ),
                 ),
               ),
             ),

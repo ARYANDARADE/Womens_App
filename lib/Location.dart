@@ -225,6 +225,7 @@ class _LocationScreenState extends State<LocationScreen> {
                       _selectedListIndex = index;
                       _onLocationSelected(_locations[index]);
                       _toggleLocationMenu();
+                      _openPopUpWindow(index);
                     },
                   ),
                 );

@@ -45,7 +45,7 @@ class _HomePageState extends State<HomePage> {
             top: 45.0,
             left: screenWidth * 0.29,
             child: Text(
-              "Template",
+              "HOME PAGE ",
               style: TextStyle(
                 color: Colors.redAccent,
                 fontSize: screenWidth * 0.10,
@@ -53,6 +53,8 @@ class _HomePageState extends State<HomePage> {
               ),
             ),
           ),
+
+
 
 
           /*Positioned(

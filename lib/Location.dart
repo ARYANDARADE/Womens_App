@@ -130,7 +130,7 @@ class _LocationScreenState extends State<LocationScreen> {
 
       // Make your API call with these values
       final response = await http.post(
-        Uri.parse('http:// 192.168.0.105:8000/predict'),
+        Uri.parse('http:// 127.0.0.1:8000/predict'),
         headers: {"Content-Type": "application/json"},
         body: jsonEncode({
           "Distance": distance,

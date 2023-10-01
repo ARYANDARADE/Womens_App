@@ -14,10 +14,14 @@ class Contact extends StatelessWidget {
       child: Container(
         height: 10,
         width: 75,
-        decoration: BoxDecoration(color: Colors.lightBlue,shape: BoxShape.circle),
+        decoration: BoxDecoration(color: Colors.lightBlue,shape: BoxShape.circle,
+          image: DecorationImage(image: AssetImage("assets/images/avatar.png")),),
         child: Align(
           alignment: Alignment.bottomRight,
           child: Container(
+            decoration: BoxDecoration(
+
+            ),
             child: Icon(Icons.call),
           ),
         ),

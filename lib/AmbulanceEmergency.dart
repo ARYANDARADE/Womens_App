@@ -39,7 +39,7 @@ class AmbulanceEmergency extends StatelessWidget {
                   CircleAvatar(
                     radius: 25,
                     backgroundColor: Colors.white.withOpacity(0.5),
-                    child: Image.asset('download-removebg-preview.png'),
+                    child: Image.asset('assets/images/download-removebg-preview.png'),
                   ),
                   Expanded(
                     child: Column(

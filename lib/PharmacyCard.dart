@@ -29,7 +29,7 @@ class PharmacyCard extends StatelessWidget {
                   width: 50,
                   child: Center(
                     child: Image.asset(
-                      'assets/medical store.png',
+                      'assets/images/medical store.png',
                       height: 32,
                     ),
                   ),

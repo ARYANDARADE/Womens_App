@@ -25,7 +25,7 @@ class BusStationCard extends StatelessWidget {
                 width: 50,
                 child: Center(
                   child: Image.asset(
-                    'assets/buss.png',
+                    'assets/images/buss.png',
                     height: 32,
                   ),
                 ),

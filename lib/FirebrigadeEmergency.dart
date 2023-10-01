@@ -39,7 +39,7 @@ class FirebrigadeEmergency extends StatelessWidget {
                   CircleAvatar(
                     radius: 25,
                     backgroundColor: Colors.white.withOpacity(0.5),
-                    child: Image.asset('images-removebg-preview.png'),
+                    child: Image.asset('assets/images/images-removebg-preview.png'),
                   ),
                   Expanded(
                     child: Column(

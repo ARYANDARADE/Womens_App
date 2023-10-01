@@ -7,7 +7,7 @@ import 'package:url_launcher/url_launcher_string.dart';
 import 'NavBar.dart';
 import 'sidebar.dart';
 
-import 'Login.dart';
+
 import 'Signup.dart';
 
 class MyApp extends StatelessWidget {

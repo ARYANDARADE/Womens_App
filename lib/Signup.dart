@@ -3,7 +3,7 @@ import 'dart:ffi';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'main.dart';
-import 'Login.dart';
+
 
 // Define DefaultSize as a constant double value
 const double DefaultSize = 16.0;
@@ -262,13 +262,7 @@ class _SignUpFormWidgetState extends State<SignUpFormWidget> {
                           email: "agent." + widget.emailController.text,
                           password: widget.passwordController.text);
                       print("Agent REgistered");
-                      if (newUser != null) {
-                        Navigator.push(
-                          context,
-                          MaterialPageRoute(builder: (
-                              context) =>  AgentMain()),
-                        );
-                      }
+
 
                     }
                     on FirebaseAuthException catch (e) {
@@ -324,10 +318,7 @@ class SignUpFooterWidget extends StatelessWidget {
       children: [
         TextButton(
           onPressed: () {
-            Navigator.push(
-              context,
-              MaterialPageRoute(builder: (context) => LoginPage()), // Navigate to LoginPage
-            );
+
           },
           child: Text.rich(TextSpan(children: [
             TextSpan(

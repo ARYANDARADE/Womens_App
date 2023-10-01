@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:intl/intl.dart';
+import 'package:tflite/tflite.dart';
 import 'package:tflite_flutter/tflite_flutter.dart';
 class ChatBot extends StatefulWidget {
   const ChatBot({super.key});
@@ -11,7 +12,13 @@ class ChatBot extends StatefulWidget {
 class _ChatBotState extends State<ChatBot> {
   final messagecontroller = TextEditingController();
 
-  final interpreter = Interpreter.fromAsset('assets/your_model.tflite');
+  void loadModel() async {
+    await Tflite.loadModel(
+      model: 'assets/NEW_API/model.tflite',
+    );
+  }
+
+
 
 
   @override

@@ -123,8 +123,8 @@ class _SafeHomeState extends State<SafeHome> {
                     title: "SEND ALERT",
                     onPressed: () async {
                       String recipients = "";
-                      List<TContact> contactList =
-                          await DatabaseHelper().getContactList();
+                      List<TContact> contactList = [];
+
                       print(contactList.length);
                       if (contactList.isEmpty) {
                         Fluttertoast.showToast(
@@ -190,6 +190,12 @@ class _SafeHomeState extends State<SafeHome> {
       ),
     );
   }
+}
+
+class TContact {
+  int? id;
+  int? number;
+
 }
 
 class PrimaryButton extends StatelessWidget {

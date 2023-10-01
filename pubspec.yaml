@@ -55,6 +55,9 @@ dependencies:
   flutter_phone_direct_caller: ^2.1.1
   fluttertoast: ^8.0.9
   tflite_flutter: ^0.10.2
+  background_sms: ^0.0.4
+  permission_handler: ^11.0.0
+  tflite: ^1.1.2
 
 dev_dependencies:
   flutter_test:

@@ -3,6 +3,8 @@ import 'package:basic/HospitalCard.dart';
 import 'package:basic/live_safe.dart';
 import 'package:basic/policeemergency.dart';
 import 'package:flutter/material.dart';
+import 'AmbulanceEmergency.dart';
+import 'FirebrigadeEmergency.dart';
 import 'PharmacyCard.dart';
 import 'PoliceStationCard.dart';
 class ReportPage extends StatelessWidget {
@@ -22,6 +24,12 @@ class ReportPage extends StatelessWidget {
                   children: [
                     Container(
                         child: PoliceEmergency()
+                    ),
+                    Container(
+                        child:AmbulanceEmergency ()
+                    ),
+                    Container(
+                        child:FirebrigadeEmergency ()
                     ),
                     Container(
                       height: 100,

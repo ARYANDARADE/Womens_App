@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "872717152334",
+    "project_id": "vigilance-400610",
+    "storage_bucket": "vigilance-400610.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:872717152334:android:67158aa4134dd95fd1931f",
+        "android_client_info": {
+          "package_name": "com.example.basic"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDxPp8dlpc9JjHHVrgE6FEsHyCDPgjyxc8"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

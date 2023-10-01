@@ -45,15 +45,6 @@ class Sidebar extends StatelessWidget {
             },
           ),
           ListTile(
-            leading: const Icon(Icons.report, color: Colors.black), // Change icon color to black
-            title: const Text('Report'),
-            onTap: () {
-              // Handle report page navigation
-              Navigator.pop(context); // Close the drawer
-            },
-          ),
-
-          ListTile(
             leading: const Icon(Icons.logout, color: Colors.black), // Change icon color to black
             title: const Text('Login with different account'),
             onTap: () async {

@@ -1,9 +1,4 @@
-# -*- coding: utf-8 -*-
-"""
-Spyder Editor
 
-This is a temporary script file.
-"""
 
 import uvicorn
 from fastapi import FastAPI
@@ -12,14 +7,14 @@ import numpy as np
 import pickle
 import pandas as pd
 import tensorflow as tf
-from python_library.test_lib2 import test_func
+
 
 
 
 
 app = FastAPI()
-interpreter = tf.saved_model.load("model.tflite")
-interpreter.allocate_tensors()
+#interpreter = tf.saved_model.load("model.tflite")
+#interpreter.allocate_tensors()
 pickle_in = open("vigilanceapp.pkl","rb")
 classifier=pickle.load(pickle_in)
 
@@ -63,6 +58,6 @@ def predict_route(data:Route):
 
 
 if __name__ =='__main__':
-    uvicorn.run(app,host='127.0.0.1',port=8000)
-#uvicorn app:app --host 127.0.0.1 --port 8000
+    uvicorn.run(app,host=' 192.168.43.220',port=8000)
+#uvicorn app:app --host  192.168.43.220 --port 8000
 #uvicorn app:app --reload

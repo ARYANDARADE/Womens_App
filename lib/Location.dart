@@ -131,14 +131,6 @@ class _LocationScreenState extends State<LocationScreen> {
     });
   }
 
-/*
-IMPORTANNT IMPORTANT IMPORTANT
-Since due to lack of time we werent able to create the api for ml model so for
-the time being we have used to ml model to predict the answers and edited it to
-the csv and we are printing on the Sreen on the basis of those predefined ml
- model's result ,as we get more time ,the ml model's api will also be integrated
- and the result will be directly posted from ml api to the popup window
-*/
   Future<void> _openPopUpWindow(int selectedIndex) async {
     // Check if the selected index is within valid range
     if (selectedIndex >= 0 && selectedIndex < _locations.length) {
@@ -148,7 +140,7 @@ the csv and we are printing on the Sreen on the basis of those predefined ml
 
       // Make your API call with these values
       final response = await http.post(
-        Uri.parse('http:// 192.168.137.81:8000/predict'),
+        Uri.parse('http://  192.168.43.220:8000/predict'),
         headers: {"Content-Type": "application/json"},
         body: jsonEncode({
           "Distance": distance,
@@ -159,6 +151,7 @@ the csv and we are printing on the Sreen on the basis of those predefined ml
 
       // Process the response and show the dialog
       if (response.statusCode == 200) {
+        print("200");
         final Map<String, dynamic> data = json.decode(response.body);
         String popupMessage = data['prediction'];
         await showDialog(
@@ -252,6 +245,25 @@ the csv and we are printing on the Sreen on the basis of those predefined ml
                 ),
               ),
             ),
+          Align(
+            alignment: Alignment.topCenter,
+            child: Row(
+              children: [
+
+                Container(
+                  height: 205,
+                  width: 125,
+                  decoration: BoxDecoration(
+                      image :DecorationImage(image:AssetImage("assets/images/logo.png")),shape: BoxShape.circle),
+                ),
+                Padding(
+                  padding: const EdgeInsets.only(top: 13,bottom: 45),
+                  child: Text("VIGILANCE",style: TextStyle(fontSize: 32
+                    ,fontWeight: FontWeight.w700,),),
+                ),
+              ],
+            ),
+          )
         ],
       ),
       floatingActionButton: Column(
@@ -269,6 +281,7 @@ the csv and we are printing on the Sreen on the basis of those predefined ml
             alignment: Alignment.topLeft,
             child: FloatingActionButton(
               onPressed: () async {
+                print("hi");
                 if (_markers.isNotEmpty) {
                   await _openPopUpWindow(_selectedListIndex);
                 }

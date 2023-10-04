@@ -8,6 +8,7 @@ import 'package:permission_handler/permission_handler.dart';
 import '';
 
 class SafeHome extends StatefulWidget {
+
   @override
   State<SafeHome> createState() => _SafeHomeState();
 }

@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 
 class HospitalCard extends StatelessWidget {
+
   final Function? onMapFunction;
 
   const HospitalCard({Key? key, this.onMapFunction}) : super(key: key);

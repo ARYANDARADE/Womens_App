@@ -4,6 +4,7 @@ class PoliceStationCard extends StatelessWidget {
   final Function? onMapFunction;
   const PoliceStationCard({Key? key, this.onMapFunction}) : super(key: key);
 
+
   @override
   Widget build(BuildContext context) {
     return Padding(

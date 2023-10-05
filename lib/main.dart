@@ -5,9 +5,13 @@ import 'package:curved_navigation_bar/curved_navigation_bar.dart';
 import 'package:geolocator/geolocator.dart';
 import 'package:url_launcher/url_launcher_string.dart';
 import 'NavBar.dart';
+import 'newOnboarding.dart';
 import 'sidebar.dart';
 import 'Login.dart';
 import 'welcome.dart';
+import 'onboarding.dart';
+
+
 import 'Signup.dart';
 
 class MyApp extends StatelessWidget {
@@ -34,9 +38,10 @@ class SidebarApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-       initialRoute: '/Welcome', // Set the initial route
+       initialRoute: '/intro', // Set the initial route
        routes: {
-         '/Welcome': (context) => WelcomeScreen(), // Welcome screen as the initial route
+         '/intro': (context) => NewOnBoardingScreen(),
+          // Welcome screen as the initial route
          '/Login': (context) => LoginPage(), // Define your login page
          '/Signup': (context) => SignupScreen(), // Define your signup page
        },

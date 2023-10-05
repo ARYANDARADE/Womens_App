@@ -40,7 +40,7 @@ class _onBoardingState extends State<onBoarding> {
     );
     return IntroductionScreen(
       key: introKey,
-      globalBackgroundColor: Colors.white,
+      //globalBackgroundColor: Colors.white,
       allowImplicitScrolling: true,
       autoScrollDuration: 10000,
       infiniteAutoScroll: false,
@@ -64,7 +64,8 @@ class _onBoardingState extends State<onBoarding> {
       //   ),
       // ),
       pages: [
-        PageViewModel(title: "Maps: Navigate with Confidence",
+        PageViewModel(
+          title: "Maps: Navigate with Confidence",
         body: "Navigate through your surroundings with ease and confidence ",
         image : _buildImage("maps.png",100),
         decoration: pageDecoration,

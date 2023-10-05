@@ -92,8 +92,8 @@ class _LoginPageState extends State<LoginPage> {
           children: [
             Image.asset(
               'assets/images/10d05a07e7a2d93351a1e18a6b65e756.jpg', // Replace with your image path
-              fit: BoxFit.cover,
-              width: 90,
+              fit: BoxFit.fill,
+              width: 500,
               height: 900,
             ),
             // Blur effect

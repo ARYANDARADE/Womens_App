@@ -38,8 +38,8 @@ class WelcomeScreen extends StatelessWidget {
             ),
             Positioned(
                 top: screenWidth * 0.7,
-                left: screenWidth *0.05,
-                 child:Text("Y A A N T R I K A", style:TextStyle(
+                left: screenWidth *0.20,
+                 child:Text("VIGILANCE", style:TextStyle(
                    fontSize: screenWidth*0.12,
                   color: Color(0xFF3E2723),
                    fontWeight:FontWeight.bold,
@@ -53,28 +53,28 @@ class WelcomeScreen extends StatelessWidget {
                 )*/
             ),
             Positioned(
-              top: screenWidth*0.94,
-              left: screenWidth*0.28,
+              top: 336,
+              left:170,
               child: Text(
-                "GIVING SECOND LIFE",
+                "SAFE GUARDING TODAY & TOMORROW",
                 style: TextStyle(
                   fontStyle: FontStyle.italic,
-                  fontSize: screenWidth * 0.05,
+                  fontSize: screenWidth * 0.03,
                   color: Color(0xFF864622),
                   fontWeight: FontWeight.bold,
                 ),
               ),
             ),
-            Positioned(
-              top: screenWidth*0.21,
-              left: screenWidth*0.23,
-              child:Image.asset(
-                'assets/images/alert.png',
-                width: screenWidth * 0.5,
-                height: screenWidth * 0.5,
-                fit: BoxFit.cover,
-              ),
-            ),
+            // Positioned(
+            //   top: screenWidth*0.21,
+            //   left: screenWidth*0.23,
+            //   child:Image.asset(
+            //     'assets/images/alert.png',
+            //     width: screenWidth * 0.5,
+            //     height: screenWidth * 0.5,
+            //     fit: BoxFit.cover,
+            //   ),
+            // ),
             Positioned(
               top: screenWidth * 1.70, // Adjust the top value to position the button vertically
               left: screenWidth * 0.15, // Adjust the left value to position the button horizontally

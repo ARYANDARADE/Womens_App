@@ -38,7 +38,7 @@ class _HomePageState extends State<HomePage> {
       body: Stack(
         children: [
           Positioned(
-            top: 39.0,
+            top: 49.0,
             left: 12.0,
             child: Builder(
               builder: (context) => IconButton(
@@ -49,8 +49,9 @@ class _HomePageState extends State<HomePage> {
               ),
             ),
           ),
-          Align(
-            alignment: Alignment.topRight,
+          Positioned(
+            top: 5,
+            left: 10,
             child: Padding(
               padding: const EdgeInsets.only(left: 45),
               child: Row(
@@ -71,35 +72,104 @@ class _HomePageState extends State<HomePage> {
               ),
             ),
           ),
-          Column(
-            children: [
-              Align(
-                alignment: Alignment.center,
-                child: SafeArea(
-                  child: Padding(
-                    padding: const EdgeInsets.all(10.0),
-                    child: SizedBox(
-                      height: 300,
-                      child: ListView(
-                        scrollDirection: Axis.horizontal,
-                        children: [
-                          Container(
-                              child: Marykom()
+          Positioned(
+            top: 120,
+            child: SizedBox(
+              height: 200, // Adjust the height as needed
+              child: Expanded(
+                child: ListView(
+                  scrollDirection: Axis.horizontal,
+                  children: [
+                    Row(
+                      children: [
+                        Container(
+                          width: 200, // Adjust the width as needed
+                          margin: EdgeInsets.only(right: 10), // Add some spacing between containers
+                          decoration: BoxDecoration(
+                            image: DecorationImage(
+                              image: AssetImage('assets/images/708003cc0c717bfa933ca2937b6153f2.jpg'), // Add your image path
+                              fit: BoxFit.cover,
+                            ),
                           ),
-                          Container(
-                              child: selfDefence()
+                          child: Center(
+                            child: Text(
+                              'Container 1',
+                              style: TextStyle(
+                                color: Colors.white,
+                                fontSize: 20,
+                                fontWeight: FontWeight.bold,
+                              ),
+                            ),
                           ),
-                          Container(
-                              child: Womensafety(),
+                        ),
+                        Container(
+                          width: 200, // Adjust the width as needed
+                          margin: EdgeInsets.only(right: 10), // Add some spacing between containers
+                          decoration: BoxDecoration(
+                            image: DecorationImage(
+                              image: AssetImage('assets/images/community.png'), // Add your image path
+                              fit: BoxFit.cover,
+                            ),
                           ),
-
-                        ],
-                      ),
+                          child: Center(
+                            child: Text(
+                              'Container 2',
+                              style: TextStyle(
+                                color: Colors.white,
+                                fontSize: 20,
+                                fontWeight: FontWeight.bold,
+                              ),
+                            ),
+                          ),
+                        ),
+                        Container(
+                          width: 200, // Adjust the width as needed
+                          margin: EdgeInsets.only(right: 10), // Add some spacing between containers
+                          decoration: BoxDecoration(
+                            image: DecorationImage(
+                              image: AssetImage('assets/images/WhatsApp Image 2023-10-05 at 17.09.08_bba9d103.jpg'), // Add your image path
+                              fit: BoxFit.cover,
+                            ),
+                          ),
+                          child: Center(
+                            child: Text(
+                              'Container 3',
+                              style: TextStyle(
+                                color: Colors.white,
+                                fontSize: 20,
+                                fontWeight: FontWeight.bold,
+                              ),
+                            ),
+                          ),
+                        ),
+                        Container(
+                          width: 200, // Adjust the width as needed
+                          decoration: BoxDecoration(
+                            image: DecorationImage(
+                              image: AssetImage('assets/images/708003cc0c717bfa933ca2937b6153f2.jpg'), // Add your image path
+                              fit: BoxFit.cover,
+                            ),
+                          ),
+                          child: Center(
+                            child: Text(
+                              'Container 4',
+                              style: TextStyle(
+                                color: Colors.white,
+                                fontSize: 20,
+                                fontWeight: FontWeight.bold,
+                              ),
+                            ),
+                          ),
+                        ),
+                      ],
                     ),
-                  ),
+                  ],
                 ),
               ),
-              // Container(
+            ),
+          ),
+
+          // Container(
               //   height: 100,
               //   child: ListView(
               //     scrollDirection: Axis.horizontal,
@@ -119,18 +189,6 @@ class _HomePageState extends State<HomePage> {
               //     ],
               //   ),
               // ),
-            ],
-
-          ),
-      Column(
-        children: [
-          Center(child: Container(
-              height: 100,
-              child: Carousel())
-          ),
-
-        ],
-      ),
 
 
 

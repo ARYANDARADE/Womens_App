@@ -27,9 +27,9 @@ class PoliceEmergency extends StatelessWidget {
                   begin: Alignment.topLeft,
                   end: Alignment.bottomRight,
                   colors: [
-                    Color(0xFFFD8080),
-                    Color(0xFFFB8580),
-                    Color(0xFFFBD079),
+                    Color(0xff06535b),
+                    Color(0xff296a72),
+                    Color(0xffc3e4ec),
                   ],
                 )),
             child: Padding(
@@ -56,7 +56,7 @@ class PoliceEmergency extends StatelessWidget {
                           ),
                         ),
                         Text(
-                          'call 0-1-5 for emergencies',
+                          'call 1-0-0 for emergencies',
                           style: TextStyle(
                             color: Colors.white,
                             fontSize: MediaQuery.of(context).size.width * 0.045,
@@ -71,7 +71,7 @@ class PoliceEmergency extends StatelessWidget {
                           ),
                           child: Center(
                             child: Text(
-                              '0-1-5',
+                              '1-0-0',
                               style: TextStyle(
                                 color: Colors.red[300],
                                 fontWeight: FontWeight.bold,

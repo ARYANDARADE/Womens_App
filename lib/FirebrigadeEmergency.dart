@@ -17,7 +17,7 @@ class FirebrigadeEmergency extends StatelessWidget {
           borderRadius: BorderRadius.circular(20),
         ),
         child: InkWell(
-          onTap: () => _callNumber('102'),
+          onTap: () => _callNumber('101'),
           child: Container(
             height: 180,
             width: MediaQuery.of(context).size.width * 0.7,
@@ -27,9 +27,9 @@ class FirebrigadeEmergency extends StatelessWidget {
                   begin: Alignment.topLeft,
                   end: Alignment.bottomRight,
                   colors: [
-                    Color(0xFFFD8080),
-                    Color(0xFFFB8580),
-                    Color(0xFFFBD079),
+                    Color(0xff06535b),
+                    Color(0xff296a72),
+                    Color(0xffc3e4ec),
                   ],
                 )),
             child: Padding(
@@ -71,7 +71,7 @@ class FirebrigadeEmergency extends StatelessWidget {
                           ),
                           child: Center(
                             child: Text(
-                              '0 -1 -6',
+                              '1 -0 -1',
                               style: TextStyle(
                                 color: Colors.red[300],
                                 fontWeight: FontWeight.bold,

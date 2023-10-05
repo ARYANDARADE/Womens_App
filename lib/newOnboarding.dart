@@ -1,4 +1,5 @@
 import 'package:basic/Home.dart';
+import 'package:basic/NavBar.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
@@ -45,7 +46,7 @@ class _NewOnBoardingScreenState extends State<NewOnBoardingScreen> {
       body: SafeArea(
         child: IntroductionScreen(
         rawPages: getPages(),
-          onDone: () => Navigator.of(context).pushReplacement(MaterialPageRoute(builder: (context)=>HomePage(),)),
+          onDone: () => Navigator.of(context).pushReplacement(MaterialPageRoute(builder: (context)=>NavBar(),)),
           showSkipButton: true,
           skipOrBackFlex: 0,
           nextFlex: 0,

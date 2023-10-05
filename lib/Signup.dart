@@ -1,9 +1,9 @@
-import 'dart:ffi';
 
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'main.dart';
-
+import "Police/PoliceMain.dart";
+import 'Login.dart';
 
 // Define DefaultSize as a constant double value
 const double DefaultSize = 16.0;
@@ -22,29 +22,66 @@ class SignupScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final screenWidth = MediaQuery.of(context).size.width;
     return SafeArea(
       child: Scaffold(
-        body: SingleChildScrollView(
-          child: Container(
-            padding: const EdgeInsets.all(DefaultSize),
-            child: Column(
-              children: [
-                FormHeaderWidget(
-                  image: 'assets/images/luffy.png',
-                  title: "Get on Board!",
-                  subTitle: "Create your profile to start your journey with us..",
-                  imageHeight: 0.4,
-                ),
-                SignUpFormWidget(
-                  fullNameController: fullNameController,
-                  emailController: emailController,
-                  phoneNumberController: phoneNumberController,
-                  passwordController: passwordController,
-                ),
-                SignUpFooterWidget(),
-              ],
+        body: Stack(
+          children: [
+            Image.asset(
+              'assets/images/8459ad298c58aa2d544ecbef33d4c5c5.jpg', // Replace with your image path
+              fit: BoxFit.cover,
+              width: double.infinity,
+              height: double.infinity,
             ),
-          ),
+            SingleChildScrollView(
+
+              child: Container(
+                padding: const EdgeInsets.all(DefaultSize),
+                child: Column(
+                  children: [
+                    Container(
+                      height: screenWidth*0.1,
+                    ),
+                    Positioned(
+                      top: 40,
+                      child: Container(
+                        child: Text("C R E A T E ",
+                          style: TextStyle(
+                            color: Color(0XFF795548),
+                            fontSize: 50.0, // Adjust font size
+                            fontWeight: FontWeight.bold,
+                          ),),
+                      ),
+                    ),
+                    Positioned(
+                      top: 60,
+                      child: Container(
+                        child: Text("A C C O U N T ",
+                          style: TextStyle(
+                            color: Color(0XFF795548),
+                            fontSize: 50.0, // Adjust font size
+                            fontWeight: FontWeight.bold,
+                          ),),
+                      ),
+                    ),
+                    /* FormHeaderWidget(
+                    image: 'assets/images/luffy.png',
+                    title: "Get on Board!",
+                    subTitle: "Create your profile to start your journey with us..",
+                    imageHeight: 0.4,
+                  ),*/
+                    SignUpFormWidget(
+                      fullNameController: fullNameController,
+                      emailController: emailController,
+                      phoneNumberController: phoneNumberController,
+                      passwordController: passwordController,
+                    ),
+                    SignUpFooterWidget(),
+                  ],
+                ),
+              ),
+            ),
+          ],
         ),
       ),
     );
@@ -156,63 +193,163 @@ class _SignUpFormWidgetState extends State<SignUpFormWidget> {
 
   @override
   Widget build(BuildContext context) {
-
+    final screenWidth = MediaQuery.of(context).size.width;
     return Container(
       padding: EdgeInsets.symmetric(vertical: FormHeight - 10),
       child: Form(
         child: Column(
-          crossAxisAlignment: CrossAxisAlignment.start,
+          crossAxisAlignment: CrossAxisAlignment.center,
           children: [
-            TextFormField(
-              controller: widget.fullNameController,
-              decoration: InputDecoration(
-                label: Text("FullName"),
-                prefixIcon: Icon(Icons.person_outline_rounded),
+            Container(
+              padding: const EdgeInsets.symmetric(vertical:5,horizontal: 10),
+              width: screenWidth*0.80,
+              decoration: BoxDecoration(
+                  color: Color(0xFFC9D9C3),//blueGrey,
+                  border: Border.all(
+                    color: Color(0xFF383330), // Border color
+                    width: 2.0, // Border width
+                  ),
+                  borderRadius: BorderRadius.circular(20)
+              ),
+              child: TextFormField(
+                controller: widget.fullNameController,
+                decoration: InputDecoration(
+                  label: Text("FullName",
+                    style: TextStyle(
+                      color: Color(0xFF383330),
+                      fontSize: 15,
+                      fontWeight: FontWeight.bold,
+                    ),),
+                  prefixIcon: Icon(Icons.person_outline_rounded,
+                    color: Color(0xFF383330),
+                    size: 35,),
+                  border: InputBorder.none,
+                ),
               ),
             ),
             const SizedBox(height: FormHeight - 20),
-            TextFormField(
-              controller: widget.emailController,
-              decoration: InputDecoration(
-                label: Text("Email"),
-                prefixIcon: Icon(Icons.email_outlined),
+            Container(
+              padding: const EdgeInsets.symmetric(vertical:5,horizontal: 10),
+              width: screenWidth*0.80,
+              decoration: BoxDecoration(
+                  color: Color(0xFFC9D9C3),//blueGrey,
+                  border: Border.all(
+                    color: Color(0xFF383330), // Border color
+                    width: 2.0, // Border width
+                  ),
+                  borderRadius: BorderRadius.circular(20)
+              ),
+              child: TextFormField(
+                controller: widget.emailController,
+                decoration: InputDecoration(
+                  label: Text("Email",
+                    style: TextStyle(
+                      color: Color(0xFF383330),
+                      fontSize: 15,
+                      fontWeight: FontWeight.bold,
+                    ),),
+                  prefixIcon: Icon(Icons.email_outlined,
+                    color: Color(0xFF383330),
+                    size: 35,),
+                  border: InputBorder.none,
+                ),
               ),
             ),
             const SizedBox(height: FormHeight - 20),
-            TextFormField(
-              controller: widget.phoneNumberController,
-              decoration: InputDecoration(
-                label: Text("PhoneNo"),
-                prefixIcon: Icon(Icons.numbers),
+            Container(
+              padding: const EdgeInsets.symmetric(vertical:5,horizontal: 10),
+              width: screenWidth*0.80,
+              decoration: BoxDecoration(
+                  color: Color(0xFFC9D9C3),//blueGrey,
+                  border: Border.all(
+                    color: Color(0xFF383330), // Border color
+                    width: 2.0, // Border width
+                  ),
+                  borderRadius: BorderRadius.circular(20)
+              ),
+              child: TextFormField(
+                controller: widget.phoneNumberController,
+                decoration: InputDecoration(
+                  label: Text("PhoneNo",
+                    style: TextStyle(
+                      color: Color(0xFF383330),
+                      fontSize: 15,
+                      fontWeight: FontWeight.bold,
+                    ),),
+                  prefixIcon: Icon(Icons.numbers,
+                    color: Color(0xFF383330),
+                    size: 35,),
+                  border: InputBorder.none,
+                ),
               ),
             ),
             const SizedBox(height: FormHeight - 20),
-            TextFormField(
-              controller: widget.passwordController,
-              obscureText: _isPasswordHidden, // Use this to control the password visibility
-              decoration: InputDecoration(
-                label: Text("Password"),
-                prefixIcon: Icon(Icons.fingerprint),
-                suffixIcon: IconButton(
-                  icon: Icon(_isPasswordHidden ? Icons.visibility_off : Icons.visibility),
-                  onPressed: () {
-                    setState(() {
-                      _isPasswordHidden = !_isPasswordHidden; // Toggle password visibility
-                    });
-                  },
+            Container(
+              padding: const EdgeInsets.symmetric(vertical:5,horizontal: 10),
+              width: screenWidth*0.80,
+              decoration: BoxDecoration(
+                  color: Color(0xFFC9D9C3),//blueGrey,
+                  border: Border.all(
+                    color: Color(0xFF383330), // Border color
+                    width: 2.0, // Border width
+                  ),
+                  borderRadius: BorderRadius.circular(20)
+              ),
+              child: TextFormField(
+                controller: widget.passwordController,
+                obscureText: _isPasswordHidden, // Use this to control the password visibility
+                decoration: InputDecoration(
+                  label: Text("Password",
+                    style: TextStyle(
+                      color: Color(0xFF383330),
+                      fontSize: 15,
+                      fontWeight: FontWeight.bold,
+                    ),),
+                  prefixIcon: Icon(Icons.fingerprint,
+                    color: Color(0xFF383330),
+                    size: 35,),
+                  suffixIcon: IconButton(
+                    icon: Icon(_isPasswordHidden ? Icons.visibility_off : Icons.visibility,
+                      color: Color(0xFF383330),
+                      size: 35,),
+                    onPressed: () {
+                      setState(() {
+                        _isPasswordHidden = !_isPasswordHidden; // Toggle password visibility
+                      });
+                    },
+                  ),
+                  border: InputBorder.none,
                 ),
               ),
             ),
 
             const SizedBox(height: FormHeight - 20),
-            DropdownButton(
-              items: const [
-                DropdownMenuItem(child: Text("SELECT"), value: "SELECT"),
-                DropdownMenuItem(child: Text("User"), value: "user"),
-                DropdownMenuItem(child: Text("Agent"), value: "agent"),
-              ],
-              value: Choice1, // Set the value here
-              onChanged: dropdownCallback,
+            Container(
+              //padding: const EdgeInsets.symmetric(vertical:5,horizontal: 30),
+              width: screenWidth*0.34,
+              decoration: BoxDecoration(
+                color: Color(0xFFC9D9C3),
+                border: Border.all(
+                  color: Color(0xFF383330), // Border color
+                  width: 2.0, // Border width
+                ),
+                borderRadius: BorderRadius.circular(15.0), // Border radius
+              ),
+              child:Align(
+                child: DropdownButton(
+                  items: const [
+                    DropdownMenuItem(child: Text("SELECT",style: TextStyle(fontWeight: FontWeight.bold,fontSize: 20,color: Color(0xFF383330),),), value: "SELECT"),
+                    DropdownMenuItem(child: Text("User",style: TextStyle(color: Color(0xFFFEFAE0), fontStyle: FontStyle.italic,fontSize: 20),), value: "user"),
+                    DropdownMenuItem(child: Text("Agent",style: TextStyle(color: Color(0xFFFEFAE0), fontStyle: FontStyle.italic,fontSize: 20),), value: "agent"),
+                  ],
+                  icon: Icon(Icons.arrow_downward_rounded,
+                    size: 30,
+                    color: Color(0xFF455947),),
+                  dropdownColor: Color(0xFFD4BDA1),
+                  value: Choice1, // Set the value here
+                  onChanged: dropdownCallback,
+                ),
+              ),
             ),
             const SizedBox(height: FormHeight - 10),
             SizedBox(
@@ -262,7 +399,13 @@ class _SignUpFormWidgetState extends State<SignUpFormWidget> {
                           email: "agent." + widget.emailController.text,
                           password: widget.passwordController.text);
                       print("Agent REgistered");
-
+                      if (newUser != null) {
+                        Navigator.push(
+                          context,
+                          MaterialPageRoute(builder: (
+                              context) =>  PoliceMain()),
+                        );
+                      }
 
                     }
                     on FirebaseAuthException catch (e) {
@@ -296,7 +439,19 @@ class _SignUpFormWidgetState extends State<SignUpFormWidget> {
                     );
                   }
                 },
-                child: Text(SignupText(Choice1)),
+                style: ElevatedButton.styleFrom(
+                  padding: EdgeInsets.symmetric(horizontal: 90.0, vertical: 18.0), // Adjust padding for consistency
+                  primary: Color(0XFF795548),
+                  onPrimary: Color(0xFFFEFAE0),
+                  shape: RoundedRectangleBorder(
+                    borderRadius: BorderRadius.circular(17.0),
+                    side: BorderSide(color: Colors.black),
+                  ),
+                ),
+                child: Text(SignupText(Choice1),
+                  style: TextStyle(
+                    fontSize: 15,
+                  ),),
               ),
             ),
           ],
@@ -318,14 +473,19 @@ class SignUpFooterWidget extends StatelessWidget {
       children: [
         TextButton(
           onPressed: () {
-
+            Navigator.push(
+              context,
+              MaterialPageRoute(builder: (context) => LoginPage()), // Navigate to LoginPage
+            );
           },
           child: Text.rich(TextSpan(children: [
             TextSpan(
-              text: "Already have an account?", // Use the variable here
-              style: Theme.of(context).textTheme.bodyLarge,
+              text: "Already have an account? ",
+              style:TextStyle(
+                color: Color(0xFFFEFAE0),
+              ),// Use the variable here
             ),
-            TextSpan(text: "login".toUpperCase()), // Use the variable here
+            TextSpan(text: "login".toUpperCase(),style: TextStyle(color: Color(0xFFD4BDA1),)), // Use the variable here
           ])),
         ),
       ],

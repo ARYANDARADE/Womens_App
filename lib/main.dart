@@ -6,6 +6,8 @@ import 'package:geolocator/geolocator.dart';
 import 'package:url_launcher/url_launcher_string.dart';
 import 'NavBar.dart';
 import 'sidebar.dart';
+import 'Login.dart';
+import 'welcome.dart';
 
 
 import 'Signup.dart';
@@ -34,13 +36,12 @@ class SidebarApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      // initialRoute: '/Welcome', // Set the initial route
-      // routes: {
-      //   '/Welcome': (context) =>
-      //       WelcomeScreen(), // Welcome screen as the initial route
-      //   '/Login': (context) => LoginPage(), // Define your login page
-      //   '/Signup': (context) => SignupScreen(), // Define your signup page
-      // },
+       initialRoute: '/Welcome', // Set the initial route
+       routes: {
+         '/Welcome': (context) => WelcomeScreen(), // Welcome screen as the initial route
+         '/Login': (context) => LoginPage(), // Define your login page
+         '/Signup': (context) => SignupScreen(), // Define your signup page
+       },
       debugShowCheckedModeBanner: false,
       home:
         onBoarding(),

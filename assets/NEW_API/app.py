@@ -58,6 +58,6 @@ def predict_route(data:Route):
 
 
 if __name__ =='__main__':
-    uvicorn.run(app,host=' 192.168.43.220',port=8000)
-#uvicorn app:app --host  192.168.43.220 --port 8000
+    uvicorn.run(app,host=' 192.168.215.116',port=8000)
+#uvicorn app:app --host   192.168.215.116--port 8000
 #uvicorn app:app --reload

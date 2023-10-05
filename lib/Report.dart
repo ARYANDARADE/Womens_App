@@ -20,7 +20,7 @@ class ReportPage extends StatelessWidget {
             alignment: Alignment.center,
             child: SafeArea(
               child: Padding(
-                padding: const EdgeInsets.all(10.0),
+                padding: const EdgeInsets.only(top: 30.0),
                 child: SizedBox(
                   height: 300,
                   child: ListView(

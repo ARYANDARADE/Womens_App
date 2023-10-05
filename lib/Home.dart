@@ -11,8 +11,9 @@ import 'sidebar.dart';
 import 'Marykom.dart';
 import 'self defence.dart';
 import 'WomenSafety.dart';
-
+import 'package:horizontal_list_view/horizontal_list_view.dart';
 import 'Signup.dart';
+import 'package:url_launcher/url_launcher.dart';
 
 void main() {
   runApp(SidebarApp());
@@ -38,7 +39,7 @@ class _HomePageState extends State<HomePage> {
       body: Stack(
         children: [
           Positioned(
-            top: 49.0,
+            top: 50.0,
             left: 12.0,
             child: Builder(
               builder: (context) => IconButton(
@@ -50,125 +51,100 @@ class _HomePageState extends State<HomePage> {
             ),
           ),
           Positioned(
-            top: 5,
-            left: 10,
-            child: Padding(
-              padding: const EdgeInsets.only(left: 45),
-              child: Row(
-                children: [
-
-                  Container(
-                    height: 195,
-                    width: 105,
-                    decoration: BoxDecoration(
-                        image :DecorationImage(image:AssetImage("assets/images/logo.png")),shape: BoxShape.circle),
+            top: 35,
+            left: 280,
+              child: Container(
+                height: 100,
+                width: 105,
+                decoration: BoxDecoration(
+                  image: DecorationImage(
+                    image: AssetImage("assets/images/logo.png"),
                   ),
-                  Padding(
-                    padding: const EdgeInsets.only(top: 7,bottom: 50),
-                    child: Text("VIGILANCE",style: TextStyle(fontSize: 32
-                      ,fontWeight: FontWeight.w700,),),
+                  shape: BoxShape.circle,
+                ),
+              ),
+          ),
+            Positioned(
+                top: 60,
+                left: 100,
+                child: Container(
+                  child: Text(
+                    "VIGILANCE",
+                    style: TextStyle(
+                      fontSize: 32,
+                      fontWeight: FontWeight.w700,
+                    ),
+                  ),
+            )
+            ),
+
+          Positioned(
+            top: 145,
+            left: 0,
+            right: 0,
+            child: Container(
+              height: 250,
+              child: ListView(
+                scrollDirection: Axis.horizontal,
+                children: [
+                  GestureDetector(
+                    onTap: () {
+                      // Open link for the first image
+                      launch('https://youtu.be/SojbIFftzuY?si=nojkFttAj29oyyMF');
+                    },
+                    child: Container(
+                      width: 360,
+                      decoration: BoxDecoration(
+                        color: Colors.blue,
+                        borderRadius: BorderRadius.all(Radius.circular(20.0)),
+                      ),
+                      margin: EdgeInsets.all(8),
+                      child: ClipRRect(
+                        borderRadius: BorderRadius.circular(20.0),
+                        child: Image.asset('assets/images/night saftey.jpg', fit: BoxFit.cover),
+                      ),
+                    ),
+                  ),
+                  GestureDetector(
+                    onTap: () {
+                      // Open link for the first image
+                      launch('https://youtube.com/shorts/M21oKzmbDkU?si=gtKIuB5Bk_6_wd9q');
+                    },
+                    child: Container(
+                      width: 350,
+                      decoration: BoxDecoration(
+                        color: Colors.blue,
+                        borderRadius: BorderRadius.all(Radius.circular(20.0)),
+                      ),
+                      margin: EdgeInsets.all(8),
+                      child: ClipRRect(
+                        borderRadius: BorderRadius.circular(20.0),
+                        child: Image.asset('assets/images/selfdefence.jpg', fit: BoxFit.cover),
+                      ),
+                    ),
+                  ),
+                  GestureDetector(
+                    onTap: () {
+                      // Open link for the first image
+                      launch('https://youtu.be/x91tRBU_H9Q?si=_-7Eysra4ecTU_aT');
+                    },
+                    child: Container(
+                      width: 350,
+                      decoration: BoxDecoration(
+                        color: Colors.blue,
+                        borderRadius: BorderRadius.all(Radius.circular(20.0)),
+                      ),
+                      margin: EdgeInsets.all(8),
+                      child: ClipRRect(
+                        borderRadius: BorderRadius.circular(20.0),
+                        child: Image.asset('assets/images/10d05a07e7a2d93351a1e18a6b65e756.jpg', fit: BoxFit.cover),
+                      ),
+                    ),
                   ),
                 ],
               ),
             ),
           ),
-          Positioned(
-            top: 120,
-            child: SizedBox(
-              height: 200, // Adjust the height as needed
-              child: Expanded(
-                child: ListView(
-                  scrollDirection: Axis.horizontal,
-                  children: [
-                    Row(
-                      children: [
-                        Container(
-                          width: 200, // Adjust the width as needed
-                          margin: EdgeInsets.only(right: 10), // Add some spacing between containers
-                          decoration: BoxDecoration(
-                            image: DecorationImage(
-                              image: AssetImage('assets/images/708003cc0c717bfa933ca2937b6153f2.jpg'), // Add your image path
-                              fit: BoxFit.cover,
-                            ),
-                          ),
-                          child: Center(
-                            child: Text(
-                              'Container 1',
-                              style: TextStyle(
-                                color: Colors.white,
-                                fontSize: 20,
-                                fontWeight: FontWeight.bold,
-                              ),
-                            ),
-                          ),
-                        ),
-                        Container(
-                          width: 200, // Adjust the width as needed
-                          margin: EdgeInsets.only(right: 10), // Add some spacing between containers
-                          decoration: BoxDecoration(
-                            image: DecorationImage(
-                              image: AssetImage('assets/images/community.png'), // Add your image path
-                              fit: BoxFit.cover,
-                            ),
-                          ),
-                          child: Center(
-                            child: Text(
-                              'Container 2',
-                              style: TextStyle(
-                                color: Colors.white,
-                                fontSize: 20,
-                                fontWeight: FontWeight.bold,
-                              ),
-                            ),
-                          ),
-                        ),
-                        Container(
-                          width: 200, // Adjust the width as needed
-                          margin: EdgeInsets.only(right: 10), // Add some spacing between containers
-                          decoration: BoxDecoration(
-                            image: DecorationImage(
-                              image: AssetImage('assets/images/WhatsApp Image 2023-10-05 at 17.09.08_bba9d103.jpg'), // Add your image path
-                              fit: BoxFit.cover,
-                            ),
-                          ),
-                          child: Center(
-                            child: Text(
-                              'Container 3',
-                              style: TextStyle(
-                                color: Colors.white,
-                                fontSize: 20,
-                                fontWeight: FontWeight.bold,
-                              ),
-                            ),
-                          ),
-                        ),
-                        Container(
-                          width: 200, // Adjust the width as needed
-                          decoration: BoxDecoration(
-                            image: DecorationImage(
-                              image: AssetImage('assets/images/708003cc0c717bfa933ca2937b6153f2.jpg'), // Add your image path
-                              fit: BoxFit.cover,
-                            ),
-                          ),
-                          child: Center(
-                            child: Text(
-                              'Container 4',
-                              style: TextStyle(
-                                color: Colors.white,
-                                fontSize: 20,
-                                fontWeight: FontWeight.bold,
-                              ),
-                            ),
-                          ),
-                        ),
-                      ],
-                    ),
-                  ],
-                ),
-              ),
-            ),
-          ),
-
           // Container(
               //   height: 100,
               //   child: ListView(

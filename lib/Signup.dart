@@ -3,7 +3,7 @@ import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'main.dart';
 import "Police/PoliceMain.dart";
-import 'Login.dart';
+
 
 // Define DefaultSize as a constant double value
 const double DefaultSize = 16.0;
@@ -358,18 +358,6 @@ class _SignUpFormWidgetState extends State<SignUpFormWidget> {
                 onPressed: () async {
                   if (_validateForm(context) && Choice1 == "user") {
                     try {
-                      UserCredential newUser = await FirebaseAuth.instance.createUserWithEmailAndPassword(
-                          email: "user." + widget.emailController.text,
-                          password: widget.passwordController.text);
-                      print("User Registered");
-                      if (newUser != null) {
-                        Navigator.push(
-                          context,
-                          MaterialPageRoute(builder: (
-                              context) =>  MyHomePage()),
-                        );
-                      }
-
                     }
                     on FirebaseAuthException catch (e) {
                       if (e.code == 'weak-password') {
@@ -475,7 +463,7 @@ class SignUpFooterWidget extends StatelessWidget {
           onPressed: () {
             Navigator.push(
               context,
-              MaterialPageRoute(builder: (context) => LoginPage()), // Navigate to LoginPage
+              MaterialPageRoute(builder: (context) => SidebarApp()), // Navigate to LoginPage
             );
           },
           child: Text.rich(TextSpan(children: [

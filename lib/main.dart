@@ -8,8 +8,6 @@ import 'NavBar.dart';
 import 'sidebar.dart';
 import 'Login.dart';
 import 'welcome.dart';
-
-
 import 'Signup.dart';
 
 class MyApp extends StatelessWidget {

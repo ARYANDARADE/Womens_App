@@ -20,12 +20,12 @@ class LiveSafe extends StatelessWidget {
         throw 'Could not launch $googleUrl';
       }
     }
-     final Uri _url = Uri.parse(googleUrl);
-     try {
-       await launchUrl(_url);
+    final Uri _url = Uri.parse(googleUrl);
+    try {
+      await launchUrl(_url);
     } catch (e) {
-       print(e);
-     }
+      print(e);
+    }
   }
 
 

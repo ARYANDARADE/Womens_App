@@ -5,10 +5,9 @@ import 'package:geocoding/geocoding.dart';
 import 'package:geolocator/geolocator.dart';
 import 'package:permission_handler/permission_handler.dart';
 
-import '';
+
 
 class SafeHome extends StatefulWidget {
-
   @override
   State<SafeHome> createState() => _SafeHomeState();
 }
@@ -63,8 +62,8 @@ class _SafeHomeState extends State<SafeHome> {
     final hasPermission = await _handleLocationPermission();
     if (!hasPermission) return;
     await Geolocator.getCurrentPosition(
-            desiredAccuracy: LocationAccuracy.high,
-            forceAndroidLocationManager: true)
+        desiredAccuracy: LocationAccuracy.high,
+        forceAndroidLocationManager: true)
         .then((Position position) {
       setState(() {
         _curentPosition = position;
@@ -84,7 +83,7 @@ class _SafeHomeState extends State<SafeHome> {
       Placemark place = placemarks[0];
       setState(() {
         _curentAddress =
-            "${place.locality},${place.postalCode},${place.street},";
+        "${place.locality},${place.postalCode},${place.street},";
       });
     } catch (e) {
       Fluttertoast.showToast(msg: e.toString());
@@ -177,13 +176,13 @@ class _SafeHomeState extends State<SafeHome> {
             children: [
               Expanded(
                   child: Column(
-                children: [
-                  ListTile(
-                    title: Text("Send Location"),
-                    subtitle: Text("Share Location"),
-                  ),
-                ],
-              )),
+                    children: [
+                      ListTile(
+                        title: Text("Send Location"),
+                        subtitle: Text("Share Location"),
+                      ),
+                    ],
+                  )),
               ClipRRect(
                   borderRadius: BorderRadius.circular(20),
                   child: Image.asset('assets/route.jpg')),

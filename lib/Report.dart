@@ -20,7 +20,7 @@ class ReportPage extends StatelessWidget {
             child: SafeArea(
               child: Padding(
                 padding: const EdgeInsets.all(10.0),
-                child: Container(
+                child: SizedBox(
                   height: 300,
                   child: ListView(
                     scrollDirection: Axis.horizontal,
@@ -34,38 +34,38 @@ class ReportPage extends StatelessWidget {
                       Container(
                           child:FirebrigadeEmergency ()
                       ),
-                      Container(
-                        height: 100,
-                        child: ListView(
-                          scrollDirection: Axis.horizontal,
-                          children: [
 
-
-                            Container(
-                              child: HospitalCard() ,
-                            ),
-                            Container(
-                              child: BusStationCard(),
-                            ),
-                            Container(
-                              child: PharmacyCard(),
-              ),
-                            Container(
-                              child: PoliceStationCard(),
-                            ),
-                          ],
-                        ),
-                      ),
                     ],
                   ),
                 ),
               ),
             ),
           ),
+          // Container(
+          //   height: 100,
+          //   child: ListView(
+          //     scrollDirection: Axis.horizontal,
+          //     children: [
+          //       Container(
+          //         child: HospitalCard() ,
+          //       ),
+          //       Container(
+          //         child: BusStationCard(),
+          //       ),
+          //       Container(
+          //         child: PharmacyCard(),
+          //       ),
+          //       Container(
+          //         child: PoliceStationCard(),
+          //       ),
+          //     ],
+          //   ),
+          // ),
           Container(
-            child:LiveSafe(),
+            child: LiveSafe(),
           )
         ],
+
       )
     );
   }

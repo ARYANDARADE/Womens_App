@@ -1,5 +1,5 @@
+import 'package:basic/CustomCarouel.dart';
 import 'package:basic/NavBar.dart';
-import 'package:basic/SafeHome.dart';
 import 'package:basic/main.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_phone_direct_caller/flutter_phone_direct_caller.dart';
@@ -27,6 +27,7 @@ class _HomePageState extends State<HomePage> {
 
   @override
   Widget build(BuildContext context) {
+
     List<String> sweetSayings = [
       "Your presence, lights up the whole room",
       "We admire,Your strong personality.",
@@ -67,27 +68,34 @@ class _HomePageState extends State<HomePage> {
               ),
             ),
           ),
-          Positioned(
-            top: 45.0,
-            left: screenWidth * 0.29,
-            child: Row(
-              mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-              children: [
-                Image.asset("assets/images/logo.png"),
-                Text(
-                  "Vigilance",
-                  style: TextStyle(
-                    color: Colors.redAccent,
-                    fontSize: screenWidth * 0.10,
-                    fontWeight: FontWeight.bold,
+          Align(
+            alignment: Alignment.topRight,
+            child: Padding(
+              padding: const EdgeInsets.only(left: 45),
+              child: Row(
+                children: [
+
+                  Container(
+                    height: 195,
+                    width: 105,
+                    decoration: BoxDecoration(
+                        image :DecorationImage(image:AssetImage("assets/images/logo.png")),shape: BoxShape.circle),
                   ),
-                ),
-              ],
+                  Padding(
+                    padding: const EdgeInsets.only(top: 7,bottom: 50),
+                    child: Text("VIGILANCE",style: TextStyle(fontSize: 32
+                      ,fontWeight: FontWeight.w700,),),
+                  ),
+                ],
+              ),
             ),
           ),
       Column(
         children: [
-          Center(child: SafeHome(),),
+          Center(child: Container(
+              height: 100,
+              child: Carousel())
+          ),
 
         ],
       ),

@@ -28,164 +28,307 @@ class HomePage extends StatefulWidget {
 
 
 class _HomePageState extends State<HomePage> {
-
+  String selectedValue = 'Option 1';
+  List<String> options = ['Option 1', 'Option 2', 'Option 3'];
   @override
   Widget build(BuildContext context) {
+    String Choice1 = 'SELECT';
+    void dropdownCallback(String? selectedValue) {
+      if (selectedValue != "SELECT") {
+        setState(() {
+          Choice1 = selectedValue!;
+        });
+      }else{
+        const SnackBar(
+          content: Text('Please fill in all required fields.'),
+        );
+
+      }
+      print(Choice1);
+    }
 
     final screenWidth = MediaQuery.of(context).size.width;
     return Scaffold(
       extendBody: true,
       drawer: Sidebar(),
-      body: Stack(
-        children: [
-          Positioned(
-            top: 50.0,
-            left: 12.0,
-            child: Builder(
-              builder: (context) => IconButton(
-                onPressed: () {
-                  Scaffold.of(context).openDrawer();
-                },
-                icon: Icon(Icons.menu_outlined, size: screenWidth * 0.11),
-              ),
-            ),
-          ),
-          Positioned(
-            top: 35,
-            left: 280,
-              child: Container(
-                height: 100,
-                width: 105,
-                decoration: BoxDecoration(
-                  image: DecorationImage(
-                    image: AssetImage("assets/images/logo.png"),
+      body: SingleChildScrollView(
+        child: Container(
+          height: 1500,
+          child: Stack(
+            children: [
+              Positioned(
+                top: 50.0,
+                left: 12.0,
+                child: Builder(
+                  builder: (context) => IconButton(
+                    onPressed: () {
+                      Scaffold.of(context).openDrawer();
+                    },
+                    icon: Icon(Icons.menu_outlined, size: screenWidth * 0.11),
                   ),
-                  shape: BoxShape.circle,
                 ),
               ),
-          ),
-            Positioned(
-                top: 60,
-                left: 100,
+              Positioned(
+                top: 35,
+                left: 280,
+                  child: Container(
+                    height: 100,
+                    width: 105,
+                    decoration: BoxDecoration(
+                      image: DecorationImage(
+                        image: AssetImage("assets/images/logo.png"),
+                      ),
+                      shape: BoxShape.circle,
+                    ),
+                  ),
+              ),
+                Positioned(
+                    top: 60,
+                    left: 100,
+                    child: Container(
+                      child: Text(
+                        "VIGILANCE",
+                        style: TextStyle(
+                          fontSize: 32,
+                          fontWeight: FontWeight.w700,
+                        ),
+                      ),
+                )
+                ),
+
+              Positioned(
+                top: 145,
+                left: 0,
+                right: 0,
                 child: Container(
-                  child: Text(
-                    "VIGILANCE",
-                    style: TextStyle(
-                      fontSize: 32,
-                      fontWeight: FontWeight.w700,
-                    ),
+                  height: 250,
+                  child: ListView(
+                    scrollDirection: Axis.horizontal,
+                    children: [
+                      GestureDetector(
+                        onTap: () {
+                          // Open link for the first image
+                          launch('https://youtu.be/SojbIFftzuY?si=nojkFttAj29oyyMF');
+                        },
+                        child: Container(
+                          width: 360,
+                          decoration: BoxDecoration(
+                            color: Colors.blue,
+                            borderRadius: BorderRadius.all(Radius.circular(20.0)),
+                          ),
+                          margin: EdgeInsets.all(8),
+                          child: ClipRRect(
+                            borderRadius: BorderRadius.circular(20.0),
+                            child: Image.asset('assets/images/night saftey.jpg', fit: BoxFit.cover),
+                          ),
+                        ),
+                      ),
+                      GestureDetector(
+                        onTap: () {
+                          // Open link for the first image
+                          launch('https://youtube.com/shorts/M21oKzmbDkU?si=gtKIuB5Bk_6_wd9q');
+                        },
+                        child: Container(
+                          width: 350,
+                          decoration: BoxDecoration(
+                            color: Colors.blue,
+                            borderRadius: BorderRadius.all(Radius.circular(20.0)),
+                          ),
+                          margin: EdgeInsets.all(8),
+                          child: ClipRRect(
+                            borderRadius: BorderRadius.circular(20.0),
+                            child: Image.asset('assets/images/selfdefence.jpg', fit: BoxFit.cover),
+                          ),
+                        ),
+                      ),
+                      GestureDetector(
+                        onTap: () {
+                          // Open link for the first image
+                          launch('https://youtu.be/x91tRBU_H9Q?si=_-7Eysra4ecTU_aT');
+                        },
+                        child: Container(
+                          width: 350,
+                          decoration: BoxDecoration(
+                            color: Colors.blue,
+                            borderRadius: BorderRadius.all(Radius.circular(20.0)),
+                          ),
+                          margin: EdgeInsets.all(8),
+                          child: ClipRRect(
+                            borderRadius: BorderRadius.circular(20.0),
+                            child: Image.asset('assets/images/10d05a07e7a2d93351a1e18a6b65e756.jpg', fit: BoxFit.cover),
+                          ),
+                        ),
+                      ),
+                    ],
                   ),
-            )
-            ),
-
-          Positioned(
-            top: 145,
-            left: 0,
-            right: 0,
-            child: Container(
-              height: 250,
-              child: ListView(
-                scrollDirection: Axis.horizontal,
-                children: [
-                  GestureDetector(
-                    onTap: () {
-                      // Open link for the first image
-                      launch('https://youtu.be/SojbIFftzuY?si=nojkFttAj29oyyMF');
-                    },
-                    child: Container(
-                      width: 360,
-                      decoration: BoxDecoration(
-                        color: Colors.blue,
-                        borderRadius: BorderRadius.all(Radius.circular(20.0)),
-                      ),
-                      margin: EdgeInsets.all(8),
-                      child: ClipRRect(
-                        borderRadius: BorderRadius.circular(20.0),
-                        child: Image.asset('assets/images/night saftey.jpg', fit: BoxFit.cover),
-                      ),
-                    ),
-                  ),
-                  GestureDetector(
-                    onTap: () {
-                      // Open link for the first image
-                      launch('https://youtube.com/shorts/M21oKzmbDkU?si=gtKIuB5Bk_6_wd9q');
-                    },
-                    child: Container(
-                      width: 350,
-                      decoration: BoxDecoration(
-                        color: Colors.blue,
-                        borderRadius: BorderRadius.all(Radius.circular(20.0)),
-                      ),
-                      margin: EdgeInsets.all(8),
-                      child: ClipRRect(
-                        borderRadius: BorderRadius.circular(20.0),
-                        child: Image.asset('assets/images/selfdefence.jpg', fit: BoxFit.cover),
-                      ),
-                    ),
-                  ),
-                  GestureDetector(
-                    onTap: () {
-                      // Open link for the first image
-                      launch('https://youtu.be/x91tRBU_H9Q?si=_-7Eysra4ecTU_aT');
-                    },
-                    child: Container(
-                      width: 350,
-                      decoration: BoxDecoration(
-                        color: Colors.blue,
-                        borderRadius: BorderRadius.all(Radius.circular(20.0)),
-                      ),
-                      margin: EdgeInsets.all(8),
-                      child: ClipRRect(
-                        borderRadius: BorderRadius.circular(20.0),
-                        child: Image.asset('assets/images/10d05a07e7a2d93351a1e18a6b65e756.jpg', fit: BoxFit.cover),
-                      ),
-                    ),
-                  ),
-                ],
+                ),
               ),
-            ),
+              // Container(
+                  //   height: 100,
+                  //   child: ListView(
+                  //     scrollDirection: Axis.horizontal,
+                  //     children: [
+                  //       Container(
+                  //         child: HospitalCard() ,
+                  //       ),
+                  //       Container(
+                  //         child: BusStationCard(),
+                  //       ),
+                  //       Container(
+                  //         child: PharmacyCard(),
+                  //       ),
+                  //       Container(
+                  //         child: PoliceStationCard(),
+                  //       ),
+                  //     ],
+                  //   ),
+                  // ),
+          /*Positioned(
+                top: 80.0, // Adjust the position as needed
+                left: screenWidth * 0.65, // Adjust the position as needed
+                child: Text(
+                  "Agent",
+                  style: TextStyle(
+                    color: Colors.red,
+                    fontSize: screenWidth * 0.05,
+                    fontWeight: FontWeight.bold,
+                    fontStyle: FontStyle.italic,
+                  ),
+                ),
+              ),*/
+              Positioned(
+                top: 700,
+                left: 20,
+                child:Container(
+                  //padding: const EdgeInsets.symmetric(vertical:5,horizontal: 30),
+                  width: screenWidth*0.88,
+                  decoration: BoxDecoration(
+                    color: Color(0xff296a72),
+                    // border: Border.all(
+                    //  color: Color(0xFF383330), // Border color
+                    //  width: 2.0, // Border width
+                    // ),
+                    borderRadius: BorderRadius.circular(15.0), // Border radius
+                  ),
+                  child: Align(
+                    alignment: Alignment.center,
+                    child: DropdownButtonFormField(
+                      items: const [
+                        DropdownMenuItem(child: Text("    Are You Safe??",style: TextStyle(fontWeight: FontWeight.bold,fontSize: 20,color: Color(0xffc3e4ec),),), value: "SELECT"),
+                        DropdownMenuItem(child: Text("    Yes",style: TextStyle(color: Color(0xFFFEFAE0), fontStyle: FontStyle.italic,fontSize: 20),), value: "user"),
+                        DropdownMenuItem(child: Text("    No",style: TextStyle(color: Color(0xFFFEFAE0), fontStyle: FontStyle.italic,fontSize: 20),), value: "agent"),
+                      ],
+                      icon: Icon(Icons.arrow_downward_rounded,
+                        size: 30,
+                        color: Color(0xffc3e4ec),),
+                      dropdownColor: Color(0xff296a72),
+                      /*decoration:InputDecoration(
+                                    labelText: "Type",
+                                    prefixIcon: Icon(
+                                      Icons.accessibility_new_rounded,
+                                      color: Colors.brown,
+                                    ),
+                                    border: UnderlineInputBorder(),
+                                  ),*/
+                      value: Choice1,
+                      onChanged: dropdownCallback,
+                      decoration: InputDecoration(
+                        border: InputBorder.none, // Remove the underline
+                      ),
+                    ),
+                  ),
+                ),),
+              Positioned(
+                top: 800,
+                left: 20,
+                child:Container(
+                  //padding: const EdgeInsets.symmetric(vertical:5,horizontal: 30),
+                  width: screenWidth*0.88,
+                  decoration: BoxDecoration(
+                    color: Color(0xff296a72),
+                    // border: Border.all(
+                    //  color: Color(0xFF383330), // Border color
+                    //  width: 2.0, // Border width
+                    // ),
+                    borderRadius: BorderRadius.circular(15.0), // Border radius
+                  ),
+                  child: Align(
+                    alignment: Alignment.center,
+                    child: DropdownButtonFormField(
+                      items: const [
+                        DropdownMenuItem(child: Text("    Are You Safe??",style: TextStyle(fontWeight: FontWeight.bold,fontSize: 20,color: Color(0xffc3e4ec),),), value: "SELECT"),
+                        DropdownMenuItem(child: Text("    Yes",style: TextStyle(color: Color(0xFFFEFAE0), fontStyle: FontStyle.italic,fontSize: 20),), value: "user"),
+                        DropdownMenuItem(child: Text("    No",style: TextStyle(color: Color(0xFFFEFAE0), fontStyle: FontStyle.italic,fontSize: 20),), value: "agent"),
+                      ],
+                      icon: Icon(Icons.arrow_downward_rounded,
+                        size: 30,
+                        color: Color(0xffc3e4ec),),
+                      dropdownColor: Color(0xff296a72),
+                      /*decoration:InputDecoration(
+                                    labelText: "Type",
+                                    prefixIcon: Icon(
+                                      Icons.accessibility_new_rounded,
+                                      color: Colors.brown,
+                                    ),
+                                    border: UnderlineInputBorder(),
+                                  ),*/
+                      value: Choice1,
+                      onChanged: dropdownCallback,
+                      decoration: InputDecoration(
+                        border: InputBorder.none, // Remove the underline
+                      ),
+                    ),
+                  ),
+                ),),
+              Positioned(
+                top: 900,
+                left: 20,
+                child:Container(
+                  //padding: const EdgeInsets.symmetric(vertical:5,horizontal: 30),
+                  width: screenWidth*0.88,
+                  decoration: BoxDecoration(
+                    color: Color(0xff296a72),
+                    // border: Border.all(
+                    //  color: Color(0xFF383330), // Border color
+                    //  width: 2.0, // Border width
+                    // ),
+                    borderRadius: BorderRadius.circular(15.0), // Border radius
+                  ),
+                  child: Align(
+                    alignment: Alignment.center,
+                    child: DropdownButtonFormField(
+                      items: const [
+                        DropdownMenuItem(child: Text("    Are You Safe??",style: TextStyle(fontWeight: FontWeight.bold,fontSize: 20,color: Color(0xffc3e4ec),),), value: "SELECT"),
+                        DropdownMenuItem(child: Text("    Yes",style: TextStyle(color: Color(0xFFFEFAE0), fontStyle: FontStyle.italic,fontSize: 20),), value: "user"),
+                        DropdownMenuItem(child: Text("    No",style: TextStyle(color: Color(0xFFFEFAE0), fontStyle: FontStyle.italic,fontSize: 20),), value: "agent"),
+                      ],
+                      icon: Icon(Icons.arrow_downward_rounded,
+                        size: 30,
+                        color: Color(0xffc3e4ec),),
+                      dropdownColor: Color(0xff296a72),
+                      /*decoration:InputDecoration(
+                                    labelText: "Type",
+                                    prefixIcon: Icon(
+                                      Icons.accessibility_new_rounded,
+                                      color: Colors.brown,
+                                    ),
+                                    border: UnderlineInputBorder(),
+                                  ),*/
+                      value: Choice1,
+                      onChanged: dropdownCallback,
+                      decoration: InputDecoration(
+                        border: InputBorder.none, // Remove the underline
+                      ),
+                    ),
+                  ),
+                ),),
+
+
+
+
+            ],
           ),
-          // Container(
-              //   height: 100,
-              //   child: ListView(
-              //     scrollDirection: Axis.horizontal,
-              //     children: [
-              //       Container(
-              //         child: HospitalCard() ,
-              //       ),
-              //       Container(
-              //         child: BusStationCard(),
-              //       ),
-              //       Container(
-              //         child: PharmacyCard(),
-              //       ),
-              //       Container(
-              //         child: PoliceStationCard(),
-              //       ),
-              //     ],
-              //   ),
-              // ),
-
-
-
-
-
-
-
-      /*Positioned(
-            top: 80.0, // Adjust the position as needed
-            left: screenWidth * 0.65, // Adjust the position as needed
-            child: Text(
-              "Agent",
-              style: TextStyle(
-                color: Colors.red,
-                fontSize: screenWidth * 0.05,
-                fontWeight: FontWeight.bold,
-                fontStyle: FontStyle.italic,
-              ),
-            ),
-          ),*/
-        ],
+        ),
       ),
     );
   }

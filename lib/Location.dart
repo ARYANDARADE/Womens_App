@@ -68,7 +68,7 @@ class _LocationScreenState extends State<LocationScreen> {
     }
   }
 
-  Future<void> _loadLocations() async {
+  Future<void>  _loadLocations() async {
     final String data = await rootBundle.loadString('assets/data.csv');
     List<List<dynamic>> csvTable = const CsvToListConverter().convert(data);
     csvTable.removeAt(0);

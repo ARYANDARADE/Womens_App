@@ -1,5 +1,7 @@
 import 'package:basic/onboarding.dart';
+import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/foundation.dart';
+import 'firebase_options.dart';
 import 'package:flutter/material.dart';
 import 'package:curved_navigation_bar/curved_navigation_bar.dart';
 import 'package:geolocator/geolocator.dart';
@@ -13,7 +15,13 @@ import 'onboarding.dart';
 
 
 import 'Signup.dart';
-
+void main() async{
+  WidgetsFlutterBinding.ensureInitialized();
+  await Firebase.initializeApp(
+    options : DefaultFirebaseOptions.currentPlatform,
+  );
+  runApp(SidebarApp());
+}
 class MyApp extends StatelessWidget {
   const MyApp({Key? key}) : super(key: key);
   @override
@@ -30,9 +38,7 @@ class MyApp extends StatelessWidget {
   }
 }
 
-void main() {
-  runApp(SidebarApp());
-}
+
 
 class SidebarApp extends StatelessWidget {
   @override

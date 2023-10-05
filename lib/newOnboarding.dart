@@ -1,12 +1,9 @@
 import 'package:basic/Home.dart';
-import 'package:basic/main.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:introduction_screen/introduction_screen.dart';
 import 'model/onboardingModel.dart';
-import 'Location.dart';
-import 'NavBar.dart';
 
 class NewOnBoardingScreen extends StatefulWidget {
   const NewOnBoardingScreen({super.key});
@@ -48,7 +45,7 @@ class _NewOnBoardingScreenState extends State<NewOnBoardingScreen> {
       body: SafeArea(
         child: IntroductionScreen(
         rawPages: getPages(),
-          onDone: () => Navigator.of(context).pushReplacement(MaterialPageRoute(builder: (context)=>NavBar(),)),
+          onDone: () => Navigator.of(context).pushReplacement(MaterialPageRoute(builder: (context)=>HomePage(),)),
           showSkipButton: true,
           skipOrBackFlex: 0,
           nextFlex: 0,

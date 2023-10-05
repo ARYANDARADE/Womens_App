@@ -30,10 +30,10 @@ class _NewOnBoardingScreenState extends State<NewOnBoardingScreen> {
       const OnBoardingModelPageViewModel(
         modelTitle: "Emergency Alert Button",
         modelDesc: "Reach out for assistance, provide crucial information, and receive immediate guidance to help you through any distressing situation.",
-        imgUrl : "assets/images/chatbot.png",
+        imgUrl : "assets/images/alert.jpg",
       ),
       const OnBoardingModelPageViewModel(
-        imgUrl: "assets/images/maps.png",
+        imgUrl: "assets/images/community.png",
         modelTitle: "A Collaborative Approach to Safety",
         modelDesc: "The community watch feature allows you to contribute to the safety of others by rating and assessing the safety of different locations",
       ),

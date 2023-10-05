@@ -22,7 +22,7 @@ class Contact extends StatelessWidget {
             decoration: BoxDecoration(
 
             ),
-            child: Icon(Icons.call),
+            child: Icon(Icons.call,color: Colors.green,),
           ),
         ),
       ),

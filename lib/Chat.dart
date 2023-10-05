@@ -1,17 +1,60 @@
 import 'package:basic/chatbot.dart';
 import 'package:basic/contact.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_phone_direct_caller/flutter_phone_direct_caller.dart';
 
-class ChatPage extends StatelessWidget {
+class ChatPage extends StatefulWidget {
+  @override
+  State<ChatPage> createState() => _ChatPageState();
+}
+
+class _ChatPageState extends State<ChatPage> {
+  _callNumber(String number) async {
+    await FlutterPhoneDirectCaller.callNumber(number);
+  }
+  TextEditingController nameController = TextEditingController();
+  TextEditingController numberController = TextEditingController();
+  final List<String> numbers = ["9529448553","987654321","987654321","987654321","1234567889"];
+  final List<String> contact = ["Harshavardhan","test","test","test","test"];
+  void addItemToList(){
+    setState(() {
+      contact.insert(0,nameController.text);
+      numbers.insert(0,numberController.text);
+    });
+  }
   @override
   Widget build(BuildContext context) {
-    final contact = ["contact1",
-      "contact2",
-      "contact3",
-     "contact4",
-    "contact5",
-    "contact6"];
+
+
+
     final screenWidth = MediaQuery.of(context).size.width;
+    Future openDialog() => showDialog(
+        context: context,
+        builder: (context) => AlertDialog(
+              title: Text("Enter Contact Details"),
+              content: Container(
+                height: 100,
+                child: Column(
+                  children: [
+                    TextField(
+                      autofocus: true,
+                      controller: nameController,
+                      decoration:
+                          InputDecoration(hintText: "Enter Contact Name"),
+                    ),
+                    TextField(
+                      controller: numberController,
+                      decoration:
+                          InputDecoration(hintText: "Enter Contact No."),
+                    )
+                  ],
+                ),
+              ),
+              actions: [TextButton(onPressed: () {
+                addItemToList();
+                Navigator.of(context).pop();
+              }, child: Text("Submit"))],
+            ));
     return Scaffold(
         backgroundColor: Colors.white,
         body: Stack(
@@ -33,10 +76,13 @@ class ChatPage extends StatelessWidget {
                                 shape: BoxShape.circle,
                                 color: Colors.grey,
                               ),
-                              child:
-                                  IconButton(icon:Icon(Icons.add, color: Colors.grey.shade200), onPressed: () {
-
-                                  },),
+                              child: IconButton(
+                                icon: Icon(Icons.add,
+                                    color: Colors.grey.shade200),
+                                onPressed: () {
+                                  openDialog();
+                                },
+                              ),
                             ),
                           ),
                         ),
@@ -56,7 +102,41 @@ class ChatPage extends StatelessWidget {
                                   scrollDirection: Axis.horizontal,
                                   itemCount: contact.length,
                                   itemBuilder: (context, index) {
-                                    return Contact();
+                                    return GestureDetector(
+                                      onTap: () => _callNumber(numbers[index]),
+                                      child: Column(
+                                        children: [
+                                          Container(
+                                            height: 54,
+                                            width: 75,
+                                            decoration: BoxDecoration(
+                                              color: Colors.lightBlue,
+                                              shape: BoxShape.circle,
+                                              image: DecorationImage(
+                                                  image: AssetImage(
+                                                      "assets/images/avatar.png")),
+                                            ),
+                                            child: Align(
+                                              alignment: Alignment.bottomRight,
+                                              child: Container(
+                                                decoration: BoxDecoration(),
+                                                child: Icon(
+                                                  Icons.call,
+                                                  color: Colors.green,
+                                                ),
+                                              ),
+                                            ),
+                                          ),
+                                          Container(
+                                            child: Text(
+                                              contact[index],
+                                              style: TextStyle(fontSize: 11),
+                                            ),
+                                          )
+                                        ],
+                                      ),
+                                    );
+                                    ;
                                   })),
                         ),
                       ],

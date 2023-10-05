@@ -8,7 +8,6 @@ import 'Signup.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 // Define DefaultSize as a constant double value
 const double DefaultSize = 16.0;
-
 const String tWelcomeScreenImage = 'assets/images/luffy.png'; // Replace with your image path
 const String tLoginTitle = 'Login Title'; // Replace with your login title
 const String tLoginSubTitle = 'Login Subtitle'; // Replace with your login subtitle

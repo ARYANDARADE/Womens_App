@@ -24,7 +24,7 @@ class Sidebar extends StatelessWidget {
             alignment: Alignment.centerLeft, // Align content to the right
             child: UserAccountsDrawerHeader(
               accountName: const Text(''),
-              accountEmail: Text(GetUserEmail()),
+              accountEmail: Text("email"),
               currentAccountPicture: const CircleAvatar(
                 backgroundColor: Colors.white,
                 radius: 50, // Adjust the radius to change the size

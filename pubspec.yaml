@@ -61,6 +61,8 @@ dependencies:
   grouped_list: ^4.2.0
   horizontal_list_view: ^1.1.0
   sms_autofill: ^2.3.0
+  dropdown_button2: ^2.3.9
+  flutter_dropdown: ^1.0.1+hotfix.1
 
 dev_dependencies:
   flutter_test:

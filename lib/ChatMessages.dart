@@ -10,12 +10,14 @@ class ChatMessages extends StatelessWidget {
     return Row(
       mainAxisAlignment: sender == "you" ? MainAxisAlignment.end : MainAxisAlignment.start,
       children: [
-        Container(
-          margin: EdgeInsets.only(right: 16),
-          child: CircleAvatar(
-            backgroundColor: sender == "you"?Colors.blueAccent:Colors.transparent,
-            child: sender == "you"?Image.asset("assets/images/user.gif"):Image.asset("assets/images/bot.gif"),
-            radius: 20,
+        Align(
+          child: Container(
+            margin: EdgeInsets.only(right: 16),
+            child: CircleAvatar(
+              backgroundColor: sender == "you"?Colors.blueAccent:Colors.transparent,
+              child: sender == "you"?Image.asset("assets/images/user.gif"):Image.asset("assets/images/bot.gif"),
+              radius: 20,
+            ),
           ),
         ),
         Flexible(

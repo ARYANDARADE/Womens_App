@@ -31,6 +31,7 @@ class _ChatBotState extends State<ChatBot> {
 
   Future<void> loadJsonData() async {
     String jsonString = await rootBundle.loadString('assets/chat.json');
+    print("loaded");
     setState(() {
       Map<String, dynamic> jsonData = json.decode(jsonString);
       intents = List<Map<String, dynamic>>.from(jsonData['intents']);

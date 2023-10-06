@@ -17,7 +17,7 @@ class Sidebar extends StatelessWidget {
   Widget build(BuildContext context) {
     return Drawer(
       child: Container(
-        color: Color(0xffd3e8ef),
+        color: Color(0xffd3e8ef).withOpacity(0.6),
         // decoration: BoxDecoration(
         //   gradient: LinearGradient(
         //     begin: Alignment.topCenter,
@@ -62,7 +62,7 @@ class Sidebar extends StatelessWidget {
                   borderRadius: BorderRadius.only(
                     bottomRight: Radius.circular(30.0),
                   ),
-                  color: Color(0xffff6b81),
+                  color: Color(0xffff6b81).withOpacity(0.6),
                 ),
               ),
             ),

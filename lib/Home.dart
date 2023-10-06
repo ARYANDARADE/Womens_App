@@ -267,7 +267,7 @@ class _HomePageState extends State<HomePage> {
                       children: [
                         Icon(
                           Icons.list,
-                          size: 16,
+                          size: 20,
                           color: Colors.white,
                         ),
                         SizedBox(
@@ -277,7 +277,7 @@ class _HomePageState extends State<HomePage> {
                           child: Text(
                             'Varun Gay??',
                             style: TextStyle(
-                              fontSize: 14,
+                              fontSize: 16,
                               fontWeight: FontWeight.bold,
                               color: Colors.white,
                             ),
@@ -323,7 +323,7 @@ class _HomePageState extends State<HomePage> {
                       icon: Icon(
                         Icons.arrow_downward_outlined,
                       ),
-                      iconSize: 20,
+                      iconSize: 30,
                       iconEnabledColor: Colors.white,
                       iconDisabledColor: Colors.grey,
                     ),

@@ -119,7 +119,7 @@ class _HomePageState extends State<HomePage> {
                           margin: EdgeInsets.all(8),
                           child: ClipRRect(
                             borderRadius: BorderRadius.circular(20.0),
-                            child: Image.asset('assets/images/night saftey.jpg', fit: BoxFit.cover),
+                            child: Image.asset('assets/images/Different people inside crowded subway Illustration #56771188.jpg', fit: BoxFit.cover),
                           ),
                         ),
                       ),
@@ -209,7 +209,7 @@ class _HomePageState extends State<HomePage> {
                       value: selectedValue,
                       onChanged: (value) {
                         setState(() {
-                          selectedValue = value;
+                          //selectedValue = value;
                         });
                       },
                       buttonStyleData: ButtonStyleData(
@@ -297,7 +297,7 @@ class _HomePageState extends State<HomePage> {
                     value: dropValue,
                     onChanged: (value) {
                       setState(() {
-                        dropValue = value;
+                        //dropValue = value;
                       });
                     },
                     buttonStyleData: ButtonStyleData(

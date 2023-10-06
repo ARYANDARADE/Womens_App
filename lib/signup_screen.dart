@@ -348,10 +348,10 @@ class SignUpFooterWidget extends StatelessWidget {
             TextSpan(
               text: "Already have an account? ",
               style:TextStyle(
-                color: Color(0xFFFEFAE0),
+                color: Colors.blue,
               ),// Use the variable here
             ),
-            TextSpan(text: "login".toUpperCase(),style: TextStyle(color: Color(0xFFD4BDA1),)), // Use the variable here
+            TextSpan(text: "login".toUpperCase(),style: TextStyle(color: Colors.green,)), // Use the variable here
           ])),
         ),
       ],

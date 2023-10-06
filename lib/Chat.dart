@@ -1,3 +1,4 @@
+import 'package:basic/NavBar.dart';
 import 'package:basic/chatbot.dart';
 import 'package:basic/contact.dart';
 import 'package:flutter/material.dart';
@@ -14,8 +15,9 @@ class _ChatPageState extends State<ChatPage> {
   }
   TextEditingController nameController = TextEditingController();
   TextEditingController numberController = TextEditingController();
-  final List<String> contacts = ["9529448553","987654321","987654321","987654321","1234567889"];
-  final List<String> relations = ["Harshavardhan","test","test","test","test"];
+  final List<String> contacts = ["9529448553","9167645691","7738657272","8600646080","8356860310"];
+  final List<String> relations = ["Harshavardhan","Pritesh","Aryan","Sharib","Varun"];
+
   void addItemToList(){
     setState(() {
       relations.insert(0,nameController.text);

@@ -254,7 +254,7 @@ class _LoginPageState extends State<LoginPage> {
                                         Navigator.of(context).push(
                                           MaterialPageRoute(
                                             builder: (context) =>
-                                                const NavBar(), // Replace with the name of your MyApp class
+                                                 NavBar(), // Replace with the name of your MyApp class
                                           ),
                                         );
                                       }

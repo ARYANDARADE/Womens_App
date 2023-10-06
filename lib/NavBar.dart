@@ -13,12 +13,11 @@ import 'Location.dart';
 import 'package:icons_plus/icons_plus.dart';
 import 'package:dot_navigation_bar/dot_navigation_bar.dart';
 class NavBar extends StatefulWidget {
-  const NavBar({super.key});
 
   @override
   _NavBarState createState() => _NavBarState();
 }
-
+String SmsText='';
 class _NavBarState extends State<NavBar> {
   int selectedpage = 0;
   final _pageOptions = [HomePage(),ChatPage(),LocationScreen(),ReportPage(),notificationPage()];
@@ -30,8 +29,8 @@ class _NavBarState extends State<NavBar> {
         Telephony telephony = Telephony.instance;
 
         await telephony.sendSms(
-            to: "8356860310",
-            message: "Pritesh Gay"
+            to: "8424820665",
+            message: SmsText,
         );
         ScaffoldMessenger.of(context).showSnackBar(
           const SnackBar(

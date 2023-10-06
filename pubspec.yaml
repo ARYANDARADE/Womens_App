@@ -66,6 +66,7 @@ dependencies:
   flutter_dropdown: ^1.0.1+hotfix.1
   cloud_firestore: ^4.9.3
 
+
 dev_dependencies:
   flutter_test:
     sdk: flutter

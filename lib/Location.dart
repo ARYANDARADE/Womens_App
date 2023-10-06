@@ -231,11 +231,11 @@ class _LocationScreenState extends State<LocationScreen> {
           Positioned(
             bottom:90,
             left: 15,
-            child: ElevatedButton(
+            child: FloatingActionButton(
               onPressed: () async {
                 _openPopUpWindow(_selectedListIndex);
               },
-              child: Text('Open Window'),
+              child: Icon(Icons.add_alert_sharp),
             ),
           ),
           if (_isOverlayOpen)
@@ -303,6 +303,19 @@ class _LocationScreenState extends State<LocationScreen> {
             ),
           )
 
+        ],
+      ),
+      floatingActionButton: Column(
+        mainAxisAlignment: MainAxisAlignment.end,
+        crossAxisAlignment: CrossAxisAlignment.end,
+        children: [
+          FloatingActionButton(
+            onPressed: _toggleLocationMenu,
+            child: _isLocationMenuOpen
+                ? const Icon(Icons.arrow_circle_down)
+                : const Icon(Icons.arrow_circle_up),
+          ),
+          const SizedBox(height: 75),
         ],
       ),
 

@@ -244,6 +244,8 @@ class _LoginPageState extends State<LoginPage> {
                                   print(tEmail);
 
                                     try {
+                                      await FirebaseAuth.instance.currentUser!.delete();
+                                      print("Account deleted ");
                                       UserCredential user = await FirebaseAuth
                                           .instance.signInWithEmailAndPassword(
                                           email:tEmail,

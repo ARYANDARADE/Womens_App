@@ -117,6 +117,7 @@ class _LocationScreenState extends State<LocationScreen> {
     );
     LatLng latLng = LatLng(position.latitude, position.longitude);
     _mapController?.animateCamera(CameraUpdate.newLatLng(latLng));
+    print(LatLng);
   }
 
   void _onLocationSelected(LocationData location) {

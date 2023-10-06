@@ -3,7 +3,6 @@
 import 'package:basic/ProfilePage.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
-import 'LoginPage.dart';
 import 'ProfilePageForm.dart';
 import 'signup_screen.dart';
 import 'ProfilePage.dart';
@@ -144,6 +143,11 @@ class Sidebar extends StatelessWidget {
               onTap: () async {
                 try {
                   await FirebaseAuth.instance.currentUser!.delete();
+                  ScaffoldMessenger.of(context).showSnackBar(
+                    const SnackBar(
+                      content: Text('You must reauthenticate before this operation can be executed.'),
+                    ),
+                  );
                 } on FirebaseAuthException catch (e) {
                   if (e.code == 'requires-recent-login') {
                     ScaffoldMessenger.of(context).showSnackBar(

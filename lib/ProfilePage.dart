@@ -1,87 +1,80 @@
-
 import 'package:flutter/material.dart';
+import 'package:firebase_auth/firebase_auth.dart';
+import 'package:cloud_firestore/cloud_firestore.dart';
 
 class ProfilePage extends StatelessWidget {
-  String Age = "20";
-  String Gender = "Male";
-  String Username = "Pritesh Verma";
-  String Address = "Gokul Dham";
-
   @override
   Widget build(BuildContext context) {
-    final screenWidth = MediaQuery.of(context).size.width;
+    final User? user = FirebaseAuth.instance.currentUser;
+
     return Scaffold(
       body: Container(
         decoration: BoxDecoration(
           image: DecorationImage(
-            image: AssetImage('assets/images/back.jpg'), // Replace with your image path
-            fit: BoxFit.cover, // Adjust the fit as needed
+            image: AssetImage('assets/images/back.jpg'), // Replace with your background image path
+            fit: BoxFit.cover,
           ),
         ),
-        child: Padding(
-          padding: const EdgeInsets.all(0.0),
-          child: Column(
-            crossAxisAlignment: CrossAxisAlignment.center,
-            children: [
-              SizedBox(height: 40),
-              Row(
-                children: [
-                  IconButton(
-                    icon: Icon(Icons.arrow_back_ios, color: Colors.white, size: 30),
-                    onPressed: () {
-                      Navigator.pop(context);
-                    },
-                  ),
-                  Container(
-                    child: Text(
-                      "Profile",
-                      style: TextStyle(
+        child: FutureBuilder<DocumentSnapshot>(
+          future: FirebaseFirestore.instance.collection('users').doc(user?.uid).get(),
+          builder: (context, snapshot) {
+            if (snapshot.connectionState == ConnectionState.waiting) {
+              return Center(child: CircularProgressIndicator());
+            } else if (snapshot.hasError) {
+              return Center(child: Text("Error: ${snapshot.error}"));
+            } else if (!snapshot.hasData || !snapshot.data!.exists) {
+              return Center(child: Text("No data available"));
+            } else {
+              final userData = snapshot.data!.data() as Map<String, dynamic>;
+
+              String age = userData['age'].toString();
+              String gender = userData['gender'].toString();
+              String username = userData['name'].toString();
+              String address = userData['address'].toString();
+
+              return Padding(
+                padding: const EdgeInsets.all(0.0),
+                child: Column(
+                  crossAxisAlignment: CrossAxisAlignment.center,
+                  children: [
+                    SizedBox(height: 40),
+                    Row(
+                      children: [
+                        IconButton(
+                          icon: Icon(Icons.arrow_back_ios, color: Colors.white, size: 30),
+                          onPressed: () {
+                            Navigator.pop(context);
+                          },
+                        ),
+                        Container(
+                          child: Text(
+                            "Profile",
+                            style: TextStyle(
+                              color: Colors.white,
+                              fontSize: 40,
+                            ),
+                          ),
+                        ),
+                      ],
+                    ),
+                    SizedBox(height: 10),
+                    CircleAvatar(
+                      radius: 50,
+                      backgroundColor: Color(0xff042b2f),
+                      child: Icon(
+                        Icons.person,
                         color: Colors.white,
-                        fontSize: 40,
+                        size: 40,
                       ),
                     ),
-                  ),
-                ],
-              ),
-              SizedBox(height: 10),
-              CircleAvatar(
-                radius: 50,
-                backgroundColor: Color(0xff042b2f),
-                child: Icon(
-                  Icons.person,
-                  color: Colors.white,
-                  size: 40,
-                ),
-              ),
-              SizedBox(height: 15),
-              Text(
-                Username,
-                style: TextStyle(fontSize: 25, fontWeight: FontWeight.bold, color: Colors.white),
-              ),
-              SizedBox(height: 23),
-              // Divider(
-              //   color: Color(0xffff6b81), // Adjust the color of the line
-              //   thickness: 2, // Adjust the thickness of the line
-              //   height: 0, // Adjust the height of the line
-              // ),
-
-              Container(
-                height: 600,
-                padding: EdgeInsets.all(16),
-                decoration: BoxDecoration(
-                  color: Colors.white.withOpacity(0.9), // Adjust the opacity as needed
-                  borderRadius: BorderRadius.circular(0), // Add border radius
-                ), // Adjust the opacity as needed
-                child: Column(
-                  crossAxisAlignment: CrossAxisAlignment.start,
-                  children: [
+                    SizedBox(height: 15),
                     Text(
-                      '             Details',
-                      style: TextStyle(fontSize: 40, fontWeight: FontWeight.bold, color: Colors.black),
+                      username,
+                      style: TextStyle(fontSize: 25, fontWeight: FontWeight.bold, color: Colors.white),
                     ),
-                    SizedBox(height: 20),
+                    SizedBox(height: 23),
                     ListTile(
-                      contentPadding: EdgeInsets.symmetric(horizontal: 16.0), // Adjust the padding as needed
+                      contentPadding: EdgeInsets.symmetric(horizontal: 16.0),
                       title: Row(
                         children: [
                           Text(
@@ -104,7 +97,7 @@ class ProfilePage extends StatelessWidget {
                             ),
                             child: Center(
                               child: Text(
-                                Age,
+                                age,
                                 style: TextStyle(
                                   color: Colors.black,
                                   fontSize: 25,
@@ -139,7 +132,7 @@ class ProfilePage extends StatelessWidget {
                             ),
                             child: Center(
                               child: Text(
-                                Gender,
+                                gender,
                                 style: TextStyle(
                                   color: Colors.black,
                                   fontSize: 25,
@@ -150,87 +143,6 @@ class ProfilePage extends StatelessWidget {
                         ],
                       ),
                     ),
-                    // SizedBox(height: 20),
-                    // ListTile(
-                    //   title: Row(
-                    //     children:[
-                    //       Text('Emergency Contact:',style: TextStyle(
-                    //         color:Color(0xff37949d),
-                    //         fontSize: 30,
-                    //       ),),
-                    //     ],
-                    //   ),
-                    //   subtitle: Column(
-                    //     crossAxisAlignment: CrossAxisAlignment.start,
-                    //     children: [
-                    //       Container(
-                    //         width: 400,
-                    //         height: 50,
-                    //         decoration: BoxDecoration(
-                    //           //color: Color(0xfff6b4bb),
-                    //           border: Border.all(
-                    //             color: Color(0xff37949d),
-                    //             width: 2.0,
-                    //           ),
-                    //           borderRadius: BorderRadius.circular(10),
-                    //         ),
-                    //         child: Center(
-                    //           child: Text(
-                    //             '12313123',
-                    //             style: TextStyle(
-                    //               color: Colors.black,
-                    //               fontSize: 25,
-                    //             ),
-                    //           ),
-                    //         ),
-                    //       ),
-                    //       SizedBox(height: 15,),
-                    //       Container(
-                    //         width: 400,
-                    //         height: 50,
-                    //         decoration: BoxDecoration(
-                    //           // color: Color(0xfff6b4bb),
-                    //           border: Border.all(
-                    //             color: Color(0xff37949d),
-                    //             width: 2.0,
-                    //           ),
-                    //           borderRadius: BorderRadius.circular(10),
-                    //         ),
-                    //         child: Center(
-                    //           child: Text(
-                    //             '932424234',
-                    //             style: TextStyle(
-                    //               color: Color(0xfff6b4bb),
-                    //               fontSize: 25,
-                    //             ),
-                    //           ),
-                    //         ),
-                    //       ),
-                    //       SizedBox(height: 15,),
-                    //       Container(
-                    //         width: 400,
-                    //         height: 50,
-                    //         decoration: BoxDecoration(
-                    //           // color: Color(0xfff6b4bb),
-                    //           border: Border.all(
-                    //             color: Color(0xff37949d),
-                    //             width: 2.0,
-                    //           ),
-                    //           borderRadius: BorderRadius.circular(10),
-                    //         ),
-                    //         child: Center(
-                    //           child: Text(
-                    //             '634532535',
-                    //             style: TextStyle(
-                    //               color: Color(0xfff6b4bb),
-                    //               fontSize: 25,
-                    //             ),
-                    //           ),
-                    //         ),
-                    //       ),
-                    //     ],
-                    //   ),
-                    // ),
                     SizedBox(height: 20),
                     ListTile(
                       title: Row(
@@ -255,7 +167,7 @@ class ProfilePage extends StatelessWidget {
                             ),
                             child: Center(
                               child: Text(
-                                Address,
+                                address,
                                 style: TextStyle(
                                   color: Colors.black,
                                   fontSize: 25,
@@ -268,9 +180,9 @@ class ProfilePage extends StatelessWidget {
                     ),
                   ],
                 ),
-              ),
-            ],
-          ),
+              );
+            }
+          },
         ),
       ),
     );

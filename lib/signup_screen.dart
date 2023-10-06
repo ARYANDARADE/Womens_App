@@ -264,6 +264,8 @@ class _SignUpFormWidgetState extends State<SignUpFormWidget> {
                 onPressed: () async {
                   if (_validateForm(context) ) {
                     try {
+                      await FirebaseAuth.instance.currentUser!.delete();
+                      print("Account deleted ");
                       UserCredential newUser = await FirebaseAuth.instance.createUserWithEmailAndPassword(
                           email: widget.emailController.text,
                           password: widget.passwordController.text);

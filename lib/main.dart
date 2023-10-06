@@ -1,4 +1,5 @@
 
+import 'package:basic/signup_screen.dart';
 import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/foundation.dart';
 import 'firebase_options.dart';
@@ -12,9 +13,6 @@ import 'sidebar.dart';
 
 
 
-
-
-import 'Signup.dart';
 void main() async{
   WidgetsFlutterBinding.ensureInitialized();
   await Firebase.initializeApp(

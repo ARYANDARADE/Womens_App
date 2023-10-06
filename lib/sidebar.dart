@@ -2,19 +2,13 @@
 
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
-import 'Signup.dart';
+import 'LoginPage.dart';
+import 'signup_screen.dart';
 
 class Sidebar extends StatelessWidget {
   const Sidebar({super.key});
 
-  String GetUserEmail(){
-    String EEmail='anonymous';
-    EEmail =FirebaseAuth.instance.currentUser!.email!;
-    if (EEmail == Null)
-      EEmail= "anonymous";
 
-    return EEmail;
-  }
 
   @override
   Widget build(BuildContext context) {
@@ -71,11 +65,6 @@ class Sidebar extends StatelessWidget {
                     fontSize: 18
                 ),),
               onTap: () {
-                Navigator.of(context).push(
-                  MaterialPageRoute(
-                    builder: (context) => SignupScreen(),
-                  ),
-                );
               },
             ),
             SizedBox(height: 10),
@@ -87,6 +76,7 @@ class Sidebar extends StatelessWidget {
                     fontSize: 16
                 ),),
               onTap: ()  {
+                SignupScreen();
 
               },
             ),

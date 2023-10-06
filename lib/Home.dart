@@ -12,7 +12,6 @@ import 'Marykom.dart';
 import 'self defence.dart';
 import 'WomenSafety.dart';
 import 'package:horizontal_list_view/horizontal_list_view.dart';
-import 'Signup.dart';
 import 'package:url_launcher/url_launcher.dart';
 
 void main() {

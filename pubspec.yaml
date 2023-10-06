@@ -61,6 +61,7 @@ dependencies:
   grouped_list: ^4.2.0
   horizontal_list_view: ^1.1.0
   sms_autofill: ^2.3.0
+  flutter_otp_text_field: ^1.1.1
 
 dev_dependencies:
   flutter_test:

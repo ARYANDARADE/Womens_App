@@ -7,7 +7,6 @@ import 'AmbulanceEmergency.dart';
 import 'FirebrigadeEmergency.dart';
 import 'PharmacyCard.dart';
 import 'PoliceStationCard.dart';
-import 'WomenSafety.dart';
 class ReportPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
@@ -36,7 +35,6 @@ class ReportPage extends StatelessWidget {
                           child:FirebrigadeEmergency ()
                       ),
                       Container(
-                          child:WomenSafety ()
                       ),
 
                     ],

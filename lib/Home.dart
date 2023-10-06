@@ -8,12 +8,11 @@ import 'Report.dart';
 import 'Location.dart';
 import 'quotes.dart';
 import 'sidebar.dart';
-import 'Marykom.dart';
-import 'self defence.dart';
-import 'WomenSafety.dart';
+
 import 'package:horizontal_list_view/horizontal_list_view.dart';
-import 'Signup.dart';
 import 'package:url_launcher/url_launcher.dart';
+import 'package:flutter_dropdown/flutter_dropdown.dart';
+import 'package:dropdown_button2/dropdown_button2.dart';
 
 void main() {
   runApp(SidebarApp());
@@ -28,24 +27,22 @@ class HomePage extends StatefulWidget {
 
 
 class _HomePageState extends State<HomePage> {
-  String selectedValue = 'Option 1';
-  List<String> options = ['Option 1', 'Option 2', 'Option 3'];
+  final List<String> items = [
+    'Yes',
+    'Yup',
+    'May be yes',
+    'Yup',
+  ];
+  String? selectedValue;
+
+  final List<String> drop = [
+    'Yes',
+    'Yup',
+    'May be yes',
+  ];
+  String? dropValue;
   @override
   Widget build(BuildContext context) {
-    String Choice1 = 'SELECT';
-    void dropdownCallback(String? selectedValue) {
-      if (selectedValue != "SELECT") {
-        setState(() {
-          Choice1 = selectedValue!;
-        });
-      }else{
-        const SnackBar(
-          content: Text('Please fill in all required fields.'),
-        );
-
-      }
-      print(Choice1);
-    }
 
     final screenWidth = MediaQuery.of(context).size.width;
     return Scaffold(
@@ -54,6 +51,7 @@ class _HomePageState extends State<HomePage> {
       body: SingleChildScrollView(
         child: Container(
           height: 1500,
+          width: 900,
           child: Stack(
             children: [
               Positioned(
@@ -69,11 +67,11 @@ class _HomePageState extends State<HomePage> {
                 ),
               ),
               Positioned(
-                top: 35,
-                left: 280,
+                top: 40,
+                right: 20,
                   child: Container(
-                    height: 100,
-                    width: 105,
+                    height: 85,
+                    width: 85,
                     decoration: BoxDecoration(
                       image: DecorationImage(
                         image: AssetImage("assets/images/logo.png"),
@@ -84,12 +82,12 @@ class _HomePageState extends State<HomePage> {
               ),
                 Positioned(
                     top: 60,
-                    left: 100,
+                    left: 90,
                     child: Container(
                       child: Text(
                         "VIGILANCE",
                         style: TextStyle(
-                          fontSize: 32,
+                          fontSize: 30,
                           fontWeight: FontWeight.w700,
                         ),
                       ),
@@ -97,8 +95,8 @@ class _HomePageState extends State<HomePage> {
                 ),
 
               Positioned(
-                top: 145,
-                left: 0,
+                top: 135,
+                left: 5,
                 right: 0,
                 child: Container(
                   height: 250,
@@ -108,54 +106,58 @@ class _HomePageState extends State<HomePage> {
                       GestureDetector(
                         onTap: () {
                           // Open link for the first image
-                          launch('https://youtu.be/SojbIFftzuY?si=nojkFttAj29oyyMF');
+                          launch('https://www.nationalgeographic.com/travel/article/should-women-travel-solo-india-tips');
                         },
                         child: Container(
-                          width: 360,
+                          width: 330,
                           decoration: BoxDecoration(
                             color: Colors.blue,
+                            border: Border.all(color: Colors.black, width: 2.0),
                             borderRadius: BorderRadius.all(Radius.circular(20.0)),
                           ),
                           margin: EdgeInsets.all(8),
                           child: ClipRRect(
                             borderRadius: BorderRadius.circular(20.0),
-                            child: Image.asset('assets/images/night saftey.jpg', fit: BoxFit.cover),
+                            child: Image.asset('assets/images/NYC subway.jpeg', fit: BoxFit.cover),
                           ),
                         ),
                       ),
                       GestureDetector(
                         onTap: () {
                           // Open link for the first image
-                          launch('https://youtube.com/shorts/M21oKzmbDkU?si=gtKIuB5Bk_6_wd9q');
+                          launch('https://seniority.in/blog/post/womens-safety-self-defense-tips-and-why-is-it-important');
                         },
                         child: Container(
-                          width: 350,
+                          width: 330,
                           decoration: BoxDecoration(
                             color: Colors.blue,
+                            border: Border.all(color: Colors.black, width: 2.0),
                             borderRadius: BorderRadius.all(Radius.circular(20.0)),
                           ),
                           margin: EdgeInsets.all(8),
                           child: ClipRRect(
                             borderRadius: BorderRadius.circular(20.0),
-                            child: Image.asset('assets/images/selfdefence.jpg', fit: BoxFit.cover),
+                            child: Image.asset('assets/images/sd1.jpg', fit: BoxFit.cover),
                           ),
                         ),
                       ),
                       GestureDetector(
                         onTap: () {
                           // Open link for the first image
-                          launch('https://youtu.be/x91tRBU_H9Q?si=_-7Eysra4ecTU_aT');
+                          launch('https://www.realsimple.com/health/preventative-health/safety/4-essential-self-defense-moves-everyone-should-know');
                         },
                         child: Container(
-                          width: 350,
+                          width: 330,
                           decoration: BoxDecoration(
+                            border: Border.all(color: Colors.black, width: 2.0),
                             color: Colors.blue,
                             borderRadius: BorderRadius.all(Radius.circular(20.0)),
                           ),
                           margin: EdgeInsets.all(8),
                           child: ClipRRect(
                             borderRadius: BorderRadius.circular(20.0),
-                            child: Image.asset('assets/images/10d05a07e7a2d93351a1e18a6b65e756.jpg', fit: BoxFit.cover),
+
+                            child: Image.asset('assets/images/Top 10 Health Benefits of Martial Arts.jpeg', fit: BoxFit.cover),
                           ),
                         ),
                       ),
@@ -163,6 +165,186 @@ class _HomePageState extends State<HomePage> {
                   ),
                 ),
               ),
+              Positioned(
+                  top:430,
+                  left: 20,
+                  right: 20,
+                  child:DropdownButtonHideUnderline(
+                    child: DropdownButton2<String>(
+                      isExpanded: true,
+                      hint: const Row(
+                        children: [
+                          Icon(
+                            Icons.list,
+                            size: 16,
+                            color: Colors.white,
+                          ),
+                          SizedBox(
+                            width: 10,
+                          ),
+                          Expanded(
+                            child: Text(
+                              'Harsh Pedo??',
+                              style: TextStyle(
+                                fontSize: 14,
+                                fontWeight: FontWeight.bold,
+                                color: Colors.white,
+                              ),
+                              overflow: TextOverflow.ellipsis,
+                            ),
+                          ),
+                        ],
+                      ),
+                      items: items
+                          .map((String item) => DropdownMenuItem<String>(
+                        value: item,
+                        child: Text(
+                          item,
+                          style: const TextStyle(
+                            fontSize: 14,
+                            fontWeight: FontWeight.bold,
+                            color: Colors.white,
+                          ),
+                          overflow: TextOverflow.ellipsis,
+                        ),
+                      ))
+                          .toList(),
+                      value: selectedValue,
+                      onChanged: (value) {
+                        setState(() {
+                          //selectedValue = value;
+                        });
+                      },
+                      buttonStyleData: ButtonStyleData(
+                        height: 50,
+                        width: 300,
+                        padding: const EdgeInsets.only(left: 14, right: 14),
+                        decoration: BoxDecoration(
+                          borderRadius: BorderRadius.circular(14),
+                          color: const Color(0xff37949d),
+                        ),
+                        elevation: 2,
+                      ),
+                      iconStyleData: const IconStyleData(
+                        icon: Icon(
+                          Icons.arrow_downward_outlined,
+                        ),
+                        iconSize: 20,
+                        iconEnabledColor: Colors.white,
+                        iconDisabledColor: Colors.grey,
+                      ),
+                      dropdownStyleData: DropdownStyleData(
+                        maxHeight: 200,
+                        width: 320,
+                        decoration: BoxDecoration(
+                          borderRadius: BorderRadius.circular(14),
+                           color: Color(0xff7eabb6),
+                        ),
+                        //offset: const Offset(-20, 0),
+                        scrollbarTheme: ScrollbarThemeData(
+                          radius: const Radius.circular(40),
+                          thickness: MaterialStateProperty.all(6),
+                          thumbVisibility: MaterialStateProperty.all(true),
+                        ),
+                      ),
+                      menuItemStyleData: const MenuItemStyleData(
+                        height: 40,
+                        padding: EdgeInsets.only(left: 14, right: 14),
+                      ),
+                    ),
+                  ), ),
+
+              Positioned(
+                top:500,
+                left: 20,
+                right: 20,
+                child:DropdownButtonHideUnderline(
+                  child: DropdownButton2<String>(
+                    isExpanded: true,
+                    hint: const Row(
+                      children: [
+                        Icon(
+                          Icons.list,
+                          size: 16,
+                          color: Colors.white,
+                        ),
+                        SizedBox(
+                          width: 10,
+                        ),
+                        Expanded(
+                          child: Text(
+                            'Varun Gay??',
+                            style: TextStyle(
+                              fontSize: 14,
+                              fontWeight: FontWeight.bold,
+                              color: Colors.white,
+                            ),
+                            overflow: TextOverflow.ellipsis,
+                          ),
+                        ),
+                      ],
+                    ),
+                    items: drop
+                        .map((String item) => DropdownMenuItem<String>(
+                      value: item,
+                      child: Text(
+                        item,
+                        style: const TextStyle(
+                          fontSize: 14,
+                          fontWeight: FontWeight.bold,
+                          color: Colors.white,
+                        ),
+                        overflow: TextOverflow.ellipsis,
+                      ),
+                    ))
+                        .toList(),
+                    value: dropValue,
+                    onChanged: (value) {
+                      setState(() {
+                        //dropValue = value;
+                      });
+                    },
+                    buttonStyleData: ButtonStyleData(
+                      height: 50,
+                      width: 300,
+                      padding: const EdgeInsets.only(left: 14, right: 14),
+                      decoration: BoxDecoration(
+                        borderRadius: BorderRadius.circular(14),
+                        // border: Border.all(
+                        //   color: Colors.black26,
+                        // ),
+                        color: const Color(0xff37949d),
+                      ),
+                      elevation: 2,
+                    ),
+                    iconStyleData: const IconStyleData(
+                      icon: Icon(
+                        Icons.arrow_downward_outlined,
+                      ),
+                      iconSize: 20,
+                      iconEnabledColor: Colors.white,
+                      iconDisabledColor: Colors.grey,
+                    ),
+                    dropdownStyleData: DropdownStyleData(
+                      maxHeight: 200,
+                      width: 320,
+                      decoration: BoxDecoration(
+                        borderRadius: BorderRadius.circular(14),
+                        color: Color(0xff7eabb6),
+                      ),
+                      //offset: const Offset(-20, 0),
+                      scrollbarTheme: ScrollbarThemeData(
+                        radius: const Radius.circular(40),
+                        thickness: MaterialStateProperty.all(6),
+                        thumbVisibility: MaterialStateProperty.all(true),
+                      ),
+                    ),
+                    menuItemStyleData: const MenuItemStyleData(
+                      height: 40,
+                      padding: EdgeInsets.only(left: 14, right: 14),
+                    ),
+                  ),
+                ), ),
               // Container(
                   //   height: 100,
                   //   child: ListView(
@@ -183,6 +365,13 @@ class _HomePageState extends State<HomePage> {
                   //     ],
                   //   ),
                   // ),
+
+
+
+
+
+
+
           /*Positioned(
                 top: 80.0, // Adjust the position as needed
                 left: screenWidth * 0.65, // Adjust the position as needed
@@ -196,136 +385,6 @@ class _HomePageState extends State<HomePage> {
                   ),
                 ),
               ),*/
-              Positioned(
-                top: 700,
-                left: 20,
-                child:Container(
-                  //padding: const EdgeInsets.symmetric(vertical:5,horizontal: 30),
-                  width: screenWidth*0.88,
-                  decoration: BoxDecoration(
-                    color: Color(0xff296a72),
-                    // border: Border.all(
-                    //  color: Color(0xFF383330), // Border color
-                    //  width: 2.0, // Border width
-                    // ),
-                    borderRadius: BorderRadius.circular(15.0), // Border radius
-                  ),
-                  child: Align(
-                    alignment: Alignment.center,
-                    child: DropdownButtonFormField(
-                      items: const [
-                        DropdownMenuItem(child: Text("    Are You Safe??",style: TextStyle(fontWeight: FontWeight.bold,fontSize: 20,color: Color(0xffc3e4ec),),), value: "SELECT"),
-                        DropdownMenuItem(child: Text("    Yes",style: TextStyle(color: Color(0xFFFEFAE0), fontStyle: FontStyle.italic,fontSize: 20),), value: "user"),
-                        DropdownMenuItem(child: Text("    No",style: TextStyle(color: Color(0xFFFEFAE0), fontStyle: FontStyle.italic,fontSize: 20),), value: "agent"),
-                      ],
-                      icon: Icon(Icons.arrow_downward_rounded,
-                        size: 30,
-                        color: Color(0xffc3e4ec),),
-                      dropdownColor: Color(0xff296a72),
-                      /*decoration:InputDecoration(
-                                    labelText: "Type",
-                                    prefixIcon: Icon(
-                                      Icons.accessibility_new_rounded,
-                                      color: Colors.brown,
-                                    ),
-                                    border: UnderlineInputBorder(),
-                                  ),*/
-                      value: Choice1,
-                      onChanged: dropdownCallback,
-                      decoration: InputDecoration(
-                        border: InputBorder.none, // Remove the underline
-                      ),
-                    ),
-                  ),
-                ),),
-              Positioned(
-                top: 800,
-                left: 20,
-                child:Container(
-                  //padding: const EdgeInsets.symmetric(vertical:5,horizontal: 30),
-                  width: screenWidth*0.88,
-                  decoration: BoxDecoration(
-                    color: Color(0xff296a72),
-                    // border: Border.all(
-                    //  color: Color(0xFF383330), // Border color
-                    //  width: 2.0, // Border width
-                    // ),
-                    borderRadius: BorderRadius.circular(15.0), // Border radius
-                  ),
-                  child: Align(
-                    alignment: Alignment.center,
-                    child: DropdownButtonFormField(
-                      items: const [
-                        DropdownMenuItem(child: Text("    Are You Safe??",style: TextStyle(fontWeight: FontWeight.bold,fontSize: 20,color: Color(0xffc3e4ec),),), value: "SELECT"),
-                        DropdownMenuItem(child: Text("    Yes",style: TextStyle(color: Color(0xFFFEFAE0), fontStyle: FontStyle.italic,fontSize: 20),), value: "user"),
-                        DropdownMenuItem(child: Text("    No",style: TextStyle(color: Color(0xFFFEFAE0), fontStyle: FontStyle.italic,fontSize: 20),), value: "agent"),
-                      ],
-                      icon: Icon(Icons.arrow_downward_rounded,
-                        size: 30,
-                        color: Color(0xffc3e4ec),),
-                      dropdownColor: Color(0xff296a72),
-                      /*decoration:InputDecoration(
-                                    labelText: "Type",
-                                    prefixIcon: Icon(
-                                      Icons.accessibility_new_rounded,
-                                      color: Colors.brown,
-                                    ),
-                                    border: UnderlineInputBorder(),
-                                  ),*/
-                      value: Choice1,
-                      onChanged: dropdownCallback,
-                      decoration: InputDecoration(
-                        border: InputBorder.none, // Remove the underline
-                      ),
-                    ),
-                  ),
-                ),),
-              Positioned(
-                top: 900,
-                left: 20,
-                child:Container(
-                  //padding: const EdgeInsets.symmetric(vertical:5,horizontal: 30),
-                  width: screenWidth*0.88,
-                  decoration: BoxDecoration(
-                    color: Color(0xff296a72),
-                    // border: Border.all(
-                    //  color: Color(0xFF383330), // Border color
-                    //  width: 2.0, // Border width
-                    // ),
-                    borderRadius: BorderRadius.circular(15.0), // Border radius
-                  ),
-                  child: Align(
-                    alignment: Alignment.center,
-                    child: DropdownButtonFormField(
-                      items: const [
-                        DropdownMenuItem(child: Text("    Are You Safe??",style: TextStyle(fontWeight: FontWeight.bold,fontSize: 20,color: Color(0xffc3e4ec),),), value: "SELECT"),
-                        DropdownMenuItem(child: Text("    Yes",style: TextStyle(color: Color(0xFFFEFAE0), fontStyle: FontStyle.italic,fontSize: 20),), value: "user"),
-                        DropdownMenuItem(child: Text("    No",style: TextStyle(color: Color(0xFFFEFAE0), fontStyle: FontStyle.italic,fontSize: 20),), value: "agent"),
-                      ],
-                      icon: Icon(Icons.arrow_downward_rounded,
-                        size: 30,
-                        color: Color(0xffc3e4ec),),
-                      dropdownColor: Color(0xff296a72),
-                      /*decoration:InputDecoration(
-                                    labelText: "Type",
-                                    prefixIcon: Icon(
-                                      Icons.accessibility_new_rounded,
-                                      color: Colors.brown,
-                                    ),
-                                    border: UnderlineInputBorder(),
-                                  ),*/
-                      value: Choice1,
-                      onChanged: dropdownCallback,
-                      decoration: InputDecoration(
-                        border: InputBorder.none, // Remove the underline
-                      ),
-                    ),
-                  ),
-                ),),
-
-
-
-
             ],
           ),
         ),

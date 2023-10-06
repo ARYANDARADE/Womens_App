@@ -1,20 +1,51 @@
 import 'package:flutter/material.dart';
+ // Import Google Fonts package
+import 'package:flutter_otp_text_field/flutter_otp_text_field.dart'; // Import the OTP package
 class OTPScreen extends StatelessWidget {
+  const OTPScreen({Key? key}) : super(key: key);
+
   @override
   Widget build(BuildContext context) {
-    final screenWidth = MediaQuery.of(context).size.width;
+    // Define the placeholder variables
+    const String tOtpTitle = "Your OTP Title";
+    const String tOtpSubTitle = "Your OTP Subtitle";
+    const String tOtpMessage = "Your OTP Message";
+
     return Scaffold(
-      backgroundColor: Colors.black,
-      body: Center(
-        child: Container(
-          child: Text(
-            "THIS IS OTPScreen PAGE",
-            style: TextStyle(
-                color: Colors.white,
-                fontSize: 20,
-                fontStyle: FontStyle.italic,
-                fontWeight: FontWeight.w700),
-          ),
+      body: Container(
+        padding: const EdgeInsets.all(16.0), // Use your desired padding value
+        child: Column(
+          mainAxisAlignment: MainAxisAlignment.center,
+          children: [
+
+            Text(
+              tOtpSubTitle.toUpperCase(),
+              style: Theme.of(context).textTheme.titleLarge,
+            ),
+            const SizedBox(height: 40.0),
+            const Text(
+              "$tOtpMessage support@codingwitht.com",
+              textAlign: TextAlign.center,
+            ),
+            const SizedBox(height: 20.0),
+            OtpTextField(
+              mainAxisAlignment: MainAxisAlignment.center,
+              numberOfFields: 6,
+              fillColor: Colors.black.withOpacity(0.1),
+              filled: true,
+              onSubmit: (code) => print("OTP is => $code"),
+            ),
+            const SizedBox(height: 20.0),
+            SizedBox(
+              width: double.infinity,
+              child: ElevatedButton(
+                onPressed: () {
+                  // Add the action you want to perform when the button is pressed
+                },
+                child: const Text("Next"),
+              ),
+            ),
+          ],
         ),
       ),
     );

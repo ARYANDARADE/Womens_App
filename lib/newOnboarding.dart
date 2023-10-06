@@ -4,6 +4,7 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:introduction_screen/introduction_screen.dart';
+import 'FirebaseAuth.dart';
 import 'model/onboardingModel.dart';
 
 class NewOnBoardingScreen extends StatefulWidget {
@@ -46,8 +47,12 @@ class _NewOnBoardingScreenState extends State<NewOnBoardingScreen> {
       body: SafeArea(
         child: IntroductionScreen(
         rawPages: getPages(),
-          onDone: () => Navigator.of(context).pushReplacement(MaterialPageRoute(builder: (context)=>NavBar(),)),
-          showSkipButton: true,
+          onDone: () =>{ Navigator.of(context).pushReplacement(MaterialPageRoute(builder: (context)=>NavBar(),))
+            ,
+            AnonymousSignup()
+
+          },
+          showSkipButton: false,
           skipOrBackFlex: 0,
           nextFlex: 0,
           showBackButton: false,

@@ -68,7 +68,7 @@ class _LocationScreenState extends State<LocationScreen> {
     }
   }
 
-  Future<void> _loadLocations() async {
+  Future<void>  _loadLocations() async {
     final String data = await rootBundle.loadString('assets/data.csv');
     List<List<dynamic>> csvTable = const CsvToListConverter().convert(data);
     csvTable.removeAt(0);
@@ -175,7 +175,7 @@ class _LocationScreenState extends State<LocationScreen> {
   Future<String> _makeApiCall(double distance, double crimeRate, int cctvCameras) async {
     try {
       final response = await http.post(
-        Uri.parse('http:// 192.168.215.116:8000/predict'),
+        Uri.parse('http://192.168.0.105:8000/predict'),
         headers: {"Content-Type": "application/json"},
         body: jsonEncode({
           "Distance": distance,
@@ -231,11 +231,11 @@ class _LocationScreenState extends State<LocationScreen> {
           Positioned(
             bottom:90,
             left: 15,
-            child: ElevatedButton(
+            child: FloatingActionButton(
               onPressed: () async {
                 _openPopUpWindow(_selectedListIndex);
               },
-              child: Text('Open Window'),
+              child: Icon(Icons.add_alert_sharp),
             ),
           ),
           if (_isOverlayOpen)
@@ -258,25 +258,51 @@ class _LocationScreenState extends State<LocationScreen> {
                 ),
               ),
             ),
-          Align(
-            alignment: Alignment.topCenter,
-            child: Row(
-              children: [
-
-                Container(
-                  height: 205,
-                  width: 125,
-                  decoration: BoxDecoration(
-                      image :DecorationImage(image:AssetImage("assets/images/logo.png")),shape: BoxShape.circle),
+          Positioned(
+            top: 30,
+            child: Container(
+              decoration: BoxDecoration(
+                color: Color(0xff37949d).withOpacity(0.6), // Adjust opacity as needed
+                borderRadius: BorderRadius.only(
+                  bottomLeft: Radius.circular(20.0),
+                  bottomRight: Radius.circular(20.0),
                 ),
-                Padding(
-                  padding: const EdgeInsets.only(top: 13,bottom: 45),
-                  child: Text("VIGILANCE",style: TextStyle(fontSize: 32
-                    ,fontWeight: FontWeight.w700,),),
-                ),
-              ],
+                // Add blur effect
+                // backdropFilter: ImageFilter.blur(sigmaX: 5.0, sigmaY: 5.0),
+                // Add border
+              ),
+              child: Row(
+                children: [
+                  SizedBox(width: 25),
+                  Container(
+                    height: 80, // Custom height for the image container
+                    width: 80,  // Custom width for the image container
+                    decoration: BoxDecoration(
+                      image: DecorationImage(
+                        image: AssetImage("assets/images/logo.png"),
+                      ),
+                      shape: BoxShape.circle,
+                    ),
+                  ),
+                  SizedBox(width: 20), // Add some space between the image and text
+                  Column(
+                    crossAxisAlignment: CrossAxisAlignment.center,
+                    children: [
+                      Text(
+                        "VIGILANCE          ",
+                        style: TextStyle(
+                          fontSize: 32,
+                          fontWeight: FontWeight.w700,
+                        ),
+                      ),
+                      // Add more Text widgets if needed
+                    ],
+                  ),
+                ],
+              ),
             ),
           )
+
         ],
       ),
       floatingActionButton: Column(
@@ -289,21 +315,10 @@ class _LocationScreenState extends State<LocationScreen> {
                 ? const Icon(Icons.arrow_circle_down)
                 : const Icon(Icons.arrow_circle_up),
           ),
-          const SizedBox(height: 16),
-          Align(
-            alignment: Alignment.topLeft,
-            child: FloatingActionButton(
-              onPressed: () async {
-                print("hi");
-
-                _openPopUpWindow(_selectedListIndex);
-
-              },
-              child: const Icon(Icons.message),
-            ),
-          ),
+          const SizedBox(height: 75),
         ],
       ),
+
       floatingActionButtonLocation: FloatingActionButtonLocation.endFloat,
       bottomSheet: _isLocationMenuOpen
           ? Container(

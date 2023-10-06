@@ -14,12 +14,12 @@ class _ChatPageState extends State<ChatPage> {
   }
   TextEditingController nameController = TextEditingController();
   TextEditingController numberController = TextEditingController();
-  final List<String> numbers = ["9529448553","987654321","987654321","987654321","1234567889"];
-  final List<String> contact = ["Harshavardhan","test","test","test","test"];
+  final List<String> contacts = ["9529448553","987654321","987654321","987654321","1234567889"];
+  final List<String> relations = ["Harshavardhan","test","test","test","test"];
   void addItemToList(){
     setState(() {
-      contact.insert(0,nameController.text);
-      numbers.insert(0,numberController.text);
+      relations.insert(0,nameController.text);
+      contacts.insert(0,numberController.text);
     });
   }
   @override
@@ -100,10 +100,10 @@ class _ChatPageState extends State<ChatPage> {
                               child: ListView.builder(
                                   padding: EdgeInsets.all(15),
                                   scrollDirection: Axis.horizontal,
-                                  itemCount: contact.length,
+                                  itemCount: relations.length,
                                   itemBuilder: (context, index) {
                                     return GestureDetector(
-                                      onTap: () => _callNumber(numbers[index]),
+                                      onTap: () => _callNumber(contacts[index]),
                                       child: Column(
                                         children: [
                                           Container(
@@ -129,7 +129,7 @@ class _ChatPageState extends State<ChatPage> {
                                           ),
                                           Container(
                                             child: Text(
-                                              contact[index],
+                                              relations[index],
                                               style: TextStyle(fontSize: 11),
                                             ),
                                           )

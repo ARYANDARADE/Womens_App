@@ -1,8 +1,10 @@
 // ignore_for_file: use_build_context_synchronously
 
+import 'package:basic/ProfilePage.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'LoginPage.dart';
+import 'ProfilePageForm.dart';
 import 'signup_screen.dart';
 
 class Sidebar extends StatelessWidget {
@@ -39,6 +41,22 @@ class Sidebar extends StatelessWidget {
                   color: Color(0xFF606C38), // Set your desired background color here
                 ),
               ),
+            ),
+            SizedBox(height: 10),
+            ListTile(
+              leading: const Icon(Icons.settings, color: Color(0xFF383330)), // Change icon color to black
+              title: const Text('Profile Form',
+                style: TextStyle(
+                    color: Color(0xFF606C38),
+                    fontSize: 18
+                ),),
+              onTap: () {
+                Navigator.of(context).push(
+                  MaterialPageRoute(
+                    builder: (context) => ProfilePageForm(),
+                  ),
+                );
+              },
             ),
             SizedBox(height: 10),
             ListTile(

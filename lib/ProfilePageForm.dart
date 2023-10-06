@@ -1,4 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:firebase_core/firebase_core.dart';
+import 'package:cloud_firestore/cloud_firestore.dart';
+
 
 class ProfilePageForm extends StatefulWidget {
   @override
@@ -10,7 +13,8 @@ class _ProfilePageFormState extends State<ProfilePageForm> {
   String number = '';
   int age = 0;
   String selectedGender = 'Male'; // Default to Male
-  List<Map<String, String>> emergencyContacts = [];
+  List<String> emergencyContactRelations = [];
+  List<String> emergencyContactNumbers = [];
 
   @override
   Widget build(BuildContext context) {
@@ -65,56 +69,73 @@ class _ProfilePageFormState extends State<ProfilePageForm> {
               hint: Text('Select Gender'),
             ),
             Text('Emergency Contacts:'),
-
-              Column(
-                children: [
-                  TextField(
-                    onChanged: (value) {
-                      setState(() {
-                        emergencyContacts[0]['relation'] = value;
-                      });
-                    },
-                    decoration: InputDecoration(labelText: 'Relation'),
-                  ),
-                  TextField(
-                    onChanged: (value) {
-                      setState(() {
-                        emergencyContacts[0]['Contact'] = value;
-                      });
-                    },
-                    decoration: InputDecoration(labelText: 'Contact No.'),
-                  ),
-                  TextField(
-                    onChanged: (value) {
-                      setState(() {
-                        emergencyContacts[1]['relation'] = value;
-                      });
-                    },
-                    decoration: InputDecoration(labelText: 'Relation'),
-                  ),
-                  TextField(
-                    onChanged: (value) {
-                      setState(() {
-                        emergencyContacts[1]['Contact'] = value;
-                      });
-                    },
-                    decoration: InputDecoration(labelText: 'Contact No.'),
-                  ),
-                ],
-              ),
+            Column(
+              children: [
+                TextField(
+                  onChanged: (value) {
+                    setState(() {
+                      emergencyContactRelations.add(value);
+                    });
+                  },
+                  decoration: InputDecoration(labelText: 'Relation'),
+                ),
+                TextField(
+                  onChanged: (value) {
+                    setState(() {
+                      emergencyContactNumbers.add(value);
+                    });
+                  },
+                  decoration: InputDecoration(labelText: 'Contact No.'),
+                ),
+                TextField(
+                  onChanged: (value) {
+                    setState(() {
+                      emergencyContactRelations.add(value);
+                    });
+                  },
+                  decoration: InputDecoration(labelText: 'Relation'),
+                ),
+                TextField(
+                  onChanged: (value) {
+                    setState(() {
+                      emergencyContactNumbers.add(value);
+                    });
+                  },
+                  decoration: InputDecoration(labelText: 'Contact No.'),
+                ),
+              ],
+            ),
             ElevatedButton(
-              onPressed: () {
-                // Handle the submit action here
-                // You can access the entered data like name, number, age, selectedGender, and emergencyContacts
-                // For example, you can print them:
-                print('Name: $name');
-                print('Number: $number');
-                print('Age: $age');
-                print('Gender: $selectedGender');
-                print('Emergency Contacts: $emergencyContacts');
+              onPressed: () async {
+                try {
+                  // Create a Firestore instance
+                  FirebaseFirestore firestore = FirebaseFirestore.instance;
+
+                  // Create a new document in the "profiles" collection
+                  await firestore.collection('profiles').add({
+                    'name': name,
+                    'number': number,
+                    'age': age,
+                    'gender': selectedGender,
+                  });
+
+                  // Create a new document in the "emergencyContacts" collection
+                  for (int i = 0; i < emergencyContactRelations.length; i++) {
+                    await firestore.collection('emergencyContacts').add({
+                      'relation': emergencyContactRelations[i],
+                      'contact': emergencyContactNumbers[i],
+                    });
+                  }
+
+                  // Data successfully stored in Firestore
+                  print('Data stored in Firestore.');
+                } catch (e) {
+                  print('Error: $e');
+                }
               },
               child: Text('Submit'),
             ),
+
           ],
         ),
       ),

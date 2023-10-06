@@ -6,6 +6,7 @@ import 'package:flutter/material.dart';
 import 'LoginPage.dart';
 import 'ProfilePageForm.dart';
 import 'signup_screen.dart';
+import 'ProfilePage.dart';
 
 class Sidebar extends StatelessWidget {
   const Sidebar({super.key});
@@ -20,28 +21,38 @@ class Sidebar extends StatelessWidget {
         child: Column(
           children: <Widget>[
             Align(
-              alignment: Alignment.center, // Align content to the right
+              alignment: Alignment.center,
               child: UserAccountsDrawerHeader(
                 accountName: const Text(''),
                 accountEmail: Text("email"),
-                currentAccountPicture: const CircleAvatar(
-                  backgroundColor: Colors.white,
-                  radius: 50, // Adjust the radius to change the size
-                  child: Icon(
-                    Icons.person,
-                    color: Colors.black, // Change icon color to black
-                    size: 40, // Adjust the icon size
+                currentAccountPicture: InkWell(
+                  onTap: () {
+                    print("ProfilePage");
+                    Navigator.of(context).push(
+                      MaterialPageRoute(
+                        builder: (context) => ProfilePage(),
+                      ),
+                    );
+                  },
+                  child: CircleAvatar(
+                    backgroundColor: Colors.white,
+                    radius: 50,
+                    child: Icon(
+                      Icons.person,
+                      color: Colors.black,
+                      size: 50,
+                    ),
                   ),
                 ),
                 decoration: BoxDecoration(
                   borderRadius: BorderRadius.only(
-                    // topRight: Radius.circular(20.0),
                     bottomRight: Radius.circular(30.0),
                   ),
-                  color: Color(0xFF606C38), // Set your desired background color here
+                  color: Color(0xFF606C38),
                 ),
               ),
             ),
+
             SizedBox(height: 10),
             ListTile(
               leading: const Icon(Icons.settings, color: Color(0xFF383330)), // Change icon color to black

@@ -305,31 +305,7 @@ class _LocationScreenState extends State<LocationScreen> {
 
         ],
       ),
-      floatingActionButton: Column(
-        mainAxisAlignment: MainAxisAlignment.end,
-        crossAxisAlignment: CrossAxisAlignment.end,
-        children: [
-          FloatingActionButton(
-            onPressed: _toggleLocationMenu,
-            child: _isLocationMenuOpen
-                ? const Icon(Icons.arrow_circle_down)
-                : const Icon(Icons.arrow_circle_up),
-          ),
-          const SizedBox(height: 16),
-          Align(
-            alignment: Alignment.topLeft,
-            child: FloatingActionButton(
-              onPressed: () async {
-                print("hi");
 
-                _openPopUpWindow(_selectedListIndex);
-
-              },
-              child: const Icon(Icons.message),
-            ),
-          ),
-        ],
-      ),
       floatingActionButtonLocation: FloatingActionButtonLocation.endFloat,
       bottomSheet: _isLocationMenuOpen
           ? Container(

@@ -7,6 +7,7 @@ import 'LoginPage.dart';
 import 'ProfilePageForm.dart';
 import 'signup_screen.dart';
 import 'ProfilePage.dart';
+import 'LoginPage.dart';
 
 class Sidebar extends StatelessWidget {
   const Sidebar({super.key});
@@ -95,6 +96,22 @@ class Sidebar extends StatelessWidget {
                 Navigator.of(context).push(
                   MaterialPageRoute(
                     builder: (context) => SignupScreen(),
+                  ),
+                );
+              },
+            ),
+            SizedBox(height: 10),
+            ListTile(
+              leading: const Icon(Icons.login, color: Color(0xff0c3e42),size: 35,), // Change icon color to black
+              title: const Text('Login',
+                style: TextStyle(
+                    color: Color(0xff0c3e42),
+                    fontSize: 18
+                ),),
+              onTap: () {
+                Navigator.of(context).push(
+                  MaterialPageRoute(
+                    builder: (context) => LoginPage(),
                   ),
                 );
               },

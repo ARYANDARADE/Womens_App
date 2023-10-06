@@ -18,6 +18,7 @@ class BusStationCard extends StatelessWidget {
             },
             child: Card(
               elevation: 3,
+              color: Color(0xffff6b81),
               shape: RoundedRectangleBorder(
                 borderRadius: BorderRadius.circular(20),
               ),
@@ -26,7 +27,7 @@ class BusStationCard extends StatelessWidget {
                 width: 50,
                 child: Center(
                   child: Image.asset(
-                    'assets/images/buss.png',
+                    'assets/images/buss-removebg-preview.png',
                     height: 32,
                   ),
                 ),

@@ -144,87 +144,87 @@ class ProfilePage extends StatelessWidget {
                         ],
                       ),
                     ),
-                    SizedBox(height: 20),
-                    ListTile(
-                      title: Row(
-                        children:[
-                          Text('Emergency Contact:',style: TextStyle(
-                            color:Color(0xff37949d),
-                            fontSize: 30,
-                          ),),
-                        ],
-                      ),
-                      subtitle: Column(
-                        crossAxisAlignment: CrossAxisAlignment.start,
-                        children: [
-                          Container(
-                            width: 400,
-                            height: 50,
-                            decoration: BoxDecoration(
-                              //color: Color(0xfff6b4bb),
-                              border: Border.all(
-                                color: Color(0xff37949d),
-                                width: 2.0,
-                              ),
-                              borderRadius: BorderRadius.circular(10),
-                            ),
-                            child: Center(
-                              child: Text(
-                                '12313123',
-                                style: TextStyle(
-                                  color: Colors.black,
-                                  fontSize: 25,
-                                ),
-                              ),
-                            ),
-                          ),
-                          SizedBox(height: 15,),
-                          Container(
-                            width: 400,
-                            height: 50,
-                            decoration: BoxDecoration(
-                              // color: Color(0xfff6b4bb),
-                              border: Border.all(
-                                color: Color(0xff37949d),
-                                width: 2.0,
-                              ),
-                              borderRadius: BorderRadius.circular(10),
-                            ),
-                            child: Center(
-                              child: Text(
-                                '932424234',
-                                style: TextStyle(
-                                  color: Color(0xfff6b4bb),
-                                  fontSize: 25,
-                                ),
-                              ),
-                            ),
-                          ),
-                          SizedBox(height: 15,),
-                          Container(
-                            width: 400,
-                            height: 50,
-                            decoration: BoxDecoration(
-                              // color: Color(0xfff6b4bb),
-                              border: Border.all(
-                                color: Color(0xff37949d),
-                                width: 2.0,
-                              ),
-                              borderRadius: BorderRadius.circular(10),
-                            ),
-                            child: Center(
-                              child: Text(
-                                '634532535',
-                                style: TextStyle(
-                                  color: Color(0xfff6b4bb),
-                                  fontSize: 25,
-                                ),
-                              ),
-                            ),
-                          ),
-                        ],
-                      ),
-                    ),
+                    // SizedBox(height: 20),
+                    // ListTile(
+                    //   title: Row(
+                    //     children:[
+                    //       Text('Emergency Contact:',style: TextStyle(
+                    //         color:Color(0xff37949d),
+                    //         fontSize: 30,
+                    //       ),),
+                    //     ],
+                    //   ),
+                    //   subtitle: Column(
+                    //     crossAxisAlignment: CrossAxisAlignment.start,
+                    //     children: [
+                    //       Container(
+                    //         width: 400,
+                    //         height: 50,
+                    //         decoration: BoxDecoration(
+                    //           //color: Color(0xfff6b4bb),
+                    //           border: Border.all(
+                    //             color: Color(0xff37949d),
+                    //             width: 2.0,
+                    //           ),
+                    //           borderRadius: BorderRadius.circular(10),
+                    //         ),
+                    //         child: Center(
+                    //           child: Text(
+                    //             '12313123',
+                    //             style: TextStyle(
+                    //               color: Colors.black,
+                    //               fontSize: 25,
+                    //             ),
+                    //           ),
+                    //         ),
+                    //       ),
+                    //       SizedBox(height: 15,),
+                    //       Container(
+                    //         width: 400,
+                    //         height: 50,
+                    //         decoration: BoxDecoration(
+                    //           // color: Color(0xfff6b4bb),
+                    //           border: Border.all(
+                    //             color: Color(0xff37949d),
+                    //             width: 2.0,
+                    //           ),
+                    //           borderRadius: BorderRadius.circular(10),
+                    //         ),
+                    //         child: Center(
+                    //           child: Text(
+                    //             '932424234',
+                    //             style: TextStyle(
+                    //               color: Color(0xfff6b4bb),
+                    //               fontSize: 25,
+                    //             ),
+                    //           ),
+                    //         ),
+                    //       ),
+                    //       SizedBox(height: 15,),
+                    //       Container(
+                    //         width: 400,
+                    //         height: 50,
+                    //         decoration: BoxDecoration(
+                    //           // color: Color(0xfff6b4bb),
+                    //           border: Border.all(
+                    //             color: Color(0xff37949d),
+                    //             width: 2.0,
+                    //           ),
+                    //           borderRadius: BorderRadius.circular(10),
+                    //         ),
+                    //         child: Center(
+                    //           child: Text(
+                    //             '634532535',
+                    //             style: TextStyle(
+                    //               color: Color(0xfff6b4bb),
+                    //               fontSize: 25,
+                    //             ),
+                    //           ),
+                    //         ),
+                    //       ),
+                    //     ],
+                    //   ),
+                    // ),
                     SizedBox(height: 20),
                     ListTile(
                       title: Row(

@@ -5,6 +5,7 @@ import 'package:basic/policeemergency.dart';
 import 'package:flutter/material.dart';
 import 'AmbulanceEmergency.dart';
 import 'FirebrigadeEmergency.dart';
+import 'WomenSafety.dart';
 import 'PharmacyCard.dart';
 import 'PoliceStationCard.dart';
 class ReportPage extends StatelessWidget {
@@ -35,6 +36,7 @@ class ReportPage extends StatelessWidget {
                           child:FirebrigadeEmergency ()
                       ),
                       Container(
+                          child:WomenSafety ()
                       ),
 
                     ],

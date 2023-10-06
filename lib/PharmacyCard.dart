@@ -22,6 +22,7 @@ class PharmacyCard extends StatelessWidget {
               },
               child: Card(
                 elevation: 3,
+                color: Color(0xffff6b81),
                 shape: RoundedRectangleBorder(
                   borderRadius: BorderRadius.circular(20),
                 ),

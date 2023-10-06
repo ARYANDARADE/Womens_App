@@ -28,17 +28,18 @@ class HomePage extends StatefulWidget {
 
 class _HomePageState extends State<HomePage> {
   final List<String> items = [
-    'Yes',
-    'Yup',
-    'May be yes',
-    'Yup',
+    "Know the human body's weak points",
+    "Rotate your wrists to free your hands",
+    "Drop low if you're grabbed from behind",
+    "Focus on the thumbs if you're being choke",
   ];
   String? selectedValue;
 
   final List<String> drop = [
-    'Yes',
-    'Yup',
-    'May be yes',
+    'Plan travel in advance',
+    "Don't blindly trust strangers",
+    "Keep your self defence ready",
+    "During Night travel keep your friend updated",
   ];
   String? dropValue;
   @override
@@ -62,7 +63,7 @@ class _HomePageState extends State<HomePage> {
                     onPressed: () {
                       Scaffold.of(context).openDrawer();
                     },
-                    icon: Icon(Icons.menu_outlined, size: screenWidth * 0.11,color: Color(0xff37949d),),
+                    icon: Icon(Icons.menu_open, size: screenWidth * 0.11,color: Colors.black,),
                   ),
                 ),
               ),
@@ -105,24 +106,39 @@ class _HomePageState extends State<HomePage> {
                     scrollDirection: Axis.horizontal,
                     children: [
                       GestureDetector(
-                        onTap: () {
-                          // Open link for the first image
-                          launch('https://www.nationalgeographic.com/travel/article/should-women-travel-solo-india-tips');
-                        },
-                        child: Container(
-                          width: 330,
-                          decoration: BoxDecoration(
-                            color: Colors.blue,
-                            border: Border.all(color: Color(0xffff6b81), width: 2.0),
-                            borderRadius: BorderRadius.all(Radius.circular(20.0)),
-                          ),
-                          margin: EdgeInsets.all(8),
-                          child: ClipRRect(
-                            borderRadius: BorderRadius.circular(20.0),
-                            child: Image.asset('assets/images/NYC subway.jpeg', fit: BoxFit.cover),
+                      onTap: () {
+                    // Open link for the first image
+                    launch('https://www.nationalgeographic.com/travel/article/should-women-travel-solo-india-tips');
+              },
+                child: Container(
+                  width: 330, // Set this width to match the width of your image
+                  decoration: BoxDecoration(
+                    border: Border.all(color: Colors.black, width: 2.0),
+                    borderRadius: BorderRadius.all(Radius.circular(20.0)),
+                  ),
+                  margin: EdgeInsets.all(8),
+                  child: ClipRRect(
+                    borderRadius: BorderRadius.circular(20.0),
+                    child: Stack(
+                      children: [
+                        Image.asset('assets/images/NYC subway.jpeg', width: 330, fit: BoxFit.cover),
+                        Positioned(
+                          bottom: 8.0,
+                          left: 8.0,
+                          child: Text(
+                            'Road Safety Articles',
+                            style: TextStyle(
+                              color: Colors.white,
+                              fontSize: 16.0,
+                              fontWeight: FontWeight.bold,
+                            ),
                           ),
                         ),
-                      ),
+                      ],
+                    ),
+                  ),
+                ),
+              ),
                       GestureDetector(
                         onTap: () {
                           // Open link for the first image
@@ -131,14 +147,30 @@ class _HomePageState extends State<HomePage> {
                         child: Container(
                           width: 330,
                           decoration: BoxDecoration(
-                            color: Colors.blue,
-                            border: Border.all(color: Color(0xffff6b81), width: 2.0),
+                            color: Color(0xFF597934),
+                            border: Border.all(color: Colors.black, width: 2.0),
                             borderRadius: BorderRadius.all(Radius.circular(20.0)),
                           ),
                           margin: EdgeInsets.all(8),
                           child: ClipRRect(
                             borderRadius: BorderRadius.circular(20.0),
-                            child: Image.asset('assets/images/sd1.jpg', fit: BoxFit.cover),
+                            child: Stack(
+                              children: [
+                                Image.asset('assets/images/sd1.jpg',width: 330, fit: BoxFit.fill),
+                                Positioned(
+                                  bottom: 8.0,
+                                  left: 8.0,
+                                  child: Text(
+                                    'Self Defence Techniques',
+                                    style: TextStyle(
+                                      color: Colors.white,
+                                      fontSize: 16.0,
+                                      fontWeight: FontWeight.bold,
+                                    ),
+                                  ),
+                                ),
+                              ],
+                            ),
                           ),
                         ),
                       ),
@@ -150,15 +182,30 @@ class _HomePageState extends State<HomePage> {
                         child: Container(
                           width: 330,
                           decoration: BoxDecoration(
-                            border: Border.all(color: Color(0xffff6b81), width: 2.0),
-                            color: Colors.blue,
+                            color: Colors.black,
+                            border: Border.all(color: Colors.black, width: 2.0),
                             borderRadius: BorderRadius.all(Radius.circular(20.0)),
                           ),
                           margin: EdgeInsets.all(8),
                           child: ClipRRect(
                             borderRadius: BorderRadius.circular(20.0),
-
-                            child: Image.asset('assets/images/Top 10 Health Benefits of Martial Arts.jpeg', fit: BoxFit.cover),
+                            child: Stack(
+                              children: [
+                                Image.asset('assets/images/Top 10 Health Benefits of Martial Arts.jpeg',width: 330, fit: BoxFit.fill),
+                                Positioned(
+                                  bottom: 8.0,
+                                  left: 8.0,
+                                  child: Text(
+                                    'Things To Know While Travelling Alone',
+                                    style: TextStyle(
+                                      color: Colors.white,
+                                      fontSize: 16.0,
+                                      fontWeight: FontWeight.bold,
+                                    ),
+                                  ),
+                                ),
+                              ],
+                            ),
                           ),
                         ),
                       ),
@@ -185,7 +232,7 @@ class _HomePageState extends State<HomePage> {
                           ),
                           Expanded(
                             child: Text(
-                              'Harsh Pedo??',
+                              'Safety Tips For Womens',
                               style: TextStyle(
                                 fontSize: 16,
                                 fontWeight: FontWeight.bold,
@@ -204,7 +251,7 @@ class _HomePageState extends State<HomePage> {
                           style: const TextStyle(
                             fontSize: 14,
                             fontWeight: FontWeight.bold,
-                            color: Colors.white,
+                            color: Colors.black,
                           ),
                           overflow: TextOverflow.ellipsis,
                         ),
@@ -240,7 +287,7 @@ class _HomePageState extends State<HomePage> {
                         width: 370,
                         decoration: BoxDecoration(
                           borderRadius: BorderRadius.circular(14),
-                           color: Color(0xfff3bbc4),
+                           color: Color(0xffeca0ac),
                         ),
                         //offset: const Offset(-20, 0),
                         scrollbarTheme: ScrollbarThemeData(
@@ -275,7 +322,7 @@ class _HomePageState extends State<HomePage> {
                         ),
                         Expanded(
                           child: Text(
-                            'Varun Gay??',
+                            'Tips For Travelling ',
                             style: TextStyle(
                               fontSize: 16,
                               fontWeight: FontWeight.bold,
@@ -294,7 +341,7 @@ class _HomePageState extends State<HomePage> {
                         style: const TextStyle(
                           fontSize: 14,
                           fontWeight: FontWeight.bold,
-                          color: Colors.white,
+                          color: Colors.black,
                         ),
                         overflow: TextOverflow.ellipsis,
                       ),

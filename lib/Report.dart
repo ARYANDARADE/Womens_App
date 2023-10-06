@@ -8,7 +8,19 @@ import 'FirebrigadeEmergency.dart';
 import 'WomenSafety.dart';
 import 'PharmacyCard.dart';
 import 'PoliceStationCard.dart';
-class ReportPage extends StatelessWidget {
+import 'package:dropdown_button2/dropdown_button2.dart';
+import 'package:url_launcher/url_launcher.dart';
+class ReportPage extends StatefulWidget {
+  @override
+  _ReportPageState createState() => _ReportPageState();
+}
+class _ReportPageState extends State<ReportPage> {
+  final List<String> items = [
+    "https://morth.nic.in/public-grievances",
+    "https://sakhi.gov.in/home/resources",
+    "https://citizen.mahapolice.gov.in/Citizen/MH/Women.aspx",
+  ];
+  String? selectedValue;
   @override
   Widget build(BuildContext context) {
     final screenWidth = MediaQuery.of(context).size.width;
@@ -67,7 +79,101 @@ class ReportPage extends StatelessWidget {
           // ),
           Container(
             child: LiveSafe(),
-          )
+          ),
+          SizedBox(height: 30,),
+          Positioned(
+            top:430,
+            left: 20,
+            right: 20,
+            child:DropdownButtonHideUnderline(
+              child: DropdownButton2<String>(
+                isExpanded: true,
+                hint:  Row(
+                  children: [
+                    Image.asset(
+                      'assets/images/goverment (1).png', // Replace with the actual path to your icon
+                      width: 60,
+                      height: 60,
+                      color: Colors.white,
+                    ),
+                    SizedBox(
+                      width: 10,
+                    ),
+                    Expanded(
+                      child: Text(
+                        'Complaint To Government Officals',
+                        style: TextStyle(
+                          fontSize: 15,
+                          fontWeight: FontWeight.bold,
+                          color: Colors.white,
+                        ),
+                        overflow: TextOverflow.ellipsis,
+                      ),
+                    ),
+                  ],
+                ),
+                items: items
+                    .map((String item) => DropdownMenuItem<String>(
+                  value: item,
+                  child: Text(
+                    item,
+                    style: const TextStyle(
+                      fontSize: 14,
+                      fontWeight: FontWeight.bold,
+                      color: Colors.black,
+                    ),
+                    overflow: TextOverflow.ellipsis,
+                  ),
+                ))
+                    .toList(),
+                value: selectedValue,
+                onChanged: (value) {
+                  setState(() {
+                    selectedValue = value;
+                  });
+                  if (value != null) {
+                    launch(value);
+                  }
+                },
+                buttonStyleData: ButtonStyleData(
+                  height: 50,
+                  width: 370,
+                  padding: const EdgeInsets.only(left: 14, right: 14),
+                  decoration: BoxDecoration(
+                    borderRadius: BorderRadius.circular(14),
+                    color: const Color(0xffff6b81),
+                  ),
+                  elevation: 2,
+                ),
+                iconStyleData: const IconStyleData(
+                  icon: Icon(
+                    Icons.arrow_downward_outlined,
+                    size: 30,
+                  ),
+                  iconSize: 30,
+                  iconEnabledColor: Colors.white,
+                  iconDisabledColor: Colors.grey,
+                ),
+                dropdownStyleData: DropdownStyleData(
+                  maxHeight: 200,
+                  width: 370,
+                  decoration: BoxDecoration(
+                    borderRadius: BorderRadius.circular(14),
+                    color: Color(0xffeca0ac),
+                  ),
+                  //offset: const Offset(-20, 0),
+                  scrollbarTheme: ScrollbarThemeData(
+                    radius: const Radius.circular(40),
+                    thickness: MaterialStateProperty.all(6),
+                    thumbVisibility: MaterialStateProperty.all(true),
+                  ),
+                ),
+                menuItemStyleData: const MenuItemStyleData(
+                  height: 40,
+                  padding: EdgeInsets.only(left: 14, right: 14),
+                ),
+              ),
+            ), ),
         ],
 
       )

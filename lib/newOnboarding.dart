@@ -6,7 +6,7 @@ import 'package:flutter/material.dart';
 import 'package:introduction_screen/introduction_screen.dart';
 import 'FirebaseAuth.dart';
 import 'model/onboardingModel.dart';
-
+import 'Location.dart';
 class NewOnBoardingScreen extends StatefulWidget {
   const NewOnBoardingScreen({super.key});
   static const String id = "onboarding screen";

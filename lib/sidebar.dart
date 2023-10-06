@@ -17,8 +17,9 @@ class Sidebar extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Drawer(
+      width: 230,
       child: Container(
-        color: Color(0xffd3e8ef).withOpacity(0.6),
+        color: Color(0xffd3e8ef).withOpacity(0.9),
         // decoration: BoxDecoration(
         //   gradient: LinearGradient(
         //     begin: Alignment.topCenter,
@@ -38,7 +39,8 @@ class Sidebar extends StatelessWidget {
                 accountName: const Text(''),
                 accountEmail: Text("email",
                 style: TextStyle(
-                  fontSize: 25
+                  fontSize: 25,
+                  color: Colors.black,
                 ),),
                 currentAccountPicture: InkWell(
                   onTap: () {
@@ -63,7 +65,7 @@ class Sidebar extends StatelessWidget {
                   borderRadius: BorderRadius.only(
                     bottomRight: Radius.circular(30.0),
                   ),
-                  color: Color(0xffff6b81).withOpacity(0.6),
+                  color: Color(0xff96d9e3).withOpacity(1),
                 ),
               ),
             ),

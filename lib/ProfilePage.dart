@@ -1,6 +1,12 @@
+
 import 'package:flutter/material.dart';
 
 class ProfilePage extends StatelessWidget {
+  String Age = "20";
+  String Gender = "Male";
+  String Username = "Pritesh Verma";
+  String Address = "Gokul Dham";
+
   @override
   Widget build(BuildContext context) {
     final screenWidth = MediaQuery.of(context).size.width;
@@ -49,7 +55,7 @@ class ProfilePage extends StatelessWidget {
               ),
               SizedBox(height: 15),
               Text(
-                'Username',
+                Username,
                 style: TextStyle(fontSize: 25, fontWeight: FontWeight.bold, color: Colors.white),
               ),
               SizedBox(height: 23),
@@ -98,7 +104,7 @@ class ProfilePage extends StatelessWidget {
                             ),
                             child: Center(
                               child: Text(
-                                '20',
+                                Age,
                                 style: TextStyle(
                                   color: Colors.black,
                                   fontSize: 25,
@@ -133,7 +139,7 @@ class ProfilePage extends StatelessWidget {
                             ),
                             child: Center(
                               child: Text(
-                                'Male',
+                                Gender,
                                 style: TextStyle(
                                   color: Colors.black,
                                   fontSize: 25,
@@ -249,7 +255,7 @@ class ProfilePage extends StatelessWidget {
                             ),
                             child: Center(
                               child: Text(
-                                'asdadasda',
+                                Address,
                                 style: TextStyle(
                                   color: Colors.black,
                                   fontSize: 25,

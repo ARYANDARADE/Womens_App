@@ -23,12 +23,12 @@ class HospitalCard extends StatelessWidget {
                 borderRadius: BorderRadius.circular(20),
               ),
               child: Container(
-                height: 50,
-                width: 50,
+                height: 60,
+                width: 60,
                 child: Center(
                   child: Image.asset(
                     'assets/images/hospital.png',
-                    height: 32,
+                    height: 40,
                   ),
                 ),
               ),

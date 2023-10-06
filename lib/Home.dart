@@ -69,11 +69,11 @@ class _HomePageState extends State<HomePage> {
                 ),
               ),
               Positioned(
-                top: 37,
-                right: 15,
+                top: 40,
+                right: 20,
                   child: Container(
-                    height: 90,
-                    width: 90,
+                    height: 85,
+                    width: 85,
                     decoration: BoxDecoration(
                       image: DecorationImage(
                         image: AssetImage("assets/images/logo.png"),
@@ -84,12 +84,12 @@ class _HomePageState extends State<HomePage> {
               ),
                 Positioned(
                     top: 60,
-                    left: 100,
+                    left: 90,
                     child: Container(
                       child: Text(
                         "VIGILANCE",
                         style: TextStyle(
-                          fontSize: 32,
+                          fontSize: 30,
                           fontWeight: FontWeight.w700,
                         ),
                       ),
@@ -97,8 +97,8 @@ class _HomePageState extends State<HomePage> {
                 ),
 
               Positioned(
-                top: 145,
-                left: 0,
+                top: 135,
+                left: 5,
                 right: 0,
                 child: Container(
                   height: 250,
@@ -111,15 +111,16 @@ class _HomePageState extends State<HomePage> {
                           launch('https://www.nationalgeographic.com/travel/article/should-women-travel-solo-india-tips');
                         },
                         child: Container(
-                          width: 360,
+                          width: 330,
                           decoration: BoxDecoration(
                             color: Colors.blue,
+                            border: Border.all(color: Colors.black, width: 2.0),
                             borderRadius: BorderRadius.all(Radius.circular(20.0)),
                           ),
                           margin: EdgeInsets.all(8),
                           child: ClipRRect(
                             borderRadius: BorderRadius.circular(20.0),
-                            child: Image.asset('assets/images/Different people inside crowded subway Illustration #56771188.jpg', fit: BoxFit.cover),
+                            child: Image.asset('assets/images/NYC subway.jpeg', fit: BoxFit.cover),
                           ),
                         ),
                       ),
@@ -129,15 +130,16 @@ class _HomePageState extends State<HomePage> {
                           launch('https://seniority.in/blog/post/womens-safety-self-defense-tips-and-why-is-it-important');
                         },
                         child: Container(
-                          width: 350,
+                          width: 330,
                           decoration: BoxDecoration(
                             color: Colors.blue,
+                            border: Border.all(color: Colors.black, width: 2.0),
                             borderRadius: BorderRadius.all(Radius.circular(20.0)),
                           ),
                           margin: EdgeInsets.all(8),
                           child: ClipRRect(
                             borderRadius: BorderRadius.circular(20.0),
-                            child: Image.asset('assets/images/selfdefence.jpg', fit: BoxFit.cover),
+                            child: Image.asset('assets/images/sd1.jpg', fit: BoxFit.cover),
                           ),
                         ),
                       ),
@@ -147,15 +149,17 @@ class _HomePageState extends State<HomePage> {
                           launch('https://www.realsimple.com/health/preventative-health/safety/4-essential-self-defense-moves-everyone-should-know');
                         },
                         child: Container(
-                          width: 350,
+                          width: 330,
                           decoration: BoxDecoration(
+                            border: Border.all(color: Colors.black, width: 2.0),
                             color: Colors.blue,
                             borderRadius: BorderRadius.all(Radius.circular(20.0)),
                           ),
                           margin: EdgeInsets.all(8),
                           child: ClipRRect(
                             borderRadius: BorderRadius.circular(20.0),
-                            child: Image.asset('assets/images/marykom.jpg', fit: BoxFit.cover),
+
+                            child: Image.asset('assets/images/Top 10 Health Benefits of Martial Arts.jpeg', fit: BoxFit.cover),
                           ),
                         ),
                       ),
@@ -166,6 +170,7 @@ class _HomePageState extends State<HomePage> {
               Positioned(
                   top:430,
                   left: 20,
+                  right: 20,
                   child:DropdownButtonHideUnderline(
                     child: DropdownButton2<String>(
                       isExpanded: true,
@@ -214,7 +219,7 @@ class _HomePageState extends State<HomePage> {
                       },
                       buttonStyleData: ButtonStyleData(
                         height: 50,
-                        width: 350,
+                        width: 300,
                         padding: const EdgeInsets.only(left: 14, right: 14),
                         decoration: BoxDecoration(
                           borderRadius: BorderRadius.circular(14),
@@ -224,15 +229,15 @@ class _HomePageState extends State<HomePage> {
                       ),
                       iconStyleData: const IconStyleData(
                         icon: Icon(
-                          Icons.arrow_forward_ios_outlined,
+                          Icons.arrow_downward_outlined,
                         ),
-                        iconSize: 14,
+                        iconSize: 20,
                         iconEnabledColor: Colors.white,
                         iconDisabledColor: Colors.grey,
                       ),
                       dropdownStyleData: DropdownStyleData(
                         maxHeight: 200,
-                        width: 350,
+                        width: 320,
                         decoration: BoxDecoration(
                           borderRadius: BorderRadius.circular(14),
                            color: Color(0xff7eabb6),
@@ -254,6 +259,7 @@ class _HomePageState extends State<HomePage> {
               Positioned(
                 top:500,
                 left: 20,
+                right: 20,
                 child:DropdownButtonHideUnderline(
                   child: DropdownButton2<String>(
                     isExpanded: true,
@@ -302,7 +308,7 @@ class _HomePageState extends State<HomePage> {
                     },
                     buttonStyleData: ButtonStyleData(
                       height: 50,
-                      width: 350,
+                      width: 300,
                       padding: const EdgeInsets.only(left: 14, right: 14),
                       decoration: BoxDecoration(
                         borderRadius: BorderRadius.circular(14),
@@ -315,15 +321,15 @@ class _HomePageState extends State<HomePage> {
                     ),
                     iconStyleData: const IconStyleData(
                       icon: Icon(
-                        Icons.arrow_forward_ios_outlined,
+                        Icons.arrow_downward_outlined,
                       ),
-                      iconSize: 14,
+                      iconSize: 20,
                       iconEnabledColor: Colors.white,
                       iconDisabledColor: Colors.grey,
                     ),
                     dropdownStyleData: DropdownStyleData(
                       maxHeight: 200,
-                      width: 350,
+                      width: 320,
                       decoration: BoxDecoration(
                         borderRadius: BorderRadius.circular(14),
                         color: Color(0xff7eabb6),

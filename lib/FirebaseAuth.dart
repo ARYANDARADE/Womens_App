@@ -1,6 +1,7 @@
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:firebase_core/firebase_core.dart';
 FirebaseAuth auth = FirebaseAuth.instance;
+
 Future <void> AnonymousSignup() async {
   try {
     UserCredential userCredential = await auth.signInAnonymously();
@@ -14,6 +15,7 @@ Future <void> AnonymousSignup() async {
     print("error");
   }
 }
+
 
 
 // Future <void> PhoneSignup(String phoneNumber) async {

@@ -8,9 +8,7 @@ import 'Report.dart';
 import 'Location.dart';
 import 'quotes.dart';
 import 'sidebar.dart';
-import 'Marykom.dart';
-import 'self defence.dart';
-import 'WomenSafety.dart';
+
 import 'package:horizontal_list_view/horizontal_list_view.dart';
 import 'package:url_launcher/url_launcher.dart';
 import 'package:flutter_dropdown/flutter_dropdown.dart';

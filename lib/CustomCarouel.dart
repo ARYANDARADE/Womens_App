@@ -12,34 +12,34 @@ class Carousel extends StatelessWidget {
       height: 300,
       child: ListView.builder(
         scrollDirection: Axis.horizontal,
-          itemCount: items.length,
-          itemBuilder: (context, index) {
-            return GestureDetector(
-              onTap: () => _launchURL(urls[index]),
-              child: Card(
-                elevation: 5.0,
-                margin: EdgeInsets.all(10.0),
-                child: Column(
-                  children: [
-                    Container(
-                      width: double.infinity,
-                      height: 200.0,
-                      child: Image.asset(
-                        images[index],
-                        fit: BoxFit.cover,
-                      ),
+        itemCount: items.length,
+        itemBuilder: (context, index) {
+          return GestureDetector(
+            onTap: () => _launchURL(urls[index]),
+            child: Card(
+              elevation: 5.0,
+              margin: EdgeInsets.all(10.0),
+              child: Column(
+                children: [
+                  Container(
+                    width: double.infinity,
+                    height: 200.0,
+                    child: Image.asset(
+                      images[index],
+                      fit: BoxFit.cover,
                     ),
-                    ListTile(
-                      title: Text(items[index]),
-                      subtitle: Text('Tap to open web page'),
-                      leading: Icon(Icons.open_in_browser),
-                    ),
-                  ],
-                ),
+                  ),
+                  ListTile(
+                    title: Text(items[index]),
+                    subtitle: Text('Tap to open web page'),
+                    leading: Icon(Icons.open_in_browser),
+                  ),
+                ],
               ),
-            );
-          },
-        ),
+            ),
+          );
+        },
+      ),
     );
   }
 

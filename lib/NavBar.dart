@@ -1,5 +1,6 @@
 import 'package:basic/Notification.dart';
-
+import 'package:shake/shake.dart';
+import 'package:telephony/telephony.dart';
 import 'Chat.dart';
 import 'sidebar.dart';
 import 'package:curved_navigation_bar/curved_navigation_bar.dart';
@@ -21,6 +22,33 @@ class NavBar extends StatefulWidget {
 class _NavBarState extends State<NavBar> {
   int selectedpage = 0;
   final _pageOptions = [HomePage(),ChatPage(),LocationScreen(),ReportPage(),notificationPage()];
+  @override
+  void initState() {
+    super.initState();
+    ShakeDetector detector = ShakeDetector.autoStart(
+      onPhoneShake: () async {
+        Telephony telephony = Telephony.instance;
+
+        await telephony.sendSms(
+            to: "8356860310",
+            message: "Pritesh Gay"
+        );
+        ScaffoldMessenger.of(context).showSnackBar(
+          const SnackBar(
+            content: Text('SOS Sent!'),
+          ),
+        );
+        // Do stuff on phone shake
+      },
+      minimumShakeCount:1,
+      shakeSlopTimeMS: 500,
+      shakeCountResetTime: 15000,
+      shakeThresholdGravity: 6,
+    );
+
+    // To close: detector.stopListening();
+    // ShakeDetector.waitForStart() waits for user to call detector.startListening();
+  }
   @override
   Widget build(BuildContext context) {
     final screenWidth = MediaQuery.of(context).size.width;

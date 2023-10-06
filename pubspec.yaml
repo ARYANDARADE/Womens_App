@@ -32,7 +32,7 @@ dependencies:
   flutter:
     sdk: flutter
 
-  firebase_core: ^2.17.0
+  firebase_core: ^2.15.1
   firebase_auth: ^4.9.0
 
   # The following adds the Cupertino Icons font to your application.
@@ -60,15 +60,20 @@ dependencies:
   background_sms: ^0.0.4
   permission_handler: ^11.0.0
   grouped_list: ^4.2.0
+  webview_flutter: ^4.4.1
   horizontal_list_view: ^1.1.0
-  sms_autofill: ^2.3.0
+  shake: ^2.2.0
+
+
+
   dropdown_button2: ^2.3.9
   flutter_dropdown: ^1.0.1+hotfix.1
+  telephony: ^0.2.0
+
 
 dev_dependencies:
   flutter_test:
     sdk: flutter
-  flutter_launcher_icons: ^0.13.1
 
   # The "flutter_lints" package below contains a set of recommended lints to
   # encourage good coding practices. The lint set provided by the package is
@@ -76,24 +81,6 @@ dev_dependencies:
   # package. See that file for information about deactivating specific lint
   # rules and activating additional ones.
   flutter_lints: ^2.0.0
-
-flutter_launcher_icons:
-  android: "launcher_icon"
-  ios: true
-  image_path: "assets/images/logo.png"
-  min_sdk_android: 21 # android min sdk min:16, default 21
-  web:
-    generate: true
-    image_path: "assets/images/logo.png"
-    background_color: "#hexcode"
-    theme_color: "#hexcode"
-  windows:
-    generate: true
-    image_path: "assets/images/logo.png"
-    icon_size: 48 # min:48, max:256, default: 48
-  macos:
-    generate: true
-    image_path: "assets/images/logo.png"
 
 # For information on the generic Dart part of this file, see the
 # following page: https://dart.dev/tools/pub/pubspec

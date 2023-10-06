@@ -17,14 +17,28 @@ class Sidebar extends StatelessWidget {
   Widget build(BuildContext context) {
     return Drawer(
       child: Container(
-        color: Color(0xFFD4BDA1),
+        color: Color(0xffd3e8ef),
+        // decoration: BoxDecoration(
+        //   gradient: LinearGradient(
+        //     begin: Alignment.topCenter,
+        //     end: Alignment.bottomCenter,
+        //     colors: [
+        //       Color(0xffff6b81), // Start color
+        //       Color(0xfff1dadd), // Clash in the center
+        //       Color(0xffcdebf1), // Bottom color
+        //     ],
+        //   ),
+        // ),
         child: Column(
           children: <Widget>[
             Align(
               alignment: Alignment.center,
               child: UserAccountsDrawerHeader(
                 accountName: const Text(''),
-                accountEmail: Text("email"),
+                accountEmail: Text("email",
+                style: TextStyle(
+                  fontSize: 25
+                ),),
                 currentAccountPicture: InkWell(
                   onTap: () {
                     print("ProfilePage");
@@ -48,17 +62,17 @@ class Sidebar extends StatelessWidget {
                   borderRadius: BorderRadius.only(
                     bottomRight: Radius.circular(30.0),
                   ),
-                  color: Color(0xFF606C38),
+                  color: Color(0xffff6b81),
                 ),
               ),
             ),
 
             SizedBox(height: 10),
             ListTile(
-              leading: const Icon(Icons.settings, color: Color(0xFF383330)), // Change icon color to black
+              leading: const Icon(Icons.contact_page, color: Color(0xff0c3e42),size: 35,), // Change icon color to black
               title: const Text('Profile Form',
                 style: TextStyle(
-                    color: Color(0xFF606C38),
+                    color: Color(0xff0c3e42),
                     fontSize: 18
                 ),),
               onTap: () {
@@ -71,10 +85,10 @@ class Sidebar extends StatelessWidget {
             ),
             SizedBox(height: 10),
             ListTile(
-              leading: const Icon(Icons.settings, color: Color(0xFF383330)), // Change icon color to black
+              leading: const Icon(Icons.settings, color: Color(0xff0c3e42),size: 35,), // Change icon color to black
               title: const Text('Signup',
                 style: TextStyle(
-                    color: Color(0xFF606C38),
+                    color: Color(0xff0c3e42),
                     fontSize: 18
                 ),),
               onTap: () {
@@ -89,10 +103,10 @@ class Sidebar extends StatelessWidget {
             SizedBox(height: 10),
 
             ListTile(
-              leading: const Icon(Icons.logout, color: Color(0xFF383330)), // Change icon color to black
+              leading: const Icon(Icons.logout, color: Color(0xff0c3e42),size: 35,), // Change icon color to black
               title: const Text('Logout',
                 style: TextStyle(
-                    color: Color(0xFF606C38),
+                    color: Color(0xff0c3e42),
                     fontSize: 18
                 ),),
               onTap: () async {
@@ -102,10 +116,10 @@ class Sidebar extends StatelessWidget {
             ),
             SizedBox(height: 10),
             ListTile(
-              leading: const Icon(Icons.remove_circle_outline, color: Color(0xFF383330)), // Change icon color to black
+              leading: const Icon(Icons.remove_circle_outline, color: Color(0xff0c3e42),size: 35,), // Change icon color to black
               title: const Text('Delete Account',
                 style: TextStyle(
-                    color: Color(0xFF606C38),
+                    color: Color(0xff0c3e42),
                     fontSize: 18
                 ),),
               onTap: () async {

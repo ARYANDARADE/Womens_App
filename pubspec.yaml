@@ -63,7 +63,7 @@ dependencies:
   webview_flutter: ^4.4.1
   horizontal_list_view: ^1.1.0
   shake: ^2.2.0
-
+  provider: ^6.0.5
 
 
   dropdown_button2: ^2.3.9

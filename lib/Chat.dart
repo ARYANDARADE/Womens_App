@@ -71,10 +71,10 @@ class _ChatPageState extends State<ChatPage> {
                             padding: const EdgeInsets.all(8.0),
                             child: Container(
                               height: 70,
-                              width: 75,
+                              width: 70,
                               decoration: BoxDecoration(
                                 shape: BoxShape.circle,
-                                color: Colors.grey,
+                                color: Color(0xff37949d),
                               ),
                               child: IconButton(
                                 icon: Icon(Icons.add,

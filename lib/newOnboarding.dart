@@ -59,8 +59,8 @@ class _NewOnBoardingScreenState extends State<NewOnBoardingScreen> {
           showDoneButton: true,
           back: const Icon(Icons.arrow_back,color: Color(0xff30949D)),
           skip: const Text('Skip', style: TextStyle(fontWeight: FontWeight.w600,color: Color(0xff30949D))),
-          next: const Icon(Icons.arrow_forward,color: Color(0xff30949D)),
-          done: const Text('Done', style: TextStyle(fontWeight: FontWeight.w600,color: Color(0xff30949D))),
+          next: const Icon(Icons.arrow_forward,color: Color(0xff30949D),size: 30,),
+          done: const Text('Done', style: TextStyle(fontWeight: FontWeight.w600,color: Color(0xff30949D),fontSize: 20)),
           curve: Curves.fastLinearToSlowEaseIn,
           controlsMargin: const EdgeInsets.all(16),
           controlsPadding: kIsWeb
@@ -68,7 +68,7 @@ class _NewOnBoardingScreenState extends State<NewOnBoardingScreen> {
               : const EdgeInsets.fromLTRB(8.0, 4.0, 8.0, 4.0),
           dotsDecorator: const DotsDecorator(
             size: Size(10.0, 10.0),
-            color: Color(0xFFBDBDBD),
+            color: Color(0xfff6b4bb),
             activeSize: Size(22.0, 10.0),
             activeColor: Color(0xff30949D),
             activeShape: RoundedRectangleBorder(

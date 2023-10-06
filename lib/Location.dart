@@ -289,7 +289,7 @@ class _LocationScreenState extends State<LocationScreen> {
                     crossAxisAlignment: CrossAxisAlignment.center,
                     children: [
                       Text(
-                        "VIGILANCE          ",
+                        "VIGILANCE                ",
                         style: TextStyle(
                           fontSize: 32,
                           fontWeight: FontWeight.w700,

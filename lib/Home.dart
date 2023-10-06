@@ -56,18 +56,18 @@ class _HomePageState extends State<HomePage> {
             children: [
               Positioned(
                 top: 50.0,
-                left: 12.0,
+                left: 13.0,
                 child: Builder(
                   builder: (context) => IconButton(
                     onPressed: () {
                       Scaffold.of(context).openDrawer();
                     },
-                    icon: Icon(Icons.menu_outlined, size: screenWidth * 0.11),
+                    icon: Icon(Icons.menu_outlined, size: screenWidth * 0.11,color: Color(0xff37949d),),
                   ),
                 ),
               ),
               Positioned(
-                top: 40,
+                top:35,
                 right: 20,
                   child: Container(
                     height: 85,
@@ -82,12 +82,13 @@ class _HomePageState extends State<HomePage> {
               ),
                 Positioned(
                     top: 60,
-                    left: 90,
+                    left: 110,
                     child: Container(
                       child: Text(
                         "VIGILANCE",
                         style: TextStyle(
                           fontSize: 30,
+                          color: Color(0xff37949d),
                           fontWeight: FontWeight.w700,
                         ),
                       ),
@@ -112,7 +113,7 @@ class _HomePageState extends State<HomePage> {
                           width: 330,
                           decoration: BoxDecoration(
                             color: Colors.blue,
-                            border: Border.all(color: Colors.black, width: 2.0),
+                            border: Border.all(color: Color(0xffff6b81), width: 2.0),
                             borderRadius: BorderRadius.all(Radius.circular(20.0)),
                           ),
                           margin: EdgeInsets.all(8),
@@ -131,7 +132,7 @@ class _HomePageState extends State<HomePage> {
                           width: 330,
                           decoration: BoxDecoration(
                             color: Colors.blue,
-                            border: Border.all(color: Colors.black, width: 2.0),
+                            border: Border.all(color: Color(0xffff6b81), width: 2.0),
                             borderRadius: BorderRadius.all(Radius.circular(20.0)),
                           ),
                           margin: EdgeInsets.all(8),
@@ -149,7 +150,7 @@ class _HomePageState extends State<HomePage> {
                         child: Container(
                           width: 330,
                           decoration: BoxDecoration(
-                            border: Border.all(color: Colors.black, width: 2.0),
+                            border: Border.all(color: Color(0xffff6b81), width: 2.0),
                             color: Colors.blue,
                             borderRadius: BorderRadius.all(Radius.circular(20.0)),
                           ),
@@ -176,7 +177,7 @@ class _HomePageState extends State<HomePage> {
                         children: [
                           Icon(
                             Icons.list,
-                            size: 16,
+                            size: 20,
                             color: Colors.white,
                           ),
                           SizedBox(
@@ -186,7 +187,7 @@ class _HomePageState extends State<HomePage> {
                             child: Text(
                               'Harsh Pedo??',
                               style: TextStyle(
-                                fontSize: 14,
+                                fontSize: 16,
                                 fontWeight: FontWeight.bold,
                                 color: Colors.white,
                               ),
@@ -221,24 +222,25 @@ class _HomePageState extends State<HomePage> {
                         padding: const EdgeInsets.only(left: 14, right: 14),
                         decoration: BoxDecoration(
                           borderRadius: BorderRadius.circular(14),
-                          color: const Color(0xff37949d),
+                          color: const Color(0xffff6b81),
                         ),
                         elevation: 2,
                       ),
                       iconStyleData: const IconStyleData(
                         icon: Icon(
                           Icons.arrow_downward_outlined,
+                          size: 30,
                         ),
-                        iconSize: 20,
+                        iconSize: 30,
                         iconEnabledColor: Colors.white,
                         iconDisabledColor: Colors.grey,
                       ),
                       dropdownStyleData: DropdownStyleData(
                         maxHeight: 200,
-                        width: 320,
+                        width: 370,
                         decoration: BoxDecoration(
                           borderRadius: BorderRadius.circular(14),
-                           color: Color(0xff7eabb6),
+                           color: Color(0xfff3bbc4),
                         ),
                         //offset: const Offset(-20, 0),
                         scrollbarTheme: ScrollbarThemeData(
@@ -327,7 +329,7 @@ class _HomePageState extends State<HomePage> {
                     ),
                     dropdownStyleData: DropdownStyleData(
                       maxHeight: 200,
-                      width: 320,
+                      width: 370,
                       decoration: BoxDecoration(
                         borderRadius: BorderRadius.circular(14),
                         color: Color(0xff7eabb6),

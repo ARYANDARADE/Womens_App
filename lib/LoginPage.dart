@@ -249,16 +249,14 @@ class _LoginPageState extends State<LoginPage> {
                                       UserCredential user = await FirebaseAuth
                                           .instance.signInWithEmailAndPassword(
                                           email:tEmail,
-                                          password: tPassword);
-                                      if (user != null) {
-                                        Navigator.of(context).push(
-                                          MaterialPageRoute(
-                                            builder: (context) =>
-                                                 NavBar(), // Replace with the name of your MyApp class
-                                          ),
-                                        );
-                                      }
-                                    } on FirebaseAuthException catch (e) {
+                                          password:tPassword);
+                                      Navigator.of(context).push(
+                                        MaterialPageRoute(
+                                          builder: (context) =>
+                                               NavBar(), // Replace with the name of your MyApp class
+                                        ),
+                                      );
+                                                                        } on FirebaseAuthException catch (e) {
                                       if (e.code == 'user-not-found') {
                                         ScaffoldMessenger.of(context).showSnackBar(
                                           const SnackBar(

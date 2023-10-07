@@ -27,8 +27,8 @@ class PoliceStationCard extends StatelessWidget {
                   borderRadius: BorderRadius.circular(20),
                 ),
                 child: Container(
-                  height: 60,
-                  width: 60,
+                  height: 50,
+                  width: 50,
                   child: Center(
                     child: Image.asset(
                       'assets/images/police.png',

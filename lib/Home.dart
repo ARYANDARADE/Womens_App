@@ -50,7 +50,7 @@ class _HomePageState extends State<HomePage> {
       drawer: Sidebar(),
       body: SingleChildScrollView(
         child: Container(
-          height: 1500,
+          height: 1350,
           width: 900,
           child: Stack(
             children: [
@@ -67,11 +67,11 @@ class _HomePageState extends State<HomePage> {
                 ),
               ),
               Positioned(
-                top:35,
+                top:45,
                 right: 20,
                   child: Container(
-                    height: 85,
-                    width: 85,
+                    height: 70,
+                    width: 70,
                     decoration: BoxDecoration(
                       image: DecorationImage(
                         image: AssetImage("assets/images/logo.png"),
@@ -82,7 +82,7 @@ class _HomePageState extends State<HomePage> {
               ),
                 Positioned(
                     top: 60,
-                    left: 100,
+                    left: 70,
                     child: Container(
                       child: Text(
                         "SAFE-ROUTES",
@@ -283,7 +283,7 @@ class _HomePageState extends State<HomePage> {
                       ),
                       dropdownStyleData: DropdownStyleData(
                         maxHeight: 200,
-                        width: 370,
+                        width: 320,
                         decoration: BoxDecoration(
                           borderRadius: BorderRadius.circular(14),
                            color: Color(0xffeca0ac),
@@ -375,7 +375,7 @@ class _HomePageState extends State<HomePage> {
                     ),
                     dropdownStyleData: DropdownStyleData(
                       maxHeight: 200,
-                      width: 370,
+                      width: 320,
                       decoration: BoxDecoration(
                         borderRadius: BorderRadius.circular(14),
                         color: Color(0xff7eabb6),
@@ -438,8 +438,8 @@ class _HomePageState extends State<HomePage> {
                 top: 590,
                 left: 20,
                 child: Container(
-                  width: 375,
-                  height: 720,
+                  width: 325,
+                  height: 670,
                   decoration: BoxDecoration(
                     border: Border.all(color: Colors.black, width: 2.0),
                     borderRadius: BorderRadius.circular(20),
@@ -456,7 +456,7 @@ class _HomePageState extends State<HomePage> {
                           borderRadius: BorderRadius.circular(20),
                           color: Color(0xff65bfc5),
                         ),
-                        padding: EdgeInsets.all(20),
+                        padding: EdgeInsets.all(10),
                         margin: EdgeInsets.only(bottom: 20),
                         child: Text(
                           '  ➤   SafeRoute gives you analysis of safety rate(SAFE / UNSAFE / NEUTRAL) of road at which you are travelling ',
@@ -469,7 +469,7 @@ class _HomePageState extends State<HomePage> {
                           borderRadius: BorderRadius.circular(20),
                           color: Color(0xff65bfc5),
                         ),
-                        padding: EdgeInsets.all(20),
+                        padding: EdgeInsets.all(10),
                         margin: EdgeInsets.only(bottom: 20),
                         child: Text(
                           '  ➤   Integrated chatbot named ORIGIN is their to be your companion till you reach your destination safely.',
@@ -482,7 +482,7 @@ class _HomePageState extends State<HomePage> {
                           borderRadius: BorderRadius.circular(20),
                           color: Color(0xff65bfc5),
                         ),
-                        padding: EdgeInsets.all(20),
+                        padding: EdgeInsets.all(10),
                         margin: EdgeInsets.only(bottom: 20),
                         child: Text(
                           '  ➤   emergency sos will be sent to your guradians and emergency services on shake of phone.',
@@ -495,7 +495,7 @@ class _HomePageState extends State<HomePage> {
                           borderRadius: BorderRadius.circular(20),
                           color: Color(0xff65bfc5),
                         ),
-                        padding: EdgeInsets.all(20),
+                        padding: EdgeInsets.all(10),
                         margin: EdgeInsets.only(bottom: 20),
                         child: Text(
                           '  ➤   your live location is fetched and based on that nearby police station, hospitals, pharmacies and public transport is spotted on map.',
@@ -508,7 +508,7 @@ class _HomePageState extends State<HomePage> {
                           borderRadius: BorderRadius.circular(20),
                           color: Color(0xff65bfc5),
                         ),
-                        padding: EdgeInsets.all(20),
+                        padding: EdgeInsets.all(10),
                         child: Text(
                           '  ➤    live incidents reporting system is provided, so that any other anonyms person can also compliant about the incident to the official authorities.',
                           style: TextStyle(color: Colors.black, fontSize: 17),

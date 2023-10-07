@@ -12,7 +12,7 @@
         </intent>
     </queries>
     <application
-        android:label="Vigilance"
+        android:label="SAFE-ROUTES"
         android:name="${applicationName}"
         android:icon="@mipmap/launcher_icon">
         <activity

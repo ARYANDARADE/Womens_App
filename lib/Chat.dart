@@ -29,6 +29,7 @@ class _ChatPageState extends State<ChatPage> {
 
 
 
+
     final screenWidth = MediaQuery.of(context).size.width;
     Future openDialog() => showDialog(
         context: context,

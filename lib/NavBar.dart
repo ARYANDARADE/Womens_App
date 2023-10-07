@@ -1,5 +1,6 @@
 import 'package:basic/Notification.dart';
 import 'package:geolocator/geolocator.dart';
+import 'package:google_maps_flutter/google_maps_flutter.dart';
 import 'package:shake/shake.dart';
 import 'package:telephony/telephony.dart';
 import 'Chat.dart';
@@ -15,25 +16,45 @@ import 'package:icons_plus/icons_plus.dart';
 import 'package:dot_navigation_bar/dot_navigation_bar.dart';
 class NavBar extends StatefulWidget {
 
+
   @override
   _NavBarState createState() => _NavBarState();
 }
-String SmsText='This is An SoS Message';
+Future<LatLng> _getCurrentLocation() async {
+  Position position = await Geolocator.getCurrentPosition(
+    desiredAccuracy: LocationAccuracy.high,
+  );
+  LatLng latLng = LatLng(position.latitude, position.longitude);
+  print(LatLng);
+  return latLng;
+}
+
+
+List<String> numbers = ["9167645691","9529448553","7738657272",""];
 class _NavBarState extends State<NavBar> {
   int selectedpage = 0;
   final _pageOptions = [HomePage(),ChatPage(),LocationScreen(),ReportPage(),NotificationPage()];
+  late String SmsText;
   @override
   void initState() {
     super.initState();
+
+
     ShakeDetector detector = ShakeDetector.autoStart(
       onPhoneShake: () async {
 
           Telephony telephony = Telephony.instance;
-
-        await telephony.sendSms(
-            to: "8424820665",
+     var number;
+     for (number in numbers)
+          {
+            var latLng =_getCurrentLocation();
+          SmsText='This is An SoS Message';
+          await telephony.sendSms(
+            to: number,
             message: SmsText,
-        );
+          );
+        }
+        print(SmsText);
         ScaffoldMessenger.of(context).showSnackBar(
           const SnackBar(
             content: Text('SOS Sent!'),

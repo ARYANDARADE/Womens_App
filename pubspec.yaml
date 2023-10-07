@@ -64,12 +64,9 @@ dependencies:
   horizontal_list_view: ^1.1.0
   shake: ^2.2.0
   provider: ^6.0.5
-
-
   dropdown_button2: ^2.3.9
   flutter_dropdown: ^1.0.1+hotfix.1
   telephony: ^0.2.0
-
   cloud_firestore: ^4.9.3
 
 

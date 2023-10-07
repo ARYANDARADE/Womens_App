@@ -1,4 +1,5 @@
 import 'package:basic/Notification.dart';
+import 'package:geolocator/geolocator.dart';
 import 'package:shake/shake.dart';
 import 'package:telephony/telephony.dart';
 import 'Chat.dart';
@@ -20,13 +21,14 @@ class NavBar extends StatefulWidget {
 String SmsText='';
 class _NavBarState extends State<NavBar> {
   int selectedpage = 0;
-  final _pageOptions = [HomePage(),ChatPage(),LocationScreen(),ReportPage(),notificationPage()];
+  final _pageOptions = [HomePage(),ChatPage(),LocationScreen(),ReportPage(),NotificationPage()];
   @override
   void initState() {
     super.initState();
     ShakeDetector detector = ShakeDetector.autoStart(
       onPhoneShake: () async {
-        Telephony telephony = Telephony.instance;
+
+          Telephony telephony = Telephony.instance;
 
         await telephony.sendSms(
             to: "8424820665",

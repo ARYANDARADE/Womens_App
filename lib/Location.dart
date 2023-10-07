@@ -8,6 +8,7 @@ import 'package:http/http.dart' as http;
 import 'package:telephony/telephony.dart';
 import 'pop.dart';
 import 'dart:async';
+import 'notification_manager.dart';
 
 class Safety {
   late final String line;
@@ -153,7 +154,15 @@ class _LocationScreenState extends State<LocationScreen> {
 
 
   Future<void> _openPopUpWindow(int selectedIndex) async {
+
     print("object");
+
+
+
+
+
+
+
     // Check if the selected index is within valid range
     if (selectedIndex >= 0 && selectedIndex < _locations.length) {
       double distance = _locations[selectedIndex].distance;
@@ -172,6 +181,8 @@ class _LocationScreenState extends State<LocationScreen> {
       // Handle invalid index
       _showPopupDialog(context, 'Invalid index');
     }
+
+
   }
 
   Future<String> _makeApiCall(double distance, double crimeRate, int cctvCameras) async {
@@ -198,6 +209,8 @@ class _LocationScreenState extends State<LocationScreen> {
   }
 
   void _showPopupDialog(BuildContext context, String message) {
+    NotificationManager.addNotification(message);
+    print("added noti");
     showDialog(
       context: context,
       builder: (BuildContext context) {
@@ -235,21 +248,6 @@ class _LocationScreenState extends State<LocationScreen> {
             left: 15,
             child: FloatingActionButton(
               onPressed: () async {
-
-                Telephony telephony = Telephony.instance;
-
-                await telephony.sendSms(
-                    to: "8356860310",
-                    message: "Pritesh Gay"
-                );
-                ScaffoldMessenger.of(context).showSnackBar(
-                  const SnackBar(
-                    content: Text('SOS Sent!'),
-                  ),
-                );
-
-
-
                 _openPopUpWindow(_selectedListIndex);
               },
               child: Icon(Icons.add_alert_sharp),

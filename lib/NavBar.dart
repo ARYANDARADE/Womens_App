@@ -20,7 +20,7 @@ class NavBar extends StatefulWidget {
 String SmsText='';
 class _NavBarState extends State<NavBar> {
   int selectedpage = 0;
-  final _pageOptions = [HomePage(),ChatPage(),LocationScreen(),ReportPage(),notificationPage()];
+  final _pageOptions = [HomePage(),ChatPage(),LocationScreen(),ReportPage(),NotificationPage()];
   @override
   void initState() {
     super.initState();

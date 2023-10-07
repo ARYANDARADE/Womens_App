@@ -61,7 +61,7 @@ class _ChatBotState extends State<ChatBot> {
 
   _messagecontroller.clear();
 
-  ChatMessages _botmessage = ChatMessages(text: chatbotResponse(prompt), sender: "bot");
+  ChatMessages _botmessage = ChatMessages(text: chatbotResponse(prompt), sender: "origin");
   setState(() {
     _messages.insert(0, _botmessage);
   });
@@ -71,9 +71,14 @@ class _ChatBotState extends State<ChatBot> {
   @override
   Widget build(BuildContext context) {
     return Expanded(
-
       child:
       Container(
+        decoration: BoxDecoration(
+          image: DecorationImage(
+            image: AssetImage('assets/images/back22.jpg'), // Replace with your image path
+            fit: BoxFit.cover,
+          ),
+        ),
         width: MediaQuery.of(context).size.width,
         child: Column(
           children: [

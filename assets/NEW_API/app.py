@@ -58,7 +58,7 @@ def predict_route(data:Route):
 
 
 if __name__ =='__main__':
-    uvicorn.run(app,host='192.168.0.105',port=8000)
+    uvicorn.run(app,host='192.168.43.141',port=8000)
 #cd C:\Users\VARUN\AndroidStudioProjects\Vigilance\assets\NEW_API
-#uvicorn app:app --host 192.168.0.105 --port 8000
+#uvicorn app:app --host 192.168.43.141 --port 8000
 #uvicorn app:app --reload

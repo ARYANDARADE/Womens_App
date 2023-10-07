@@ -188,7 +188,7 @@ class _LocationScreenState extends State<LocationScreen> {
   Future<String> _makeApiCall(double distance, double crimeRate, int cctvCameras) async {
     try {
       final response = await http.post(
-        Uri.parse('http://192.168.0.105:8000/predict'),
+        Uri.parse('http://192.168.43.141:8000/predict'),
         headers: {"Content-Type": "application/json"},
         body: jsonEncode({
           "Distance": distance,
@@ -299,12 +299,12 @@ class _LocationScreenState extends State<LocationScreen> {
                       shape: BoxShape.circle,
                     ),
                   ),
-                  SizedBox(width: 20), // Add some space between the image and text
+                  SizedBox(width: 10), // Add some space between the image and text
                   Column(
                     crossAxisAlignment: CrossAxisAlignment.center,
                     children: [
                       Text(
-                        "SAFE-ROUTES          ",
+                        "SAFE-ROUTES    ",
                         style: TextStyle(
                           fontSize: 32,
                           fontWeight: FontWeight.w700,

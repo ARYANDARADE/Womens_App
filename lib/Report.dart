@@ -17,7 +17,7 @@ class ReportPage extends StatefulWidget {
   _ReportPageState createState() => _ReportPageState();
 }
 class _ReportPageState extends State<ReportPage> {
-  String ReportNow ="Chain Snatchingfaffasfafafafafafafsafafafafafafafasfafafafafasfasfafsafaf";
+  String ReportNow ="Harassment at Aray road near Goragaon";
   final List<String> items = [
     "https://morth.nic.in/public-grievances",
     "https://sakhi.gov.in/home/resources",
@@ -31,13 +31,13 @@ class _ReportPageState extends State<ReportPage> {
       backgroundColor: Colors.white,
       body: SingleChildScrollView(
         child: Container(
-          height: 850,
+          height: 780,
           child: Column(
             children: [
               Align(
                 alignment: Alignment.center,
                   child: Padding(
-                    padding: const EdgeInsets.only(top: 55.0),
+                    padding: const EdgeInsets.only(top: 35.0),
                     child: SizedBox(
                       height: 300,
                       child: ListView(
@@ -81,11 +81,11 @@ class _ReportPageState extends State<ReportPage> {
               //     ],
               //   ),
               // ),
-              SizedBox(height: 20,),
+              SizedBox(height: 10,),
               Container(
                 child: LiveSafe(),
               ),
-              SizedBox(height: 30,),
+              SizedBox(height: 10,),
               Positioned(
                 top:430,
                 left: 20,
@@ -142,7 +142,7 @@ class _ReportPageState extends State<ReportPage> {
                     },
                     buttonStyleData: ButtonStyleData(
                       height: 50,
-                      width: 370,
+                      width: 320,
                       padding: const EdgeInsets.only(left: 14, right: 14),
                       decoration: BoxDecoration(
                         borderRadius: BorderRadius.circular(14),
@@ -161,7 +161,7 @@ class _ReportPageState extends State<ReportPage> {
                     ),
                     dropdownStyleData: DropdownStyleData(
                       maxHeight: 200,
-                      width: 370,
+                      width: 320,
                       decoration: BoxDecoration(
                         borderRadius: BorderRadius.circular(14),
                         color: Color(0xffeca0ac),
@@ -179,7 +179,7 @@ class _ReportPageState extends State<ReportPage> {
                     ),
                   ),
                 ), ),
-              SizedBox(height: 30,),
+              SizedBox(height: 20,),
               ListTile(
                 title: Column(
                   children: [
@@ -212,7 +212,7 @@ class _ReportPageState extends State<ReportPage> {
                         ),
                       ),
                     ),
-                    SizedBox(height: 10,),
+                    SizedBox(height: 5,),
                     SizedBox(
                       width: 90,
                       child: ElevatedButton(
@@ -220,7 +220,7 @@ class _ReportPageState extends State<ReportPage> {
                           Telephony telephony = Telephony.instance;
 
                           await telephony.sendSms(
-                            to:"8356860310", //"8424820665",
+                            to:"9167645691", //"8424820665",
                             message: ReportNow,
                           );
                           ScaffoldMessenger.of(context).showSnackBar(

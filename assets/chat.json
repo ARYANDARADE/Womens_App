@@ -4,6 +4,11 @@
                         "tag": "greeting",
                         "patterns": [
                                 "Hi",
+                                "hi",
+                                "hiii",
+                                "hii",
+                                "hello",
+                                "heyaa",
                                 "How are you",
                                 "Is anyone there?",
                                 "Hello",
@@ -44,8 +49,8 @@
                 {
                         "tag": "chatbot",
                         "patterns": [
-                                "Who built this chatbot?",
-                                "Tell me about Chatbot",
+                                "ho built this chatbot",
+                                "ell me about Chatbot",
                                 "What is this chatbot name?"
                         ],
                         "responses": [

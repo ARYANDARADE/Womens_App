@@ -17,7 +17,7 @@ class NavBar extends StatefulWidget {
   @override
   _NavBarState createState() => _NavBarState();
 }
-String SmsText='';
+String SmsText='This is An SoS Message';
 class _NavBarState extends State<NavBar> {
   int selectedpage = 0;
   final _pageOptions = [HomePage(),ChatPage(),LocationScreen(),ReportPage(),NotificationPage()];

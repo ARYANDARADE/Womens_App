@@ -18,7 +18,7 @@ class Sidebar extends StatelessWidget {
     return Drawer(
       width: 230,
       child: Container(
-        color: Color(0xffd3e8ef).withOpacity(0.9),
+        color: Color(0xffd3e8ef).withOpacity(0.5),
         // decoration: BoxDecoration(
         //   gradient: LinearGradient(
         //     begin: Alignment.topCenter,

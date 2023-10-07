@@ -82,10 +82,10 @@ class _HomePageState extends State<HomePage> {
               ),
                 Positioned(
                     top: 60,
-                    left: 110,
+                    left: 100,
                     child: Container(
                       child: Text(
-                        "VIGILANCE",
+                        "SAFE-ROUTES",
                         style: TextStyle(
                           fontSize: 30,
                           color: Color(0xff37949d),
@@ -393,6 +393,7 @@ class _HomePageState extends State<HomePage> {
                     ),
                   ),
                 ), ),
+
               // Container(
                   //   height: 100,
                   //   child: ListView(
@@ -433,6 +434,93 @@ class _HomePageState extends State<HomePage> {
                   ),
                 ),
               ),*/
+              Positioned(
+                top: 590,
+                left: 20,
+                child: Container(
+                  width: 375,
+                  height: 720,
+                  decoration: BoxDecoration(
+                    border: Border.all(color: Colors.black, width: 2.0),
+                    borderRadius: BorderRadius.circular(20),
+                    color: Color.fromRGBO(133, 207, 210, 0.5),
+                  ),
+                  padding: EdgeInsets.all(20),
+                  // Blue color with 50% opacity
+                  child: Column(
+                    crossAxisAlignment: CrossAxisAlignment.start,
+                    children: [
+                      Container(
+                        width: double.infinity,
+                        decoration: BoxDecoration(
+                          borderRadius: BorderRadius.circular(20),
+                          color: Color(0xff65bfc5),
+                        ),
+                        padding: EdgeInsets.all(20),
+                        margin: EdgeInsets.only(bottom: 20),
+                        child: Text(
+                          '  ➤   SafeRoute gives you analysis of safety rate(SAFE / UNSAFE / NEUTRAL) of road at which you are travelling ',
+                          style: TextStyle(color: Colors.black, fontSize: 17),
+                        ),
+                      ),
+                      Container(
+                        width: double.infinity,
+                        decoration: BoxDecoration(
+                          borderRadius: BorderRadius.circular(20),
+                          color: Color(0xff65bfc5),
+                        ),
+                        padding: EdgeInsets.all(20),
+                        margin: EdgeInsets.only(bottom: 20),
+                        child: Text(
+                          '  ➤   Integrated chatbot named ORIGIN is their to be your companion till you reach your destination safely.',
+                          style: TextStyle(color: Colors.black, fontSize: 17),
+                        ),
+                      ),
+                      Container(
+                        width: double.infinity,
+                        decoration: BoxDecoration(
+                          borderRadius: BorderRadius.circular(20),
+                          color: Color(0xff65bfc5),
+                        ),
+                        padding: EdgeInsets.all(20),
+                        margin: EdgeInsets.only(bottom: 20),
+                        child: Text(
+                          '  ➤   emergency sos will be sent to your guradians and emergency services on shake of phone.',
+                          style: TextStyle(color: Colors.black, fontSize: 17),
+                        ),
+                      ),
+                      Container(
+                        width: double.infinity,
+                        decoration: BoxDecoration(
+                          borderRadius: BorderRadius.circular(20),
+                          color: Color(0xff65bfc5),
+                        ),
+                        padding: EdgeInsets.all(20),
+                        margin: EdgeInsets.only(bottom: 20),
+                        child: Text(
+                          '  ➤   your live location is fetched and based on that nearby police station, hospitals, pharmacies and public transport is spotted on map.',
+                          style: TextStyle(color: Colors.black, fontSize: 17),
+                        ),
+                      ),
+                      Container(
+                        width: double.infinity,
+                        decoration: BoxDecoration(
+                          borderRadius: BorderRadius.circular(20),
+                          color: Color(0xff65bfc5),
+                        ),
+                        padding: EdgeInsets.all(20),
+                        child: Text(
+                          '  ➤    live incidents reporting system is provided, so that any other anonyms person can also compliant about the incident to the official authorities.',
+                          style: TextStyle(color: Colors.black, fontSize: 17),
+                        ),
+                      ),
+
+
+                    ],
+                  ),
+                ),
+              ),
+
             ],
           ),
         ),

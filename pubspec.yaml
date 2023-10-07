@@ -68,6 +68,7 @@ dependencies:
   flutter_dropdown: ^1.0.1+hotfix.1
   telephony: ^0.2.0
   cloud_firestore: ^4.9.3
+  image_picker: 0.8.6
 
 
 dev_dependencies:

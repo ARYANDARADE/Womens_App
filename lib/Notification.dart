@@ -1,3 +1,4 @@
+import 'package:basic/addForumButton.dart';
 import 'package:flutter/material.dart';
 
 class NotificationPage extends StatefulWidget {
@@ -20,19 +21,29 @@ class _NotificationPageState extends State<NotificationPage> {
       backgroundColor: Colors.blueGrey, // Set the background color here
       body: Padding(
         padding: const EdgeInsets.symmetric(horizontal: 20.0),
-        child: ListView.builder(
-          itemCount: notifications.length,
-          itemBuilder: (context, index) {
-            return Container(
-              height: 60,
-              width: MediaQuery.of(context).size.width - 40, // Screen width minus 20 on both sides
-              color: Colors.white, // Set the white color for the "notification pad"
-              margin: EdgeInsets.only(bottom: 10.0), // Add margin between notifications
-              child: Center(
-                child: Text(notifications[index]),
+        child: SafeArea(
+          child: Column(
+            children: [
+              AddForumBtn(),
+              Container(
+                height: 100,
+                child: ListView.builder(
+                  itemCount: notifications.length,
+                  itemBuilder: (context, index) {
+                    return Container(
+                      height: 60,
+                      width: MediaQuery.of(context).size.width - 40, // Screen width minus 20 on both sides
+                      color: Colors.white, // Set the white color for the "notification pad"
+                      margin: EdgeInsets.only(bottom: 10.0), // Add margin between notifications
+                      child: Center(
+                        child: Text(notifications[index]),
+                      ),
+                    );
+                  },
+                ),
               ),
-            );
-          },
+            ],
+          ),
         ),
       ),
 

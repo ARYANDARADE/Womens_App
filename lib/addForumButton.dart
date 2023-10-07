@@ -89,14 +89,14 @@ Future openDialog() => showDialog(
     );
   }Future pickImagefromGallery() async{
     final returnedImage = await ImagePicker().pickImage(source: ImageSource.gallery);
-    if(returnedImage==null)return;
+    // if(returnedImage==null)return;
     setState((){
       selectedImage = File(returnedImage!.path);
     });
   }
   Future pickImagefromCamera() async{
     final returnedImage = await ImagePicker().pickImage(source: ImageSource.camera);
-    if(returnedImage==null)return;
+    // if(returnedImage==null) return;
     setState((){
       selectedImage = File(returnedImage!.path);
     });
